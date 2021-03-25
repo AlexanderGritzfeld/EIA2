@@ -10,9 +10,13 @@ var L01;
     part3.sort(function (a, b) { return 0.5 - Math.random(); });
     //jetzt sollen die Fetzen zusammengeführt werden und in der Konsole ausgegeben werden
     var x = 0;
-    while (x <= part1.length) {
+    while (x < part1.length) {
         console.log(part1[x], part2[x], part3[x]);
         x++;
     }
+    //wird der Refresh_bttn gedrückt wird die Seite neu geladen
+    document.getElementById("refresh_bttn").addEventListener("click", function () {
+        location.reload();
+    });
 })(L01 || (L01 = {})); //Ende Namespace
 //# sourceMappingURL=typecript9.js.map
