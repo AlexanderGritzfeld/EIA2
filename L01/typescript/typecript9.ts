@@ -22,10 +22,14 @@ part3.sort((a, b) => 0.5 - Math.random());
 
 let x: number = 0;
 
-while (x <= part1.length) {
+while (x < part1.length) {
     console.log(part1[x], part2[x], part3[x]);
     x++;
 }
 
+//wird der Refresh_bttn gedrückt wird die Seite neu geladen
+document.getElementById("refresh_bttn").addEventListener("click", function(): void {
+    location.reload();
+    });
 
 } //Ende Namespace
