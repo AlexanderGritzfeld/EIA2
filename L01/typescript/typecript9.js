@@ -1,10 +1,18 @@
 var L01;
 (function (L01) {
-    var part1 = ["Das Leben ", "Unser Nachbar ", "Ein Pinguin ", "Anarchie ", "Die Welt, so wie wir sie kennen, "];
-    var part2 = ["befreit ", "konsumiert ", "tötet ", "legalisiert ", "projeziert "];
-    var part3 = ["für dich", "die Leere", "noch einen Pinguin", "das Recht frei zu sein", "'Sein'"];
-    console.log(part1);
-    console.log(part2);
-    console.log(part3);
-})(L01 || (L01 = {}));
+    //Arrays in denen die Gedichtsfetzen liegen
+    var part1 = ["Das Leben", "Unser Nachbar", "Ein Pinguin", "Anarchie", "Die Welt, so wie wir sie kennen,"];
+    var part2 = ["befreit", "konsumiert", "tötet", "legalisiert", "prophezeit"];
+    var part3 = ["für dich", "die Leere", "noch einen Pinguin", "das Recht frei zu sein", "uns"];
+    //jetzt sollen die Arrays geshuffelt werden
+    part1.sort(function (a, b) { return 0.5 - Math.random(); });
+    part2.sort(function (a, b) { return 0.5 - Math.random(); });
+    part3.sort(function (a, b) { return 0.5 - Math.random(); });
+    //jetzt sollen die Fetzen zusammengeführt werden und in der Konsole ausgegeben werden
+    var x = 0;
+    while (x <= part1.length) {
+        console.log(part1[x], part2[x], part3[x]);
+        x++;
+    }
+})(L01 || (L01 = {})); //Ende Namespace
 //# sourceMappingURL=typecript9.js.map
