@@ -1,0 +1,1602 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 15">
+<link id=Main-File rel=Main-File href="../TraceTable.htm">
+<link rel=File-List href=filelist.xml>
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+x\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<link rel=Stylesheet href=stylesheet.css>
+<style>
+<!--table
+	{mso-displayed-decimal-separator:"\,";
+	mso-displayed-thousand-separator:"\.";}
+@page
+	{margin:.79in .7in .79in .7in;
+	mso-header-margin:.3in;
+	mso-footer-margin:.3in;}
+-->
+</style>
+<![if !supportTabStrip]><script language="JavaScript">
+<!--
+function fnUpdateTabs()
+ {
+  if (parent.window.g_iIEVer>=4) {
+   if (parent.document.readyState=="complete"
+    && parent.frames['frTabs'].document.readyState=="complete")
+   parent.fnSetActiveSheet(0);
+  else
+   window.setTimeout("fnUpdateTabs();",150);
+ }
+}
+
+if (window.name!="frSheet")
+ window.location.replace("../TraceTable.htm");
+else
+ fnUpdateTabs();
+//-->
+</script>
+<![endif]>
+</head>
+
+<body link="#0563C1" vlink="#954F72">
+
+<table border=0 cellpadding=0 cellspacing=0 width=1701 style='border-collapse:
+ collapse;table-layout:fixed;width:1273pt'>
+ <col width=83 span=6 style='width:62pt'>
+ <col width=291 style='mso-width-source:userset;mso-width-alt:10353;width:218pt'>
+ <col width=83 span=5 style='width:62pt'>
+ <col width=497 style='mso-width-source:userset;mso-width-alt:17664;width:373pt'>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 width=83 style='height:14.4pt;width:62pt'>Boxes</td>
+  <td width=83 style='width:62pt'></td>
+  <td width=83 style='width:62pt'></td>
+  <td colspan=2 width=166 style='mso-ignore:colspan;width:124pt'>n: number = 5</td>
+  <td width=83 style='width:62pt'></td>
+  <td width=291 style='width:218pt'></td>
+  <td width=83 style='width:62pt'></td>
+  <td width=83 style='width:62pt'></td>
+  <td width=83 style='width:62pt'></td>
+  <td width=83 style='width:62pt'></td>
+  <td width=83 style='width:62pt'></td>
+  <td width=497 style='width:373pt'></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 colspan=3 style='height:14.4pt;mso-ignore:colspan'></td>
+  <td colspan=3 style='mso-ignore:colspan'>size: array[] = [&quot;big&quot;,
+  &quot;medium&quot;, &quot;small&quot;]</td>
+  <td colspan=7 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 colspan=13 style='height:14.4pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 colspan=8 style='height:14.4pt;mso-ignore:colspan'></td>
+  <td colspan=2 style='mso-ignore:colspan'>function createBox</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl67>Nr</td>
+  <td class=xl68>color</td>
+  <td class=xl68>x</td>
+  <td class=xl68>y</td>
+  <td class=xl68>i</td>
+  <td class=xl69>Kommentar</td>
+  <td></td>
+  <td class=xl67>_color</td>
+  <td class=xl68>_x</td>
+  <td class=xl68>_y</td>
+  <td class=xl68>_size</td>
+  <td class=xl69>Ergebnis</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl70>&nbsp;</td>
+  <td class=xl71>string</td>
+  <td class=xl71>number</td>
+  <td class=xl71>number</td>
+  <td class=xl71>number</td>
+  <td class=xl72>&nbsp;</td>
+  <td></td>
+  <td class=xl70>string</td>
+  <td class=xl71>number</td>
+  <td class=xl71>number</td>
+  <td class=xl71>string</td>
+  <td class=xl72><span style='mso-spacerun:yes'> </span></td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl73>4</td>
+  <td class=xl65 style='border-left:none'>&nbsp;</td>
+  <td class=xl65 style='border-left:none'>0</td>
+  <td class=xl65 style='border-left:none'>&nbsp;</td>
+  <td class=xl65 style='border-left:none'>&nbsp;</td>
+  <td class=xl65 style='border-left:none'>&nbsp;</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>5</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>0</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>7</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>0</td>
+  <td class=xl66 style='border-top:none;border-left:none'>0&gt;5 --&gt;
+  Schleife wird ausgeführt</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>8</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>50</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>0 /= 2 --&gt; fail</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>9</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>170</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>11</td>
+  <td class=xl66 style='border-top:none;border-left:none'>#ff0000</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>i = 0; (rot)</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>24</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>Durchlauf
+  &quot;big&quot;</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>25</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>createBox(color, x,
+  y, size) wird ausgeführt</td>
+  <td align=left valign=top><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+   coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+   filled="f" stroked="f">
+   <v:stroke joinstyle="miter"/>
+   <v:formulas>
+    <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+    <v:f eqn="sum @0 1 0"/>
+    <v:f eqn="sum 0 0 @1"/>
+    <v:f eqn="prod @2 1 2"/>
+    <v:f eqn="prod @3 21600 pixelWidth"/>
+    <v:f eqn="prod @3 21600 pixelHeight"/>
+    <v:f eqn="sum @0 0 1"/>
+    <v:f eqn="prod @6 1 2"/>
+    <v:f eqn="prod @7 21600 pixelWidth"/>
+    <v:f eqn="sum @8 21600 0"/>
+    <v:f eqn="prod @7 21600 pixelHeight"/>
+    <v:f eqn="sum @10 21600 0"/>
+   </v:formulas>
+   <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+   <o:lock v:ext="edit" aspectratio="t"/>
+  </v:shapetype><v:shape id="Gerade_x0020_Verbindung_x0020_mit_x0020_Pfeil_x0020_2"
+   o:spid="_x0000_s1025" type="#_x0000_t75" style='position:absolute;
+   margin-left:8.4pt;margin-top:3.6pt;width:55.8pt;height:12.6pt;z-index:1;
+   visibility:visible' o:gfxdata="UEsDBBQABgAIAAAAIQD+JeulAAEAAOoBAAATAAAAW0NvbnRlbnRfVHlwZXNdLnhtbJSRzU7EIBDH
+7ya+A+FqWqoHY0zpHqwe1Zj1AQhMW2I7EAbr7ts73e5ejGviEeb/8RuoN7tpFDMk8gG1vC4rKQBt
+cB57Ld+3T8WdFJQNOjMGBC33QHLTXF7U230EEuxG0nLIOd4rRXaAyVAZIiBPupAmk/mYehWN/TA9
+qJuqulU2YAbMRV4yZFO30JnPMYvHHV+vJAlGkuJhFS5dWpoYR29NZlI1o/vRUhwbSnYeNDT4SFeM
+IdWvDcvkfMHR98JPk7wD8WpSfjYTYyiXaNkAweaQWFf+nbSgTlSErvMWyjYRL7V6T3DnSlz4wgTz
+f/Nbtr3BfEpXh59qvgEAAP//AwBQSwMEFAAGAAgAAAAhAJYFM1jUAAAAlwEAAAsAAABfcmVscy8u
+cmVsc6SQPWsDMQyG90L/g9He8yVDKSW+bIWsIYWuxtZ9kLNkJHNN/n1MoaVXsnWUXvQ8L9rtL2k2
+C4pOTA42TQsGKXCcaHDwfnp7egGjxVP0MxM6uKLCvnt82B1x9qUe6ThlNZVC6mAsJb9aq2HE5LXh
+jFSTniX5UkcZbPbh7Ae027Z9tvKbAd2KaQ7RgRziFszpmqv5DztNQVi5L03gZLnvp3CPaiN/0hGX
+SvEyYHEQRb+WgktTy4G979380xuYCENh+aiOlfwnqfbvBnb1zu4GAAD//wMAUEsDBBQABgAIAAAA
+IQCw67dgCAIAANEFAAAUAAAAZHJzL2Nvbm5lY3RvcnhtbC54bWy8lE2P0zAQhu9I/AfLdzZpU9Io
+arJCXdgLggpY7iYZtxb2OLJNm/57/JFmpRV72a24OTP2PK/f8WRzOypJjmCs0NjQxU1OCWCne4H7
+hj78+PSuosQ6hj2TGqGhZ7D0tn37ZjP2pmbYHbQhvgTa2gcaenBuqLPMdgdQzN7oAdBnuTaKOf9p
+9llv2MkXVzJb5nmZ2cEA6+0BwN2lDG1jbXfSW5DyQ0SkEDdapVWnZbveZEFDWMYDfvGV87YqqmU+
+p0IkZo0+tYsixcP6Egwb1qWXMqfikVj6kef0zHiOu86rsrwSeMaN+H0ginVGN3TyBY/bEN2ZSdGX
+484Q0Te0oASZ8i26B8N6ID/B/BLY/8E9UcKRHQchyZJm87mpjg/E2z4pbCOC1SM3auowe0F/FRPo
+lbNac07Ghq6LqlhX/pWdG7pcvS/KVR4ksRpGRzq/oVyuKh8jnd8QU1nSEPYMxrp70K/WQ0Khhlpn
+mNgf3FYjQue0WUSl7PjZuuDKIzDAJV7DBseE/Ig9cefBt8oZwXAvIVjgcRKnXiTzw/O27iwh4b+B
+dzCO2osb4R+KtzhdM84obKUhRyYb2v9ezCo8KSC5kPJq0Dx6+yx0YgUscO678b/AMy3eWOP1wEqg
+Nv+6tRsvVvPEu3Q99Tr91sKQT6MqBaC7Y45dRvXJvzEeSP/i9i8AAAD//wMAUEsDBBQABgAIAAAA
+IQDBfVTTEgEAAIgBAAAPAAAAZHJzL2Rvd25yZXYueG1sVJDNTsMwEITvSLyDtUjcqN20TatSt6oq
+QEioSC08gEk2PyK2I9skgadnS4MCx531N56d1abTFWvQ+dIaCeORAIYmsWlpcgmvL/c3C2A+KJOq
+yhqU8IkeNuvLi5VaprY1B2yOIWdkYvxSSShCqJec+6RArfzI1mhol1mnVaDR5Tx1qiVzXfFIiJhr
+VRr6oVA17gpM3o8fWkK+O75NGpyJVD3wqN51d/unXEh5fdVtb4EF7MLwuKcfUwkTOJ1CZ8Ca8nXV
+1iSFdSw7oC+/KPxZz5zVzNmWZgISW0mYw0l4zjKPQcJ0No+oB9r8KmMRxwsB/GQbbA9Pe5ga+gNH
+0SL+D58VYvmQ6WcYClx/AwAA//8DAFBLAQItABQABgAIAAAAIQD+JeulAAEAAOoBAAATAAAAAAAA
+AAAAAAAAAAAAAABbQ29udGVudF9UeXBlc10ueG1sUEsBAi0AFAAGAAgAAAAhAJYFM1jUAAAAlwEA
+AAsAAAAAAAAAAAAAAAAAMQEAAF9yZWxzLy5yZWxzUEsBAi0AFAAGAAgAAAAhALDrt2AIAgAA0QUA
+ABQAAAAAAAAAAAAAAAAALgIAAGRycy9jb25uZWN0b3J4bWwueG1sUEsBAi0AFAAGAAgAAAAhAMF9
+VNMSAQAAiAEAAA8AAAAAAAAAAAAAAAAAaAQAAGRycy9kb3ducmV2LnhtbFBLBQYAAAAABAAEAPkA
+AACnBQAAAAA=
+">
+   <v:imagedata src="image001.png" o:title=""/>
+   <o:lock v:ext="edit" aspectratio="f"/>
+   <x:ClientData ObjectType="Pict">
+    <x:SizeWithCells/>
+    <x:CF>Bitmap</x:CF>
+    <x:AutoPict/>
+   </x:ClientData>
+  </v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout;
+  position:absolute;z-index:1;margin-left:11px;margin-top:5px;width:74px;
+  height:17px'><img width=74 height=17 src=image002.png v:shapes="Gerade_x0020_Verbindung_x0020_mit_x0020_Pfeil_x0020_2"></span><![endif]><span
+  style='mso-ignore:vglayout2'>
+  <table cellpadding=0 cellspacing=0>
+   <tr>
+    <td height=19 width=83 style='height:14.4pt;width:62pt'></td>
+   </tr>
+  </table>
+  </span></td>
+  <td class=xl66 style='border-top:none'>#ff0000</td>
+  <td class=xl66 style='border-top:none;border-left:none'>170</td>
+  <td class=xl66 style='border-top:none;border-left:none'>50</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&quot;big&quot;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>neues div in HTML mit
+  Farbe: rot; left: 170px; top: 50px und Klasse: &quot;big&quot;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>26</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>0 /= 4 --&gt; zurück
+  zu Nr. 24</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>24</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>Durchlauf
+  &quot;medium&quot;</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>25</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>createBox(color, x,
+  y, size) wird ausgeführt</td>
+  <td rowspan=2 height=38 width=83 style='mso-ignore:colspan-rowspan;
+  height:28.8pt;width:62pt'><!--[if gte vml 1]><v:shape id="Gerade_x0020_Verbindung_x0020_mit_x0020_Pfeil_x0020_10"
+   o:spid="_x0000_s1026" type="#_x0000_t75" style='position:absolute;
+   margin-left:6.6pt;margin-top:6.6pt;width:55.8pt;height:13.2pt;z-index:2;
+   visibility:visible' o:gfxdata="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
+BQAAAAA=
+">
+   <v:imagedata src="image001.png" o:title=""/>
+   <o:lock v:ext="edit" aspectratio="f"/>
+   <x:ClientData ObjectType="Pict">
+    <x:SizeWithCells/>
+    <x:CF>Bitmap</x:CF>
+    <x:AutoPict/>
+   </x:ClientData>
+  </v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'>
+  <table cellpadding=0 cellspacing=0>
+   <tr>
+    <td width=10 height=9></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td><img width=74 height=18 src=image003.png v:shapes="Gerade_x0020_Verbindung_x0020_mit_x0020_Pfeil_x0020_10"></td>
+    <td width=-1></td>
+   </tr>
+   <tr>
+    <td height=11></td>
+   </tr>
+  </table>
+  </span><![endif]><!--[if !mso & vml]><span style='width:62.4pt;height:28.8pt'></span><![endif]--></td>
+  <td class=xl66 style='border-top:none'>#ff0000</td>
+  <td class=xl66 style='border-top:none;border-left:none'>170</td>
+  <td class=xl66 style='border-top:none;border-left:none'>50</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&quot;medium&quot;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>neues div in HTML mit
+  Farbe: rot; left: 170px; top: 50px und Klasse: &quot;medium&quot;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>26</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>0 /= 4 --&gt; zurück
+  zu Nr. 24</td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>24</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>Durchlauf
+  &quot;small&quot;</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>25</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>createBox(color, x,
+  y, size) wird ausgeführt</td>
+  <td align=left valign=top><!--[if gte vml 1]><v:shape id="Gerade_x0020_Verbindung_x0020_mit_x0020_Pfeil_x0020_12"
+   o:spid="_x0000_s1027" type="#_x0000_t75" style='position:absolute;
+   margin-left:7.8pt;margin-top:6pt;width:55.8pt;height:13.2pt;z-index:3;
+   visibility:visible' o:gfxdata="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
+">
+   <v:imagedata src="image001.png" o:title=""/>
+   <o:lock v:ext="edit" aspectratio="f"/>
+   <x:ClientData ObjectType="Pict">
+    <x:SizeWithCells/>
+    <x:CF>Bitmap</x:CF>
+    <x:AutoPict/>
+   </x:ClientData>
+  </v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout;
+  position:absolute;z-index:3;margin-left:10px;margin-top:8px;width:74px;
+  height:18px'><img width=74 height=18 src=image003.png v:shapes="Gerade_x0020_Verbindung_x0020_mit_x0020_Pfeil_x0020_12"></span><![endif]><span
+  style='mso-ignore:vglayout2'>
+  <table cellpadding=0 cellspacing=0>
+   <tr>
+    <td height=19 width=83 style='height:14.4pt;width:62pt'></td>
+   </tr>
+  </table>
+  </span></td>
+  <td class=xl66 style='border-top:none'>#ff0000</td>
+  <td class=xl66 style='border-top:none;border-left:none'>170</td>
+  <td class=xl66 style='border-top:none;border-left:none'>50</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&quot;small&quot;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>neues div in HTML mit
+  Farbe: rot; left: 170px; top: 50px und Klasse: &quot;small&quot;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>26</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>0 /= 4 und Schleife
+  beendet--&gt; zurück zu Nr. 7</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>7</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>1</td>
+  <td class=xl66 style='border-top:none;border-left:none'>1&gt;5 --&gt;
+  Schleife weiter</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>8</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>50</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>1 /= 2 --&gt; fail</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>9</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>340</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>16</td>
+  <td class=xl66 style='border-top:none;border-left:none'>#00ff00</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>(grün)</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>24</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>Durchlauf
+  &quot;big&quot;</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>25</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>createBox(color, x,
+  y, size) wird ausgeführt</td>
+  <td align=left valign=top><!--[if gte vml 1]><v:shape id="Gerade_x0020_Verbindung_x0020_mit_x0020_Pfeil_x0020_13"
+   o:spid="_x0000_s1028" type="#_x0000_t75" style='position:absolute;
+   margin-left:7.8pt;margin-top:8.4pt;width:55.8pt;height:12.6pt;z-index:4;
+   visibility:visible' o:gfxdata="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
+">
+   <v:imagedata src="image001.png" o:title=""/>
+   <o:lock v:ext="edit" aspectratio="f"/>
+   <x:ClientData ObjectType="Pict">
+    <x:SizeWithCells/>
+    <x:CF>Bitmap</x:CF>
+    <x:AutoPict/>
+   </x:ClientData>
+  </v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout;
+  position:absolute;z-index:4;margin-left:10px;margin-top:12px;width:74px;
+  height:17px'><img width=74 height=17 src=image002.png v:shapes="Gerade_x0020_Verbindung_x0020_mit_x0020_Pfeil_x0020_13"></span><![endif]><span
+  style='mso-ignore:vglayout2'>
+  <table cellpadding=0 cellspacing=0>
+   <tr>
+    <td height=19 width=83 style='height:14.4pt;width:62pt'></td>
+   </tr>
+  </table>
+  </span></td>
+  <td class=xl66 style='border-top:none'>#00ff00</td>
+  <td class=xl66 style='border-top:none;border-left:none'>340</td>
+  <td class=xl66 style='border-top:none;border-left:none'>50</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&quot;big&quot;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>neues div in HTML mit
+  Farbe: grün; left: 340px; top: 50px und Klasse: &quot;big&quot;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>26</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>1 /= 4 --&gt; zurück
+  zu Nr. 24</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>24</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>Durchlauf
+  &quot;medium&quot;</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>25</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>createBox(color, x,
+  y, size) wird ausgeführt</td>
+  <td rowspan=2 height=38 width=83 style='mso-ignore:colspan-rowspan;
+  height:28.8pt;width:62pt'><!--[if gte vml 1]><v:shape id="Gerade_x0020_Verbindung_x0020_mit_x0020_Pfeil_x0020_14"
+   o:spid="_x0000_s1029" type="#_x0000_t75" style='position:absolute;
+   margin-left:6.6pt;margin-top:8.4pt;width:55.8pt;height:13.2pt;z-index:5;
+   visibility:visible' o:gfxdata="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
+">
+   <v:imagedata src="image001.png" o:title=""/>
+   <o:lock v:ext="edit" aspectratio="f"/>
+   <x:ClientData ObjectType="Pict">
+    <x:SizeWithCells/>
+    <x:CF>Bitmap</x:CF>
+    <x:AutoPict/>
+   </x:ClientData>
+  </v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'>
+  <table cellpadding=0 cellspacing=0>
+   <tr>
+    <td width=10 height=11></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td><img width=74 height=18 src=image003.png v:shapes="Gerade_x0020_Verbindung_x0020_mit_x0020_Pfeil_x0020_14"></td>
+    <td width=-1></td>
+   </tr>
+   <tr>
+    <td height=9></td>
+   </tr>
+  </table>
+  </span><![endif]><!--[if !mso & vml]><span style='width:62.4pt;height:28.8pt'></span><![endif]--></td>
+  <td class=xl66 style='border-top:none'>#00ff00</td>
+  <td class=xl66 style='border-top:none;border-left:none'>340</td>
+  <td class=xl66 style='border-top:none;border-left:none'>50</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&quot;medium&quot;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>neues div in HTML mit
+  Farbe: grün; left: 340px; top: 50px und Klasse: &quot;medium&quot;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>26</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>1 /= 4 --&gt; zurück
+  zu Nr. 24</td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>24</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>Durchlauf
+  &quot;small&quot;</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>25</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>createBox(color, x,
+  y, size) wird ausgeführt</td>
+  <td align=left valign=top><!--[if gte vml 1]><v:shape id="Gerade_x0020_Verbindung_x0020_mit_x0020_Pfeil_x0020_15"
+   o:spid="_x0000_s1030" type="#_x0000_t75" style='position:absolute;
+   margin-left:7.2pt;margin-top:10.2pt;width:55.8pt;height:12.6pt;z-index:6;
+   visibility:visible' o:gfxdata="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
+">
+   <v:imagedata src="image001.png" o:title=""/>
+   <o:lock v:ext="edit" aspectratio="f"/>
+   <x:ClientData ObjectType="Pict">
+    <x:SizeWithCells/>
+    <x:CF>Bitmap</x:CF>
+    <x:AutoPict/>
+   </x:ClientData>
+  </v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout;
+  position:absolute;z-index:6;margin-left:10px;margin-top:14px;width:74px;
+  height:17px'><img width=74 height=17 src=image002.png v:shapes="Gerade_x0020_Verbindung_x0020_mit_x0020_Pfeil_x0020_15"></span><![endif]><span
+  style='mso-ignore:vglayout2'>
+  <table cellpadding=0 cellspacing=0>
+   <tr>
+    <td height=19 width=83 style='height:14.4pt;width:62pt'></td>
+   </tr>
+  </table>
+  </span></td>
+  <td class=xl66 style='border-top:none'>#00ff00</td>
+  <td class=xl66 style='border-top:none;border-left:none'>340</td>
+  <td class=xl66 style='border-top:none;border-left:none'>50</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&quot;small&quot;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>neues div in HTML mit
+  Farbe: grün; left: 340px; top: 50px und Klasse: &quot;small&quot;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>26</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>1 /= 4 und Schleife
+  beendet --&gt; zurück zu Nr. 7</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>7</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>2</td>
+  <td class=xl66 style='border-top:none;border-left:none'>2&gt;5 --&gt;
+  Schleife weiter</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>8</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>20</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>2 = 2 --&gt; pass</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>9</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>10</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>21</td>
+  <td class=xl66 style='border-top:none;border-left:none'>#0000ff</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>(blau)</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>24</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>Durchlauf
+  &quot;big&quot;</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>25</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>createBox(color, x,
+  y, size) wird ausgeführt</td>
+  <td align=left valign=top><!--[if gte vml 1]><v:shape id="Gerade_x0020_Verbindung_x0020_mit_x0020_Pfeil_x0020_16"
+   o:spid="_x0000_s1031" type="#_x0000_t75" style='position:absolute;
+   margin-left:7.2pt;margin-top:11.4pt;width:55.8pt;height:13.2pt;z-index:7;
+   visibility:visible' o:gfxdata="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
+">
+   <v:imagedata src="image001.png" o:title=""/>
+   <o:lock v:ext="edit" aspectratio="f"/>
+   <x:ClientData ObjectType="Pict">
+    <x:SizeWithCells/>
+    <x:CF>Bitmap</x:CF>
+    <x:AutoPict/>
+   </x:ClientData>
+  </v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout;
+  position:absolute;z-index:7;margin-left:10px;margin-top:15px;width:74px;
+  height:18px'><img width=74 height=18 src=image003.png v:shapes="Gerade_x0020_Verbindung_x0020_mit_x0020_Pfeil_x0020_16"></span><![endif]><span
+  style='mso-ignore:vglayout2'>
+  <table cellpadding=0 cellspacing=0>
+   <tr>
+    <td height=19 width=83 style='height:14.4pt;width:62pt'></td>
+   </tr>
+  </table>
+  </span></td>
+  <td class=xl66 style='border-top:none'>#0000ff</td>
+  <td class=xl66 style='border-top:none;border-left:none'>10</td>
+  <td class=xl66 style='border-top:none;border-left:none'>20</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&quot;big&quot;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>neues div in HTML mit
+  Farbe: blau; left: 10px; top: 20px und Klasse: &quot;big&quot;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>26</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>2 /= 4 --&gt; zurück
+  zu Nr.24</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>24</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>Durchlauf
+  &quot;medium&quot;</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>25</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>createBox(color, x,
+  y, size) wird ausgeführt</td>
+  <td align=left valign=top><!--[if gte vml 1]><v:shape id="Gerade_x0020_Verbindung_x0020_mit_x0020_Pfeil_x0020_17"
+   o:spid="_x0000_s1032" type="#_x0000_t75" style='position:absolute;
+   margin-left:7.8pt;margin-top:13.2pt;width:55.8pt;height:12.6pt;z-index:8;
+   visibility:visible' o:gfxdata="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
+">
+   <v:imagedata src="image001.png" o:title=""/>
+   <o:lock v:ext="edit" aspectratio="f"/>
+   <x:ClientData ObjectType="Pict">
+    <x:SizeWithCells/>
+    <x:CF>Bitmap</x:CF>
+    <x:AutoPict/>
+   </x:ClientData>
+  </v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout;
+  position:absolute;z-index:8;margin-left:10px;margin-top:18px;width:74px;
+  height:17px'><img width=74 height=17 src=image002.png v:shapes="Gerade_x0020_Verbindung_x0020_mit_x0020_Pfeil_x0020_17"></span><![endif]><span
+  style='mso-ignore:vglayout2'>
+  <table cellpadding=0 cellspacing=0>
+   <tr>
+    <td height=19 width=83 style='height:14.4pt;width:62pt'></td>
+   </tr>
+  </table>
+  </span></td>
+  <td class=xl66 style='border-top:none'>#0000ff</td>
+  <td class=xl66 style='border-top:none;border-left:none'>10</td>
+  <td class=xl66 style='border-top:none;border-left:none'>20</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&quot;medium&quot;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>neues div in HTML mit
+  Farbe: blau; left: 10px; top: 20px und Klasse: &quot;medium&quot;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>26</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>2 /= 4 --&gt; zurück
+  zu Nr.24</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>24</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>Durchlauf
+  &quot;small&quot;</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>25</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>createBox(color, x,
+  y, size) wird ausgeführt</td>
+  <td rowspan=2 height=38 width=83 style='mso-ignore:colspan-rowspan;
+  height:28.8pt;width:62pt'><!--[if gte vml 1]><v:shape id="Gerade_x0020_Verbindung_x0020_mit_x0020_Pfeil_x0020_18"
+   o:spid="_x0000_s1033" type="#_x0000_t75" style='position:absolute;
+   margin-left:6.6pt;margin-top:12.6pt;width:55.8pt;height:12.6pt;z-index:9;
+   visibility:visible' o:gfxdata="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
+">
+   <v:imagedata src="image001.png" o:title=""/>
+   <o:lock v:ext="edit" aspectratio="f"/>
+   <x:ClientData ObjectType="Pict">
+    <x:SizeWithCells/>
+    <x:CF>Bitmap</x:CF>
+    <x:AutoPict/>
+   </x:ClientData>
+  </v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'>
+  <table cellpadding=0 cellspacing=0>
+   <tr>
+    <td width=10 height=17></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td><img width=74 height=17 src=image002.png v:shapes="Gerade_x0020_Verbindung_x0020_mit_x0020_Pfeil_x0020_18"></td>
+    <td width=-1></td>
+   </tr>
+   <tr>
+    <td height=4></td>
+   </tr>
+  </table>
+  </span><![endif]><!--[if !mso & vml]><span style='width:62.4pt;height:28.8pt'></span><![endif]--></td>
+  <td class=xl66 style='border-top:none'>#0000ff</td>
+  <td class=xl66 style='border-top:none;border-left:none'>10</td>
+  <td class=xl66 style='border-top:none;border-left:none'>20</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&quot;small&quot;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>neues div in HTML mit
+  Farbe: blau; left: 10px; top: 20px und Klasse: &quot;small&quot;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>26</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>2 /= 4 und Schleife
+  beendet --&gt; zurück zu Nr. 7</td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>7</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>3</td>
+  <td class=xl66 style='border-top:none;border-left:none'>3 &gt; 5 --&gt;
+  Schleife weiter</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>8</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>50</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>3 /= 2 --&gt; fail</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>9</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>180</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>19</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>continue --&gt;
+  zurück zu Nr. 7</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>7</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>4</td>
+  <td class=xl66 style='border-top:none;border-left:none'>4 &gt; 5 --&gt;
+  Schleife weiter</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>8</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>50</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>4 /= 2 --&gt; fail</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>7</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>300</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>16</td>
+  <td class=xl66 style='border-top:none;border-left:none'>#00ff00</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>(grün)</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>24</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>Durchlauf
+  &quot;big&quot;</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>25</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>createBox(color, x,
+  y, size) wird ausgeführt</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>#00ff00</td>
+  <td class=xl66 style='border-top:none;border-left:none'>300</td>
+  <td class=xl66 style='border-top:none;border-left:none'>50</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&quot;big&quot;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>neues div in HTML mit
+  Farbe: grün; left: 340px; top: 50px und Klasse: &quot;big&quot;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>26</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>4 = 4 --&gt; zurück
+  zu Nr. 7</td>
+  <td align=left valign=top><!--[if gte vml 1]><v:shape id="Gerade_x0020_Verbindung_x0020_mit_x0020_Pfeil_x0020_19"
+   o:spid="_x0000_s1034" type="#_x0000_t75" style='position:absolute;
+   margin-left:7.2pt;margin-top:1.2pt;width:55.8pt;height:13.2pt;z-index:10;
+   visibility:visible' o:gfxdata="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
+eG1sUEsFBgAAAAAEAAQA+QAAALgFAAAAAA==
+">
+   <v:imagedata src="image001.png" o:title=""/>
+   <o:lock v:ext="edit" aspectratio="f"/>
+   <x:ClientData ObjectType="Pict">
+    <x:SizeWithCells/>
+    <x:CF>Bitmap</x:CF>
+    <x:AutoPict/>
+   </x:ClientData>
+  </v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout;
+  position:absolute;z-index:10;margin-left:10px;margin-top:2px;width:74px;
+  height:18px'><img width=74 height=18 src=image003.png v:shapes="Gerade_x0020_Verbindung_x0020_mit_x0020_Pfeil_x0020_19"></span><![endif]><span
+  style='mso-ignore:vglayout2'>
+  <table cellpadding=0 cellspacing=0>
+   <tr>
+    <td height=19 width=83 style='height:14.4pt;width:62pt'></td>
+   </tr>
+  </table>
+  </span></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=19 style='height:14.4pt'>
+  <td height=19 style='height:14.4pt'></td>
+  <td class=xl74 style='border-top:none'>7</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>5</td>
+  <td class=xl66 style='border-top:none;border-left:none'>5 /&gt; 5 --&gt;
+  Schleife beendet</td>
+  <td></td>
+  <td class=xl66 style='border-top:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl66 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=83 style='width:62pt'></td>
+  <td width=83 style='width:62pt'></td>
+  <td width=83 style='width:62pt'></td>
+  <td width=83 style='width:62pt'></td>
+  <td width=83 style='width:62pt'></td>
+  <td width=83 style='width:62pt'></td>
+  <td width=291 style='width:218pt'></td>
+  <td width=83 style='width:62pt'></td>
+  <td width=83 style='width:62pt'></td>
+  <td width=83 style='width:62pt'></td>
+  <td width=83 style='width:62pt'></td>
+  <td width=83 style='width:62pt'></td>
+  <td width=497 style='width:373pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</body>
+
+</html>
