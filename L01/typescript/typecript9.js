@@ -1,6 +1,6 @@
 "use strict";
-var L01;
-(function (L01) {
+var L01T;
+(function (L01T) {
     //Arrays in denen die Gedichtsfetzen liegen
     let part1 = ["Das Leben", "Unser Nachbar", "Ein Pinguin", "Anarchie", "Die Welt, so wie wir sie kennen,"];
     let part2 = ["befreit", "konsumiert", "tötet", "legalisiert", "prophezeit"];
@@ -19,5 +19,5 @@ var L01;
     document.getElementById("refresh_bttn").addEventListener("click", function () {
         location.reload();
     });
-})(L01 || (L01 = {})); //Ende Namespace
+})(L01T || (L01T = {})); //Ende Namespace
 //# sourceMappingURL=typecript9.js.map
