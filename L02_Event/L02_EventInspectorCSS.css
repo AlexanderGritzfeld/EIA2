@@ -13,6 +13,7 @@ h1 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     position: fixed;
     top: 20px;
+    left: 20px;
 }
 
 .symbol {
