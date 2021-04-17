@@ -6,11 +6,11 @@ html, body {
 }
 
 html {
-    background: linear-gradient(135deg, rgba(255,255,255,1) 5%, rgba(192,202,214,1) 51%, rgba(157,154,169,1) 100%);
+    background-image: url(bg_tupf.png);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 
 }
 h1 {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     position: fixed;
     top: 20px;
     left: 20px;
@@ -36,4 +36,12 @@ h1 {
     width: 400px;
     height: 500px;
     margin: 5px;
+}
+
+#span {
+    position: fixed;
+    background: rgb(94, 50, 112);
+    border-radius: 5px;
+    border: 3px solid black;
+    color: rgb(184, 184, 184);
 }
