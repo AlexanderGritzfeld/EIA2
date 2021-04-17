@@ -1,0 +1,38 @@
+html, body {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+html {
+    background: linear-gradient(135deg, rgba(255,255,255,1) 5%, rgba(192,202,214,1) 51%, rgba(157,154,169,1) 100%);
+
+}
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: fixed;
+    top: 20px;
+}
+
+.symbol {
+    font-size: 80px;
+}
+
+#box1 {
+    background: rgb(124, 45, 112);
+    border-radius: 5px;
+    border: 3px solid black;
+    width: 400px;
+    height: 500px;
+    margin: 5px;
+}
+
+#box2 {
+    background: rgb(64, 55, 112);
+    border-radius: 5px;
+    border: 3px solid black;
+    width: 400px;
+    height: 500px;
+    margin: 5px;
+}
