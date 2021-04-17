@@ -1,5 +1,5 @@
 
-namespace L01 { //damit es nicht rummeckert, dass ich Namen schon vergeben habe
+namespace L01T { //damit es nicht rummeckert, dass ich Namen schon vergeben habe
 
 //Arrays in denen die Gedichtsfetzen liegen
 
@@ -8,7 +8,6 @@ let part1: string[] = ["Das Leben", "Unser Nachbar", "Ein Pinguin", "Anarchie", 
 let part2: string[] = ["befreit", "konsumiert", "tötet", "legalisiert", "prophezeit"];
 
 let part3: string[] = ["für dich", "die Leere", "noch einen Pinguin", "das Recht frei zu sein", "uns"];
-
 
 
 //jetzt sollen die Arrays geshuffelt werden
