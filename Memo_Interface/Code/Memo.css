@@ -12,8 +12,13 @@ h1 {
     font-size: 25px;
     margin-top: 50px;
 }
-h2 {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+#gameArea{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	justify-content: center; 
+	text-align: center;
 }
 
 .formular {
@@ -59,7 +64,7 @@ h2 {
     transition: 0.25s;
 }
 
-.is-hidden {
+.is_hidden {
     display: none;
 }
 
