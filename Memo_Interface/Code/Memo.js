@@ -9,10 +9,10 @@ var MemorySettings;
     let checkOthers = [];
     window.addEventListener("load", startGame);
     function startGame() {
-        let startMemory = document.querySelector("#start_bttn");
+        let startMemory = document.querySelector(".start");
         startMemory.addEventListener("click", main);
     }
-    let body;
+    let gameArea;
     let formData;
     let size;
     let bgColor;
@@ -30,7 +30,7 @@ var MemorySettings;
         card.style.width = size + "px";
         card.style.height = size + "px";
         if (bgColor) {
-            body.style.background = bgColor.toString();
+            gameArea.style.background = bgColor.toString();
         }
         if (fontColor) {
             card.style.color = fontColor.toString();
