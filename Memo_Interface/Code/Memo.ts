@@ -48,5 +48,63 @@ namespace MemorySettings {
         }
     }
 
+    function clickHandler(_event: Event): void {
+        let target: HTMLElement = <HTMLElement>_event.target;
+        if (target.classList.contains("card")) {
+            cardsOpen++;
+            if (!(cardsOpen > 2) && target.classList.contains("is_hidden") && target != cardsOpenArray[0]) {
+
+                if (target.classList.contains("hidden")) {
+
+                    target.classList.remove("is_hidden");
+                    target.classList.add("open");
+                    cardsOpenArray.push(target);
+
+                }
+            }
+            else {
+
+                cardsOpen--;
+
+            }
+
+            if (cardsOpen == 2) {
+
+                setTimeout(compareCards, 600);
+
+            }
+        }
+    }
+
+    function compareCards(): void {
+
+        if (cardsOpenArray[0].innerHTML == cardsOpenArray[1].innerHTML) {
+
+            for (let i: number = 0; i < 2; i++) {
+                cardsOpenArray[1].classList.remove("open");
+                cardsOpenArray[1].classList.add("done");
+            }
+
+            checkOthers.splice(0, 2);
+
+        }
+
+        else {
+
+            for (let i: number = 0; i < cardsOpenArray.length; i++) {
+                cardsOpenArray[1].classList.remove("open");
+                cardsOpenArray[1].classList.add("hidden");
+            }
+        }
+
+        cardsOpenArray = [];
+        cardsOpen = 0;
+        checkWin();
+    }
+
+    function checkWin(): void {
+        if (checkOthers.length == 0) 
+    }
+
 
 }
