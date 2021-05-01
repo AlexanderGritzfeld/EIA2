@@ -1,6 +1,7 @@
 "use strict";
 var MemorySettings;
 (function (MemorySettings) {
+    console.log("test");
     let numberPairs;
     let cardContent = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25"];
     let cardArray = [];
@@ -11,6 +12,7 @@ var MemorySettings;
     function startGame() {
         let startMemory = document.querySelector(".start");
         startMemory.addEventListener("click", main);
+        console.log("test_click");
     }
     let gameArea;
     let formData;
@@ -20,6 +22,7 @@ var MemorySettings;
     let fontColor;
     let fontStyle;
     function createCard(_cardContent) {
+        console.log("test_card");
         let card = document.createElement("div");
         card.innerHTML = "<p>" + _cardContent + "</p>";
         card.classList.add("card");
@@ -96,6 +99,7 @@ var MemorySettings;
     function main(_event) {
         let fieldset = document.querySelector(".formular");
         if (fieldset.classList.contains("visible")) {
+            console.log("text_visible");
             fieldset.classList.remove("visible");
             fieldset.classList.add("is_hidden");
         }
