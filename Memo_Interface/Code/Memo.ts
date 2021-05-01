@@ -9,7 +9,7 @@ namespace MemorySettings {
 
     window.addEventListener("load", startGame);
     function startGame(): void {
-        let startMemory: HTMLElement = <HTMLElement>document.querySelector(".start_bttn");
+        let startMemory: HTMLElement = <HTMLElement>document.querySelector("#start_bttn");
         startMemory.addEventListener("click", main);
     }
     let body: HTMLBodyElement;
