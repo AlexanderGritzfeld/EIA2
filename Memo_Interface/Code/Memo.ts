@@ -12,7 +12,7 @@ namespace MemorySettings {
         let startMemory: HTMLElement = <HTMLElement>document.querySelector(".start");
         startMemory.addEventListener("click", main);
     }
-    let gameArea: HTMLDivElement;
+    let gameArea: HTMLElement;
     let formData: FormData;
     let size: number;
     let bgColor: FormDataEntryValue | null;
