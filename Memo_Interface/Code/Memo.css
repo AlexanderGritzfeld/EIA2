@@ -42,17 +42,18 @@ h2 {
     transform: scale(1.05);
 }
 
-
-.karte {
-    width: 100px;
-    height: 100px;
-    margin-top: 50px;
-    margin-inline-start: 15px;
-    display: inline-block;
-    cursor: pointer;
-    border-radius: 3px;
-    background-image: url(/Aufgabe_5/images/Karte_bg.png);
+#Arial {
+    font-family: Arial, Helvetica, sans-serif;
 }
+
+#LucidaSans {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#TimesNewRoman {
+    font-family: 'Times New Roman', Times, serif;
+}
+
 .karte:hover {
     transform: scale(1.05);
     transition: 0.25s;
@@ -102,61 +103,6 @@ h2 {
 
 .lila {
     background-image: url(/Aufgabe_5/images/lila.png);
-}
-
-
-.zebra {
-    background-image: url(/Aufgabe_5/images/Zebra.png);
-}
-.kreis {
-    background-image: url(/Aufgabe_5/images/Kreis.png);
-}
-.pfeil_unten {
-    background-image: url(/Aufgabe_5/images/pfeil_unten.png);
-}
-
-
-.css_defi_Teil1 {
-    background-image: url(/Aufgabe_5/images/css_defi_Teil1.png);
-}
-.css_defi_Teil2 {
-    background-image: url(/Aufgabe_5/images/EIA_Css2.png);
-}
-
-.html_Teil1 {
-    background-image: url(/Aufgabe_5/images/html_Teil1.png);
-}
-.html_Teil2 {
-    background-image: url(/Aufgabe_5/images/html_Teil2.png);
-}
-
-.js1_T1 {
-    background-image: url(/Aufgabe_5/images/js1_T1.jpg);
-}
-.js1_t2 {
-    background-image: url(/Aufgabe_5/images/js1_t2.png);
-}
-.js2_t1 {
-    background-image: url(/Aufgabe_5/images/js2_t1.png);
-}
-.js2_t2 {
-    background-image: url(/Aufgabe_5/images/js2_t2.png);
-}
-.js3_t1 {
-    background-image: url(/Aufgabe_5/images/js3_t1.png);
-}
-.js3_t2 {
-    background-image: url(/Aufgabe_5/images/js3_t2.png);
-}
-.js4_t1 {
-    background-image: url(/Aufgabe_5/images/js4_t1.png);
-}
-.js4_t2 {
-    background-image: url(/Aufgabe_5/images/js4_t2.png);
-}
-
-.blank {
-    background-image: url(/Aufgabe_5/images/Karte_bg.png) !important;
 }
 
 .sieger {
