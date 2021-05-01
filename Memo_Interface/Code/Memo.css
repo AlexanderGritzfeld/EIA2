@@ -63,46 +63,25 @@ h2 {
     display: none;
 }
 
-
-
-.rot {
-    background-image: url(/Aufgabe_5/images/rot.png);
+.hidden{
+	background-color: black;
+	cursor: pointer;
 }
 
-.hellgrün {
-    background-image: url(/Aufgabe_5/images/hellgrün.png);
+.hidden p{
+	display: none;
 }
 
-.dunkelgrün {
-    background-image: url(/Aufgabe_5/images/dunkelgrün.png);
+.open{
+	background-color: rgb(231, 236, 234);
 }
 
-.hellblau {
-    background-image: url(/Aufgabe_5/images/hellblau.png);
+.done{
+	visibility: hidden;
 }
 
-.dunkelblau {
-    background-image: url(/Aufgabe_5/images/dunkelblau.png);
-}
-
-.orange {
-    background-image: url(/Aufgabe_5/images/orange.png);
-}
-
-.braun {
-    background-image: url(/Aufgabe_5/images/braun.png);
-}
-
-.gelb {
-    background-image: url(/Aufgabe_5/images/gelb.png);
-}
-
-.rosa {
-    background-image: url(/Aufgabe_5/images/rosa.png);
-}
-
-.lila {
-    background-image: url(/Aufgabe_5/images/lila.png);
+.done p{
+	display: none;
 }
 
 .victory {
