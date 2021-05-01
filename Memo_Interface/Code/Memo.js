@@ -9,7 +9,7 @@ var MemorySettings;
     let checkOthers = [];
     window.addEventListener("load", startGame);
     function startGame() {
-        let startMemory = document.querySelector(".start_bttn");
+        let startMemory = document.querySelector("#start_bttn");
         startMemory.addEventListener("click", main);
     }
     let body;
