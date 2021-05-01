@@ -105,7 +105,7 @@ h2 {
     background-image: url(/Aufgabe_5/images/lila.png);
 }
 
-.sieger {
+.victory {
     left: 400px;
     top: 110px;
     position: fixed;
@@ -117,7 +117,7 @@ h2 {
     text-align: center;
 }
 
-.sieger_text {
+.victory_text {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 25px;
     margin-top: 50px;
