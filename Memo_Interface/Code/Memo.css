@@ -1,0 +1,305 @@
+html, body {
+    height: 100%;
+    display: flex;
+}
+
+html {
+    background-image: url(../../L02_Event/bg_tupf.png);
+
+}
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: larger;
+}
+h2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.platz {
+    position: relative;
+    left: 20px;
+    width: 300px;
+    height: 650px;
+    background-color: darkgrey;
+    border: 2px solid gray;
+    border-radius: 3px;
+    margin-left: 10px;
+    font-size: 15px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.chartWrapper {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.5);
+}
+.chartWrapper .chartCOM {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0%;
+    background: rgb(90, 4, 105);
+    transition: 1s;
+}
+
+.chartWrapper .chartSpieler {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0%;
+    background: rgb(90, 4, 105);
+    transition: 1s;
+}
+footer {
+        text-align: center;
+        padding: 3px;
+        background-color: rgb(53, 55, 62);
+        color: white;
+        position: fixed;
+        width:300px;
+        height:100px;
+        bottom: 0;
+        right: 0;
+}
+
+.reihe {
+    position: relative;
+    text-align: center;
+}
+.is4 {
+    position: relative;
+    left: 75px;
+    text-align: justify;
+}
+.is8 {
+    position: relative;
+    left: 75px;
+}
+.is12 {
+    position: relative;
+    left: 75px;
+}
+.is16 {
+    position: relative;
+    left: 75px;
+}
+.is20 {
+    position: relative;
+    left: 75px;
+}
+.is24 {
+    position: relative;
+    left: 75px;
+}
+.is28 {
+    position: relative;
+    left: 75px;
+}
+.is32 {
+    position: relative;
+    left: 75px;
+}
+
+.karte {
+    width: 100px;
+    height: 100px;
+    margin-top: 50px;
+    margin-inline-start: 15px;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 3px;
+    background-image: url(/Aufgabe_5/images/Karte_bg.png);
+}
+.karte:hover {
+    transform: scale(1.05);
+    transition: 0.25s;
+}
+
+.set2 {
+    position:relative;
+    left: 555px;
+    top: -614px;
+}
+
+.is-hidden {
+    display: none;
+}
+
+
+.challenge {
+    position: absolute;
+    left: 400px;
+    top: 110px;
+}
+.bg_challenge {
+    position: fixed;
+    width: 700px;
+    height: 200px;
+    background-color: blue;
+    border-radius: 5px;
+    border: 3px solid black;
+    text-align: center;
+}
+.auswahl-intro {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+    margin-top: 50px;
+}
+
+.cBttn button {
+    width: 200px;
+    height: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+#leicht {
+    background-color: pink;
+}
+#leicht:hover {
+    transform: scale(1.05);
+}
+
+#mittel {
+    background-color: rgb(255, 118, 141);
+}
+#mittel:hover {
+    transform: scale(1.05);
+}
+
+#schwierig {
+    background-color: rgb(255, 0, 43);
+}
+#schwierig:hover {
+    transform: scale(1.05);
+}
+
+
+
+.rot {
+    background-image: url(/Aufgabe_5/images/rot.png);
+}
+
+.hellgrün {
+    background-image: url(/Aufgabe_5/images/hellgrün.png);
+}
+
+.dunkelgrün {
+    background-image: url(/Aufgabe_5/images/dunkelgrün.png);
+}
+
+.hellblau {
+    background-image: url(/Aufgabe_5/images/hellblau.png);
+}
+
+.dunkelblau {
+    background-image: url(/Aufgabe_5/images/dunkelblau.png);
+}
+
+.orange {
+    background-image: url(/Aufgabe_5/images/orange.png);
+}
+
+.braun {
+    background-image: url(/Aufgabe_5/images/braun.png);
+}
+
+.gelb {
+    background-image: url(/Aufgabe_5/images/gelb.png);
+}
+
+.rosa {
+    background-image: url(/Aufgabe_5/images/rosa.png);
+}
+
+.lila {
+    background-image: url(/Aufgabe_5/images/lila.png);
+}
+
+
+.zebra {
+    background-image: url(/Aufgabe_5/images/Zebra.png);
+}
+.kreis {
+    background-image: url(/Aufgabe_5/images/Kreis.png);
+}
+.pfeil_unten {
+    background-image: url(/Aufgabe_5/images/pfeil_unten.png);
+}
+
+
+.css_defi_Teil1 {
+    background-image: url(/Aufgabe_5/images/css_defi_Teil1.png);
+}
+.css_defi_Teil2 {
+    background-image: url(/Aufgabe_5/images/EIA_Css2.png);
+}
+
+.html_Teil1 {
+    background-image: url(/Aufgabe_5/images/html_Teil1.png);
+}
+.html_Teil2 {
+    background-image: url(/Aufgabe_5/images/html_Teil2.png);
+}
+
+.js1_T1 {
+    background-image: url(/Aufgabe_5/images/js1_T1.jpg);
+}
+.js1_t2 {
+    background-image: url(/Aufgabe_5/images/js1_t2.png);
+}
+.js2_t1 {
+    background-image: url(/Aufgabe_5/images/js2_t1.png);
+}
+.js2_t2 {
+    background-image: url(/Aufgabe_5/images/js2_t2.png);
+}
+.js3_t1 {
+    background-image: url(/Aufgabe_5/images/js3_t1.png);
+}
+.js3_t2 {
+    background-image: url(/Aufgabe_5/images/js3_t2.png);
+}
+.js4_t1 {
+    background-image: url(/Aufgabe_5/images/js4_t1.png);
+}
+.js4_t2 {
+    background-image: url(/Aufgabe_5/images/js4_t2.png);
+}
+
+.blank {
+    background-image: url(/Aufgabe_5/images/Karte_bg.png) !important;
+}
+
+.sieger {
+    left: 400px;
+    top: 110px;
+    position: fixed;
+    width: 700px;
+    height: 200px;
+    background-color: rgb(174, 0, 255);
+    border-radius: 5px;
+    border: 3px solid black;
+    text-align: center;
+}
+
+.sieger_text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+    margin-top: 50px;
+    font-style: italic;
+}
+
+#refresh_bttn {
+    width: 200px;
+    height: 50px;
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 10px;
+}
