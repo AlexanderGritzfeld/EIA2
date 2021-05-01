@@ -9,25 +9,38 @@ html {
 }
 h1 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: larger;
+    font-size: 25px;
+    margin-top: 50px;
 }
 h2 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.platz {
-    position: relative;
-    left: 20px;
-    width: 300px;
-    height: 650px;
-    background-color: darkgrey;
-    border: 2px solid gray;
-    border-radius: 3px;
-    margin-left: 10px;
-    font-size: 15px;
-    margin-top: 40px;
-    text-align: center;
+.formular {
+    left: 200px;
+    top: 80px;
+    position: absolute;
+    width: 900px;
+    height: 600px;
+    background-color: rgb(115, 115, 117);
+    border-radius: 5px;
+    border: 3px solid black;
+    text-align: left;
 }
+
+#start_bttn {
+    background-color: pink;
+    width: 200px;
+    height: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+#leicht:hover {
+    transform: scale(1.05);
+}
+
 
 .chartWrapper {
     position: relative;
@@ -53,55 +66,6 @@ h2 {
     background: rgb(90, 4, 105);
     transition: 1s;
 }
-footer {
-        text-align: center;
-        padding: 3px;
-        background-color: rgb(53, 55, 62);
-        color: white;
-        position: fixed;
-        width:300px;
-        height:100px;
-        bottom: 0;
-        right: 0;
-}
-
-.reihe {
-    position: relative;
-    text-align: center;
-}
-.is4 {
-    position: relative;
-    left: 75px;
-    text-align: justify;
-}
-.is8 {
-    position: relative;
-    left: 75px;
-}
-.is12 {
-    position: relative;
-    left: 75px;
-}
-.is16 {
-    position: relative;
-    left: 75px;
-}
-.is20 {
-    position: relative;
-    left: 75px;
-}
-.is24 {
-    position: relative;
-    left: 75px;
-}
-.is28 {
-    position: relative;
-    left: 75px;
-}
-.is32 {
-    position: relative;
-    left: 75px;
-}
 
 .karte {
     width: 100px;
@@ -118,64 +82,8 @@ footer {
     transition: 0.25s;
 }
 
-.set2 {
-    position:relative;
-    left: 555px;
-    top: -614px;
-}
-
 .is-hidden {
     display: none;
-}
-
-
-.challenge {
-    position: absolute;
-    left: 400px;
-    top: 110px;
-}
-.bg_challenge {
-    position: fixed;
-    width: 700px;
-    height: 200px;
-    background-color: blue;
-    border-radius: 5px;
-    border: 3px solid black;
-    text-align: center;
-}
-.auswahl-intro {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 25px;
-    margin-top: 50px;
-}
-
-.cBttn button {
-    width: 200px;
-    height: 50px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 20px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-#leicht {
-    background-color: pink;
-}
-#leicht:hover {
-    transform: scale(1.05);
-}
-
-#mittel {
-    background-color: rgb(255, 118, 141);
-}
-#mittel:hover {
-    transform: scale(1.05);
-}
-
-#schwierig {
-    background-color: rgb(255, 0, 43);
-}
-#schwierig:hover {
-    transform: scale(1.05);
 }
 
 
