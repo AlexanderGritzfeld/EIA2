@@ -1,5 +1,7 @@
 namespace MemorySettings {
 
+    console.log("test");
+
     let numberPairs: number;
     let cardContent: string[] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25"];
     let cardArray: HTMLElement[] = [];
@@ -11,6 +13,7 @@ namespace MemorySettings {
     function startGame(): void {
         let startMemory: HTMLElement = <HTMLElement>document.querySelector(".start");
         startMemory.addEventListener("click", main);
+        console.log("test_click");
     }
     let gameArea: HTMLElement;
     let formData: FormData;
@@ -21,6 +24,8 @@ namespace MemorySettings {
     let fontStyle: FormDataEntryValue | null;
 
     function createCard(_cardContent: string): void {
+
+        console.log("test_card");
 
         let card: HTMLElement = document.createElement("div");
     
@@ -40,6 +45,7 @@ namespace MemorySettings {
             gameArea.style.background = bgColor.toString();
         }
 
+        
         if (fontColor) {
             card.style.color = fontColor.toString();
         }
@@ -128,6 +134,8 @@ namespace MemorySettings {
 
         let fieldset: HTMLFormElement = <HTMLFormElement>document.querySelector(".formular");
         if (fieldset.classList.contains("visible")) {
+
+            console.log("text_visible");
 
             fieldset.classList.remove("visible");
             fieldset.classList.add("is_hidden");
