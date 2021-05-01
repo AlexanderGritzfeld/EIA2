@@ -12,7 +12,7 @@ namespace MemorySettings {
         let startMemory: HTMLElement = <HTMLElement>document.querySelector(".start_bttn");
         startMemory.addEventListener("click", main);
     }
-
+    let body: HTMLBodyElement;
     let formData: FormData;
     let size: number;
     let bgColor: FormDataEntryValue | null;
@@ -26,7 +26,7 @@ namespace MemorySettings {
     
         card.innerHTML = "<p>" + _cardContent + "</p>";
         card.classList.add("card");
-        card.classList.add("is_hidden");
+        card.classList.add("hidden");
 
         cardArray.push(card);
         checkOthers.push(card);
@@ -36,7 +36,8 @@ namespace MemorySettings {
         card.style.height = size + "px";
 
         if (bgColor) {
-            card.style.backgroundColor = bgColor.toString();
+            
+            body.style.background = bgColor.toString();
         }
 
         if (fontColor) {
@@ -46,17 +47,21 @@ namespace MemorySettings {
         if (fontStyle) {
             card.style.fontFamily = fontStyle.toString();
         }
+
+        if (cardColor) {
+            card.style.backgroundColor = cardColor.toString();
+        }
     }
 
     function clickHandler(_event: Event): void {
         let target: HTMLElement = <HTMLElement>_event.target;
         if (target.classList.contains("card")) {
             cardsOpen++;
-            if (!(cardsOpen > 2) && target.classList.contains("is_hidden") && target != cardsOpenArray[0]) {
+            if (!(cardsOpen > 2) && target.classList.contains("hidden") && target != cardsOpenArray[0]) {
 
                 if (target.classList.contains("hidden")) {
 
-                    target.classList.remove("is_hidden");
+                    target.classList.remove("hidden");
                     target.classList.add("open");
                     cardsOpenArray.push(target);
 
@@ -103,8 +108,60 @@ namespace MemorySettings {
     }
 
     function checkWin(): void {
-        if (checkOthers.length == 0) 
+        if (checkOthers.length == 0) {
+            alert("Glückwunsch! Falls du nochmal möchtest refreshe einfach die Seite.");
+        }
     }
 
+    function shuffleArray(_array: any[]): any[] {
+        for (var i: number = _array.length - 1; i > 0; i--) {
+            var j: number = Math.floor(Math.random() * (i + 1));
+            var temp: number = _array[i];
+            _array[i] = _array[j];
+            _array[j] = temp;
+        }
+
+        return _array;
+    }
+
+    function main(_event: Event): void {
+
+        let fieldset: HTMLFormElement = <HTMLFormElement>document.querySelector(".formular");
+        if (fieldset.classList.contains("visible")) {
+
+            fieldset.classList.remove("visible");
+            fieldset.classList.add("is_hidden");
+        }
+
+        formData = new FormData(document.forms[0]);
+        //console.log(formData);
+
+        size = Number(formData.get("Slider"));
+        bgColor = formData.get("bgColor");
+        cardColor = formData.get("CardColor");
+        fontColor = formData.get("FontColor");
+        fontStyle = formData.get("radio");
+
+        let pairOfCards: FormDataEntryValue | null = formData.get("Stepper"); 
+        if (pairOfCards) {
+        numberPairs = Number(pairOfCards);
+        }
+        else {
+            numberPairs = 5;
+        }
+
+        for (let i: number = 0; i < numberPairs; i++) {
+            createCard(cardContent[i]);
+            createCard(cardContent[i]);
+        }
+
+        shuffleArray(cardArray);
+
+        for (let i: number = 0; i < cardArray.length; i++) {
+            let user: HTMLDivElement = <HTMLDivElement>document.getElementById("gameArea");
+            user.appendChild(cardArray[i]);
+        }
+
+    }
 
 }
