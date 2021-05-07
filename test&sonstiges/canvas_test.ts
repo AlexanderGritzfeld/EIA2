@@ -1,8 +1,7 @@
 namespace test_canvas {
 
     let canvas: HTMLCanvasElement = <HTMLCanvasElement>document.querySelector("canvas");
-    let crc2: CanvasRenderingContext2D;
-    crc2 = canvas.getContext("2d");
+    let crc2: CanvasRenderingContext2D = canvas.getContext("2d")!;
 
 
     crc2.fillStyle = "#ff0000";
