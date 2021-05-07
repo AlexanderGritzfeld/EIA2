@@ -2,8 +2,7 @@
 var test_canvas;
 (function (test_canvas) {
     let canvas = document.querySelector("canvas");
-    let crc2;
-    crc2 = canvas.getContext("2d");
+    let crc2 = canvas.getContext("2d");
     crc2.fillStyle = "#ff0000";
     crc2.fillRect(0, 0, crc2.canvas.width, crc2.canvas.height);
     crc2.beginPath();
