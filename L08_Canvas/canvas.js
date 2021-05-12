@@ -25,11 +25,14 @@ var canvas;
         let x2 = x + Math.floor(Math.random() * 30);
         let y2 = y + Math.floor(Math.random() * 30);
         let y3 = y2 + Math.floor(Math.random() * 30);
-        console.log("x " + x);
-        console.log("x2 " + x2);
-        console.log("y " + y);
-        console.log("y2 " + y2);
-        console.log("y3 " + y3);
+        /*
+                console.log("x " + x);
+                console.log("x2 " + x2);
+                console.log("y " + y);
+                console.log("y2 " + y2);
+                console.log("y3 " + y3);
+        
+                */
         crc2.beginPath();
         crc2.strokeStyle = "white";
         crc2.moveTo(x, y);
