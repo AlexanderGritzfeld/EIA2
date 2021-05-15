@@ -10,7 +10,10 @@ var L08_2_Bees;
         let canvas = document.querySelector("canvas");
         if (!canvas)
             return;
+        canvas = document.querySelector("canvas");
         crc2 = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
         let horizon = crc2.canvas.height * golden;
         let posMountains = { x: 0, y: horizon };
         drawBackground();
@@ -18,7 +21,7 @@ var L08_2_Bees;
         drawSun({ x: crc2.canvas.width - 100, y: 75 });
         drawTreeLog({ x: 50, y: canvas.height });
         drawLeaves({ x: 175, y: 100 }, { x: 350, y: 100 });
-        drawFlower({ x: 400, y: canvas.height - 50 }, 3);
+        drawFlower({ x: 400, y: canvas.height - 50 });
     }
     function drawBackground() {
         let gradient = crc2.createLinearGradient(0, 0, 0, crc2.canvas.height);
@@ -105,11 +108,12 @@ var L08_2_Bees;
         }
         crc2.restore();
     }
-    function drawFlower(_position, _maxFlowers) {
+    function drawFlower(_position) {
         let positionX = _position.x;
+        let maxFlowers = Math.random() * 11;
         let petalColor = ["red", "white", "orange", "HSL(329, 100%, 24%)", "purple"];
         let randomNumberArray = Math.floor(Math.random() * Math.floor(5));
-        for (let flowers = 0; flowers < _maxFlowers; flowers++) {
+        for (let flowers = 0; flowers < maxFlowers; flowers++) {
             //Stängel
             crc2.beginPath();
             crc2.fillStyle = "HSL(131, 100%, 24%)";
