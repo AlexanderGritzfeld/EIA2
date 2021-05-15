@@ -20,7 +20,11 @@ namespace L08_2_Bees {
         let canvas: HTMLCanvasElement | null = document.querySelector("canvas");
         if (!canvas)
             return;
+        canvas = <HTMLCanvasElement>document.querySelector("canvas");    
         crc2 = <CanvasRenderingContext2D>canvas.getContext("2d");
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
 
         let horizon: number = crc2.canvas.height * golden;
 
@@ -31,7 +35,7 @@ namespace L08_2_Bees {
         drawSun({ x: crc2.canvas.width - 100, y: 75 });
         drawTreeLog({ x: 50, y: canvas.height});
         drawLeaves({ x: 175, y: 100 }, { x: 350, y: 100 });
-        drawFlower({x: 400, y: canvas.height - 50}, 3);
+        drawFlower({x: 400, y: canvas.height - 50});
 
 }
 
@@ -149,14 +153,15 @@ namespace L08_2_Bees {
         crc2.restore();
     }
 
-    function drawFlower(_position: Vector, _maxFlowers: number): void {
+    function drawFlower(_position: Vector): void {
 
         let positionX: number = _position.x;
+        let maxFlowers: number = Math.random() * 11;
 
         let petalColor: string[] = ["red", "white", "orange", "HSL(329, 100%, 24%)", "purple"];
         let randomNumberArray: number = Math.floor(Math.random() * Math.floor(5));
 
-        for (let flowers: number = 0; flowers < _maxFlowers; flowers++) {
+        for (let flowers: number = 0; flowers < maxFlowers; flowers++) {
 
         //Stängel
         crc2.beginPath();
@@ -202,7 +207,7 @@ namespace L08_2_Bees {
         crc2.arc(0, 0, 15, 0, 2 * Math.PI);
         crc2.fill();
         crc2.restore();
-        
+
         //Blüte innen
         crc2.save();
         crc2.beginPath();
