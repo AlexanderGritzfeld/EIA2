@@ -14,14 +14,7 @@ namespace classes {
             this.y += _addend.y;
         }
 
-        constructor(_x: number, _y: number) {
-            this.set(_x, _y);
-        }
-    
-        set(_x: number, _y: number): void {
-            this.x = 0;
-            this.y = 0;
-        }
+        
     }
 
     let v1: Vector = new Vector();
