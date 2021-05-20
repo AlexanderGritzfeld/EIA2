@@ -2,21 +2,6 @@
 var L09Farm;
 (function (L09Farm) {
     window.addEventListener("load", handleLoad);
-    /*export interface FoodAmount {
-       legumes: number;
-       weed: number;
-       corn: number;
-       fish: number;
-       meat: number;
-   }
-
-   var foodAmount: FoodAmount = {
-       legumes: 10,
-       weed: 50,
-       corn: 20,
-       fish: 5,
-       meat: 15
-   }; */
     function handleLoad() {
         var pig = new L09Farm.Animal("pig", "legumes", "Oink!", 10);
         pig.sing();
