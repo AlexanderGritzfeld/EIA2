@@ -36,6 +36,7 @@ namespace L09_2_Bienenwiese {
         drawTreeLog({ x: 50, y: canvas.height});
         drawLeaves({ x: 175, y: 100 }, { x: 350, y: 100 });
         drawFlower({x: 400, y: canvas.height - 50});
+        drawBee({ x: 300, y: 300});
 
 }
 
@@ -125,6 +126,25 @@ namespace L09_2_Bienenwiese {
         crc2.lineTo(_position.x + 100, 150);
         crc2.closePath();
         crc2.fill();
+
+        //Bienenstock gelb
+        crc2.save();
+        crc2.beginPath();
+        crc2.translate(_position.x + 180, 190);
+        crc2.fillStyle = "HSL(51, 100%, 50%)";
+        crc2.ellipse(0, 0, 60, 45, 1.5, 0, 2 * Math.PI);
+        crc2.fill();
+        crc2.restore();
+
+        //Schwarz
+
+        crc2.save();
+        crc2.beginPath();
+        crc2.translate(_position.x + 180, 220);
+        crc2.fillStyle = "black";
+        crc2.ellipse(0, 0, 16, 10.5, 1.5, 0, 2 * Math.PI);
+        crc2.fill();
+        crc2.restore();
     }
 
     function drawLeaves(_position: Vector, _size: Vector): void {
@@ -156,7 +176,7 @@ namespace L09_2_Bienenwiese {
     function drawFlower(_position: Vector): void {
 
         let positionX: number = _position.x;
-        let maxFlowers: number = Math.random() * 11;
+        let maxFlowers: number = 11;
 
         let petalColor: string[] = ["red", "white", "orange", "HSL(329, 100%, 24%)", "purple"];
         let randomNumberArray: number = Math.floor(Math.random() * Math.floor(5));
@@ -219,9 +239,37 @@ namespace L09_2_Bienenwiese {
 
         positionX = positionX + 100;
 
-        console.log(flowers);
-
         }//Ende for Schleife
+    }
+
+    function drawBee(_position: Vector): void {
+
+        //body yellow
+        crc2.save();
+        crc2.beginPath();
+        crc2.translate(_position.x, _position.y);
+        crc2.fillStyle = "yellow";
+        crc2.ellipse(0, 0, 16, 10.5, 3.1, 0, 2 * Math.PI);
+        crc2.fill();
+        crc2.strokeStyle = "black";
+        crc2.stroke();
+        crc2.restore();
+
+        //body black
+        crc2.save();
+        crc2.beginPath();
+        //crc2.translate(_position.x, _position.y);
+        crc2.fillStyle = "black";
+        crc2.moveTo(_position.x - 4, _position.y + 10);
+        crc2.lineTo(_position.x + 4, _position.y + 10);
+        crc2.lineTo(_position.x + 4, _position.y - 10);
+        crc2.lineTo(_position.x - 4, _position.y - 10);
+        //crc2.lineTo(_position.x + 4, _position.y + 10);
+        crc2.closePath();
+        crc2.fill();
+        crc2.restore();
+
+
     }
 
 }
