@@ -1,4 +1,4 @@
-
+/*
 namespace L01T { //damit es nicht rummeckert, dass ich Namen schon vergeben habe
 
 //Arrays in denen die Gedichtsfetzen liegen
@@ -32,3 +32,4 @@ document.getElementById("refresh_bttn").addEventListener("click", function(): vo
     });
 
 } //Ende Namespace
+*/
