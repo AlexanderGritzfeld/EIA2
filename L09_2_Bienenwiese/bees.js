@@ -58,7 +58,7 @@ var L09_2;
             if (this.startPosX > L09_2.crc2.canvas.width || this.startPosX < 0) {
                 this.velocityX = -this.velocityX;
             }
-            if (this.startPosY > L09_2.crc2.canvas.height || this.startPosY < L09_2.crc2.canvas.height * 0.50) {
+            if (this.startPosY > L09_2.crc2.canvas.height || this.startPosY < L09_2.crc2.canvas.height * 0.25) {
                 this.velocityY = -this.velocityY;
             }
             if (this.counter == this.randomNumber) {
