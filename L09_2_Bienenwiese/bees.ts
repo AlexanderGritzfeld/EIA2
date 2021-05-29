@@ -77,7 +77,7 @@ namespace L09_2 {
                 this.velocityX = -this.velocityX;
             }
 
-            if (this.startPosY > crc2.canvas.height || this.startPosY < crc2.canvas.height * 0.50) {
+            if (this.startPosY > crc2.canvas.height || this.startPosY < crc2.canvas.height * 0.25) {
                 this.velocityY = -this.velocityY;
             }
 
