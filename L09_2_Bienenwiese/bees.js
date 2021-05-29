@@ -12,7 +12,6 @@ var L09_2;
             this.velocityY = _velocity.y;
         }
         draw() {
-            //console.log("Test");
             //wings
             L09_2.crc2.save();
             L09_2.crc2.translate(this.startPosX - 6, this.startPosY - 10);
