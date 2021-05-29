@@ -196,7 +196,7 @@ namespace L09_2 {
     function drawBee(_nBees: number): void {
         
         for (let i: number = 0; i < _nBees; i++) {
-            //console.log("Test");
+            
             let randomScale: number = 0.5 + Math.random() * (2.5 - 1.3);
             let randomVelocityX: number = (Math.random() - 0.5) * 5;
             let randomVelocityY: number = (Math.random() - 0.5) * 5;
