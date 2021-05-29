@@ -11,8 +11,9 @@ namespace L09_2 {
     export let crc2: CanvasRenderingContext2D;
     export let golden: number = 0.62;
 
-    let bees: Bees[] = [];
+    let clouds: Clouds[] = [];
     let flowers: Flowers[] = [];
+    let bees: Bees[] = [];
 
     let imageData: ImageData;
 
@@ -38,6 +39,7 @@ namespace L09_2 {
         drawBackground();
         drawMountains(posMountains, 75, 200, "grey", "white");
         drawSun({ x: crc2.canvas.width - 100, y: 75 });
+        drawCloud();
         drawTreeLog({ x: 50, y: canvas.height});
         drawLeaves({ x: 175, y: 100 }, { x: 350, y: 100 });
         drawFlower();
@@ -108,6 +110,12 @@ namespace L09_2 {
         crc2.arc(0, 0, r2, 0, 2 * Math.PI);
         crc2.fill();
         crc2.restore();
+
+    }
+
+    function drawCloud(): void {
+
+        clouds.push(new Clouds({ x: crc2.canvas.width * .10, y: crc2.canvas.height * .10 }));
 
     }
 
@@ -207,9 +215,9 @@ namespace L09_2 {
             bees[index].update();
             
         }
-        /*for (let index: number = 0; index < clouds.length; index ++) {
+        for (let index: number = 0; index < clouds.length; index ++) {
             clouds[index].update();
-        }*/
+        }
     }
 
 }
