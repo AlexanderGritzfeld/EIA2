@@ -5,14 +5,15 @@ var L09_2;
     //erstellt mit der Hilfe von Huu Thien seinem Code
     L09_2.golden = 0.62;
     let bees = [];
+    let imageData;
     let greenColors = ["darkGreen", "forestGreen", "green", "oliveDrab", "seaGreen"];
     window.addEventListener("load", handleLoad);
     function handleLoad(_event) {
-        /*let canvas: HTMLCanvasElement | null = document.querySelector("canvas");
+        let canvas = document.querySelector("canvas");
         if (!canvas)
             return;
-        canvas = <HTMLCanvasElement>document.querySelector("canvas"); */
-        let canvas = document.querySelector("canvas");
+        canvas = document.querySelector("canvas");
+        document.querySelector("canvas");
         L09_2.crc2 = canvas.getContext("2d");
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
@@ -26,6 +27,7 @@ var L09_2;
         drawFlower({ x: 400, y: canvas.height - 50 });
         drawBee(10);
         imageData = L09_2.crc2.getImageData(0, 0, canvas.width, canvas.height);
+        animate();
     }
     function drawBackground() {
         let gradient = L09_2.crc2.createLinearGradient(0, 0, 0, L09_2.crc2.canvas.height);
@@ -188,8 +190,19 @@ var L09_2;
             let randomScale = 0.5 + Math.random() * (2.5 - 1.3);
             let randomVelocityX = (Math.random() - 0.5) * 5;
             let randomVelocityY = (Math.random() - 0.5) * 5;
-            bees.push(new L09_2.Bees({ x: L09_2.crc2.canvas.width / 2, y: L09_2.crc2.canvas.height * L09_2.golden }, { x: randomVelocityX, y: randomVelocityY }, randomScale));
+            bees.push(new L09_2.Bees({ x: L09_2.crc2.canvas.width / 4, y: L09_2.crc2.canvas.height * L09_2.golden }, { x: randomVelocityX, y: randomVelocityY }, randomScale));
         }
+    }
+    function animate() {
+        requestAnimationFrame(animate);
+        L09_2.crc2.clearRect(0, 0, L09_2.crc2.canvas.width, L09_2.crc2.canvas.height);
+        L09_2.crc2.putImageData(imageData, 0, 0);
+        for (let index = 0; index < bees.length; index++) {
+            bees[index].update();
+        }
+        /*for (let index: number = 0; index < clouds.length; index ++) {
+            clouds[index].update();
+        }*/
     }
 })(L09_2 || (L09_2 = {}));
 //# sourceMappingURL=bienenwiese.js.map
