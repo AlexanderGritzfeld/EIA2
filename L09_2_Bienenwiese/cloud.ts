@@ -4,7 +4,6 @@ namespace L09_2 {
         posX: number;
         posY: number; 
         velocityX: number = 0.5;
-        velocityY: number = 0.1;
 
         constructor(_position: Vector) {
             this.posY = _position.y;
@@ -37,12 +36,7 @@ namespace L09_2 {
                 this.velocityX = -this.velocityX;
             }
 
-            //if (this.posY > crc2.canvas.height * 0.20 || this.posY < 10) {
-            //    this.velocityY = -this.velocityY;
-            //}
-
             this.posX += this.velocityX;
-            //this.posY += this.velocityY;
             
             this.draw();
         }
