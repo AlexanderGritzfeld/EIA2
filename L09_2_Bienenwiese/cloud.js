@@ -4,7 +4,6 @@ var L09_2;
     class Clouds {
         constructor(_position) {
             this.velocityX = 0.5;
-            this.velocityY = 0.1;
             this.posY = _position.y;
             this.posX = _position.x;
         }
@@ -28,11 +27,7 @@ var L09_2;
             if (this.posX > L09_2.crc2.canvas.width || this.posX < 0) {
                 this.velocityX = -this.velocityX;
             }
-            //if (this.posY > crc2.canvas.height * 0.20 || this.posY < 10) {
-            //    this.velocityY = -this.velocityY;
-            //}
             this.posX += this.velocityX;
-            //this.posY += this.velocityY;
             this.draw();
         }
     } //Ende class
