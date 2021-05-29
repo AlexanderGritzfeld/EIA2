@@ -4,8 +4,9 @@ var L09_2;
     //inspiriert und teilweise entnommen von Jirka seinem Code "Allay.ts"
     //erstellt mit der Hilfe von Huu Thien seinem Code
     L09_2.golden = 0.62;
-    let bees = [];
+    let clouds = [];
     let flowers = [];
+    let bees = [];
     let imageData;
     let greenColors = ["darkGreen", "forestGreen", "green", "oliveDrab", "seaGreen"];
     window.addEventListener("load", handleLoad);
@@ -23,6 +24,7 @@ var L09_2;
         drawBackground();
         drawMountains(posMountains, 75, 200, "grey", "white");
         drawSun({ x: L09_2.crc2.canvas.width - 100, y: 75 });
+        drawCloud();
         drawTreeLog({ x: 50, y: canvas.height });
         drawLeaves({ x: 175, y: 100 }, { x: 350, y: 100 });
         drawFlower();
@@ -73,6 +75,9 @@ var L09_2;
         L09_2.crc2.arc(0, 0, r2, 0, 2 * Math.PI);
         L09_2.crc2.fill();
         L09_2.crc2.restore();
+    }
+    function drawCloud() {
+        clouds.push(new L09_2.Clouds({ x: L09_2.crc2.canvas.width * .10, y: L09_2.crc2.canvas.height * .10 }));
     }
     function drawTreeLog(_position) {
         //Hauptstamm
@@ -149,9 +154,9 @@ var L09_2;
         for (let index = 0; index < bees.length; index++) {
             bees[index].update();
         }
-        /*for (let index: number = 0; index < clouds.length; index ++) {
+        for (let index = 0; index < clouds.length; index++) {
             clouds[index].update();
-        }*/
+        }
     }
 })(L09_2 || (L09_2 = {}));
 //# sourceMappingURL=bienenwiese.js.map
