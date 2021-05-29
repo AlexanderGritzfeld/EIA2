@@ -5,6 +5,7 @@ var L09_2;
     //erstellt mit der Hilfe von Huu Thien seinem Code
     L09_2.golden = 0.62;
     let bees = [];
+    let flowers = [];
     let imageData;
     let greenColors = ["darkGreen", "forestGreen", "green", "oliveDrab", "seaGreen"];
     window.addEventListener("load", handleLoad);
@@ -24,7 +25,7 @@ var L09_2;
         drawSun({ x: L09_2.crc2.canvas.width - 100, y: 75 });
         drawTreeLog({ x: 50, y: canvas.height });
         drawLeaves({ x: 175, y: 100 }, { x: 350, y: 100 });
-        drawFlower({ x: 400, y: canvas.height - 50 });
+        drawFlower();
         drawBee(10);
         imageData = L09_2.crc2.getImageData(0, 0, canvas.width, canvas.height);
         animate();
@@ -129,64 +130,12 @@ var L09_2;
         }
         L09_2.crc2.restore();
     }
-    function drawFlower(_position) {
-        let positionX = _position.x;
-        let maxFlowers = 11;
-        let petalColor = ["red", "white", "orange", "HSL(329, 100%, 24%)", "purple"];
-        let randomNumberArray = Math.floor(Math.random() * Math.floor(5));
-        for (let flowers = 0; flowers < maxFlowers; flowers++) {
-            //Stängel
-            L09_2.crc2.beginPath();
-            L09_2.crc2.fillStyle = "HSL(131, 100%, 24%)";
-            L09_2.crc2.moveTo(positionX, _position.y);
-            L09_2.crc2.lineTo(positionX + 10, _position.y);
-            L09_2.crc2.lineTo(positionX + 10, _position.y - 75);
-            L09_2.crc2.lineTo(positionX, _position.y - 75);
-            L09_2.crc2.closePath();
-            L09_2.crc2.fill();
-            //Blütenblätter
-            L09_2.crc2.save();
-            L09_2.crc2.beginPath();
-            L09_2.crc2.translate(positionX + 15, _position.y - 75);
-            L09_2.crc2.fillStyle = petalColor[randomNumberArray];
-            L09_2.crc2.arc(0, 0, 15, 0, 2 * Math.PI);
-            L09_2.crc2.fill();
-            L09_2.crc2.restore();
-            L09_2.crc2.save();
-            L09_2.crc2.beginPath();
-            L09_2.crc2.translate(positionX - 5, _position.y - 75);
-            L09_2.crc2.fillStyle = petalColor[randomNumberArray];
-            L09_2.crc2.arc(0, 0, 15, 0, 2 * Math.PI);
-            L09_2.crc2.fill();
-            L09_2.crc2.restore();
-            L09_2.crc2.save();
-            L09_2.crc2.beginPath();
-            L09_2.crc2.translate(positionX + 5, _position.y - 67);
-            L09_2.crc2.fillStyle = petalColor[randomNumberArray];
-            L09_2.crc2.arc(0, 0, 15, 0, 2 * Math.PI);
-            L09_2.crc2.fill();
-            L09_2.crc2.restore();
-            L09_2.crc2.save();
-            L09_2.crc2.beginPath();
-            L09_2.crc2.translate(positionX + 5, _position.y - 83);
-            L09_2.crc2.fillStyle = petalColor[randomNumberArray];
-            L09_2.crc2.arc(0, 0, 15, 0, 2 * Math.PI);
-            L09_2.crc2.fill();
-            L09_2.crc2.restore();
-            //Blüte innen
-            L09_2.crc2.save();
-            L09_2.crc2.beginPath();
-            L09_2.crc2.translate(positionX + 5, _position.y - 75);
-            L09_2.crc2.fillStyle = "yellow";
-            L09_2.crc2.arc(0, 0, 15, 0, 2 * Math.PI);
-            L09_2.crc2.fill();
-            L09_2.crc2.restore();
-            positionX = positionX + 100;
-        } //Ende for Schleife
+    function drawFlower() {
+        flowers.push(new L09_2.Flowers({ x: L09_2.crc2.canvas.width / 4, y: L09_2.crc2.canvas.height - 50 }));
     }
     function drawBee(_nBees) {
         for (let i = 0; i < _nBees; i++) {
-            console.log("Test");
+            //console.log("Test");
             let randomScale = 0.5 + Math.random() * (2.5 - 1.3);
             let randomVelocityX = (Math.random() - 0.5) * 5;
             let randomVelocityY = (Math.random() - 0.5) * 5;
