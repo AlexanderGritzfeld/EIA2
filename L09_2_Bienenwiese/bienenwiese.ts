@@ -255,7 +255,7 @@ namespace L09_2 {
             let randomVelocityX: number = (Math.random() - 0.5) * 5;
             let randomVelocityY: number = (Math.random() - 0.5) * 5;
 
-            bees.push(new Bees({ x: crc2.canvas.width / 4.7, y: crc2.canvas.height * golden / 2.4}, { x: randomVelocityX, y: randomVelocityY }, randomScale));
+            bees.push(new Bees({ x: crc2.canvas.width / 4, y: crc2.canvas.height * golden / 2.4}, { x: randomVelocityX, y: randomVelocityY }, randomScale));
 
         }
 
