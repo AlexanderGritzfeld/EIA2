@@ -190,7 +190,7 @@ var L09_2;
             let randomScale = 0.5 + Math.random() * (2.5 - 1.3);
             let randomVelocityX = (Math.random() - 0.5) * 5;
             let randomVelocityY = (Math.random() - 0.5) * 5;
-            bees.push(new L09_2.Bees({ x: L09_2.crc2.canvas.width / 4.7, y: L09_2.crc2.canvas.height * L09_2.golden / 2.4 }, { x: randomVelocityX, y: randomVelocityY }, randomScale));
+            bees.push(new L09_2.Bees({ x: L09_2.crc2.canvas.width / 4, y: L09_2.crc2.canvas.height * L09_2.golden / 2.4 }, { x: randomVelocityX, y: randomVelocityY }, randomScale));
         }
     }
     function animate() {
