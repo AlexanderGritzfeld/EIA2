@@ -15,16 +15,17 @@ namespace L09_2 {
 
     let bees: Bees[] = [];
 
+    let imageData: ImageData;
+
     let greenColors: string[] = ["darkGreen", "forestGreen", "green", "oliveDrab", "seaGreen"];
 
     window.addEventListener("load", handleLoad);
 
     function handleLoad(_event: Event): void {
-        /*let canvas: HTMLCanvasElement | null = document.querySelector("canvas");
+        let canvas: HTMLCanvasElement | null = document.querySelector("canvas");
         if (!canvas)
             return;
-        canvas = <HTMLCanvasElement>document.querySelector("canvas"); */
-        let canvas: HTMLCanvasElement = <HTMLCanvasElement>
+        canvas = <HTMLCanvasElement>document.querySelector("canvas");
         document.querySelector("canvas");   
         crc2 = <CanvasRenderingContext2D>canvas.getContext("2d");
 
@@ -43,6 +44,7 @@ namespace L09_2 {
         drawFlower({x: 400, y: canvas.height - 50});
         drawBee(10);
         imageData = crc2.getImageData(0, 0, canvas.width, canvas.height);
+        animate();
         
 }
 
@@ -253,10 +255,23 @@ namespace L09_2 {
             let randomVelocityX: number = (Math.random() - 0.5) * 5;
             let randomVelocityY: number = (Math.random() - 0.5) * 5;
 
-            bees.push(new Bees({ x: crc2.canvas.width / 2, y: crc2.canvas.height * golden }, { x: randomVelocityX, y: randomVelocityY }, randomScale));
+            bees.push(new Bees({ x: crc2.canvas.width / 4, y: crc2.canvas.height * golden}, { x: randomVelocityX, y: randomVelocityY }, randomScale));
 
         }
 
+    }
+
+    function animate(): void {
+        requestAnimationFrame(animate);
+        crc2.clearRect(0, 0, crc2.canvas.width, crc2.canvas.height);
+        crc2.putImageData(imageData, 0, 0);
+        for (let index: number = 0; index < bees.length; index ++) {
+            bees[index].update();
+            
+        }
+        /*for (let index: number = 0; index < clouds.length; index ++) {
+            clouds[index].update();
+        }*/
     }
 
 }
