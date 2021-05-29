@@ -8,12 +8,11 @@ namespace L09_2 {
         y: number;
     }
 
-    
-
     export let crc2: CanvasRenderingContext2D;
     export let golden: number = 0.62;
 
     let bees: Bees[] = [];
+    let flowers: Flowers[] = [];
 
     let imageData: ImageData;
 
@@ -41,7 +40,7 @@ namespace L09_2 {
         drawSun({ x: crc2.canvas.width - 100, y: 75 });
         drawTreeLog({ x: 50, y: canvas.height});
         drawLeaves({ x: 175, y: 100 }, { x: 350, y: 100 });
-        drawFlower({x: 400, y: canvas.height - 50});
+        drawFlower();
         drawBee(10);
         imageData = crc2.getImageData(0, 0, canvas.width, canvas.height);
         animate();
@@ -180,77 +179,16 @@ namespace L09_2 {
         crc2.restore();
     }
 
-    function drawFlower(_position: Vector): void {
+    function drawFlower(): void {
 
-        let positionX: number = _position.x;
-        let maxFlowers: number = 11;
+        flowers.push(new Flowers({x: crc2.canvas.width / 4, y: crc2.canvas.height - 50}));
 
-        let petalColor: string[] = ["red", "white", "orange", "HSL(329, 100%, 24%)", "purple"];
-        let randomNumberArray: number = Math.floor(Math.random() * Math.floor(5));
-
-        for (let flowers: number = 0; flowers < maxFlowers; flowers++) {
-
-        //Stängel
-        crc2.beginPath();
-        crc2.fillStyle = "HSL(131, 100%, 24%)";
-        crc2.moveTo(positionX, _position.y);
-        crc2.lineTo(positionX + 10, _position.y);
-        crc2.lineTo(positionX + 10, _position.y - 75);
-        crc2.lineTo(positionX, _position.y - 75);
-        crc2.closePath();
-        crc2.fill();
-
-        //Blütenblätter
-        crc2.save();
-        crc2.beginPath();
-        crc2.translate(positionX + 15, _position.y - 75);
-        crc2.fillStyle = petalColor[randomNumberArray];
-        crc2.arc(0, 0, 15, 0, 2 * Math.PI);
-        crc2.fill();
-        crc2.restore();
-
-        crc2.save();
-        crc2.beginPath();
-        crc2.translate(positionX - 5, _position.y - 75);
-        crc2.fillStyle = petalColor[randomNumberArray];
-        crc2.arc(0, 0, 15, 0, 2 * Math.PI);
-        crc2.fill();
-        crc2.restore();
-
-        crc2.save();
-        crc2.beginPath();
-        crc2.translate(positionX + 5, _position.y - 67);
-        crc2.fillStyle = petalColor[randomNumberArray];
-        crc2.arc(0, 0, 15, 0, 2 * Math.PI);
-        crc2.fill();
-        crc2.restore();
-
-        crc2.save();
-        crc2.beginPath();
-        crc2.translate(positionX + 5, _position.y - 83);
-        crc2.fillStyle = petalColor[randomNumberArray];
-        crc2.arc(0, 0, 15, 0, 2 * Math.PI);
-        crc2.fill();
-        crc2.restore();
-
-        //Blüte innen
-        crc2.save();
-        crc2.beginPath();
-        crc2.translate(positionX + 5, _position.y - 75);
-        crc2.fillStyle = "yellow";
-        crc2.arc(0, 0, 15, 0, 2 * Math.PI);
-        crc2.fill();
-        crc2.restore();
-
-        positionX = positionX + 100;
-
-        }//Ende for Schleife
     }
 
     function drawBee(_nBees: number): void {
         
         for (let i: number = 0; i < _nBees; i++) {
-            console.log("Test");
+            //console.log("Test");
             let randomScale: number = 0.5 + Math.random() * (2.5 - 1.3);
             let randomVelocityX: number = (Math.random() - 0.5) * 5;
             let randomVelocityY: number = (Math.random() - 0.5) * 5;
