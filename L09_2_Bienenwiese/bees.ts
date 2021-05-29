@@ -1,11 +1,5 @@
 namespace L09_2 {
 
-    /*muss noch weg (?)
-    interface Vector {
-            x: number;
-            y: number;
-        } */
-
     export class Bees {
 
         startPosX: number;
@@ -32,18 +26,16 @@ namespace L09_2 {
             //wings
             crc2.save();
             crc2.translate(this.startPosX - 6, this.startPosY - 10);
-            
-            //crc2.scale(this.randomScale, this.randomScale);
+    
             crc2.fillStyle = "HSLA(178, 100%, 50%, 0.7)";
             crc2.strokeStyle = "black";
             crc2.beginPath();
-            //crc2.moveTo(200, 200);
             crc2.arc(0, 0, 8, 0, 2 * Math.PI);
             crc2.stroke();
             crc2.fill();
-            //crc2.restore();
+            crc2.restore();
 
-            //crc2.save();
+            crc2.save();
             crc2.beginPath();
             crc2.fillStyle = "HSLA(178, 100%, 50%, 0.7)";
             crc2.strokeStyle = "black";
@@ -51,10 +43,10 @@ namespace L09_2 {
             crc2.arc(0, 0, 8, 0, 2 * Math.PI);
             crc2.stroke();
             crc2.fill();
-            //crc2.restore();
+            crc2.restore();
 
             //body yellow
-            //crc2.save();
+            crc2.save();
             crc2.beginPath();
             crc2.translate(this.startPosX, this.startPosY);
             crc2.fillStyle = "yellow";
@@ -62,7 +54,7 @@ namespace L09_2 {
             crc2.fill();
             crc2.strokeStyle = "black";
             crc2.stroke();
-            //crc2.restore();
+            crc2.restore();
 
             //body black
             //crc2.save();
