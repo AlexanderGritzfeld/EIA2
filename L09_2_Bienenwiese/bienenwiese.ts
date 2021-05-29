@@ -1,26 +1,31 @@
-namespace L09_2_Bienenwiese {
+namespace L09_2 {
 
     //inspiriert und teilweise entnommen von Jirka seinem Code "Allay.ts"
+    //erstellt mit der Hilfe von Huu Thien seinem Code
 
-    interface Vector {
+    export interface Vector {
         x: number;
         y: number;
     }
 
-    window.addEventListener("load", handleLoad);
+    
 
-    let crc2: CanvasRenderingContext2D;
+    export let crc2: CanvasRenderingContext2D;
+    export let golden: number = 0.62;
 
-    let golden: number = 0.62;
+    let bees: Bees[] = [];
 
     let greenColors: string[] = ["darkGreen", "forestGreen", "green", "oliveDrab", "seaGreen"];
 
+    window.addEventListener("load", handleLoad);
 
     function handleLoad(_event: Event): void {
-        let canvas: HTMLCanvasElement | null = document.querySelector("canvas");
+        /*let canvas: HTMLCanvasElement | null = document.querySelector("canvas");
         if (!canvas)
             return;
-        canvas = <HTMLCanvasElement>document.querySelector("canvas");    
+        canvas = <HTMLCanvasElement>document.querySelector("canvas"); */
+        let canvas: HTMLCanvasElement = <HTMLCanvasElement>
+        document.querySelector("canvas");   
         crc2 = <CanvasRenderingContext2D>canvas.getContext("2d");
 
         canvas.width = window.innerWidth;
@@ -36,8 +41,9 @@ namespace L09_2_Bienenwiese {
         drawTreeLog({ x: 50, y: canvas.height});
         drawLeaves({ x: 175, y: 100 }, { x: 350, y: 100 });
         drawFlower({x: 400, y: canvas.height - 50});
-        drawBee({ x: 300, y: 300});
-
+        drawBee(10);
+        imageData = crc2.getImageData(0, 0, canvas.width, canvas.height);
+        
 }
 
 
@@ -159,7 +165,6 @@ namespace L09_2_Bienenwiese {
 
         crc2.save();
         crc2.translate(_position.x, _position.y);
-        crc2.fillStyle = "green";
 
         for (let drawn: number = 0; drawn < nParticles; drawn++) {
             crc2.save();
@@ -192,8 +197,6 @@ namespace L09_2_Bienenwiese {
         crc2.lineTo(positionX, _position.y - 75);
         crc2.closePath();
         crc2.fill();
-
-        console.log(positionX);
 
         //Blütenblätter
         crc2.save();
@@ -242,33 +245,17 @@ namespace L09_2_Bienenwiese {
         }//Ende for Schleife
     }
 
-    function drawBee(_position: Vector): void {
+    function drawBee(_nBees: number): void {
+        
+        for (let i: number = 0; i < _nBees; i++) {
+            console.log("Test");
+            let randomScale: number = 0.5 + Math.random() * (2.5 - 1.3);
+            let randomVelocityX: number = (Math.random() - 0.5) * 5;
+            let randomVelocityY: number = (Math.random() - 0.5) * 5;
 
-        //body yellow
-        crc2.save();
-        crc2.beginPath();
-        crc2.translate(_position.x, _position.y);
-        crc2.fillStyle = "yellow";
-        crc2.ellipse(0, 0, 16, 10.5, 3.1, 0, 2 * Math.PI);
-        crc2.fill();
-        crc2.strokeStyle = "black";
-        crc2.stroke();
-        crc2.restore();
+            bees.push(new Bees({ x: crc2.canvas.width / 2, y: crc2.canvas.height * golden }, { x: randomVelocityX, y: randomVelocityY }, randomScale));
 
-        //body black
-        crc2.save();
-        crc2.beginPath();
-        //crc2.translate(_position.x, _position.y);
-        crc2.fillStyle = "black";
-        crc2.moveTo(_position.x - 4, _position.y + 10);
-        crc2.lineTo(_position.x + 4, _position.y + 10);
-        crc2.lineTo(_position.x + 4, _position.y - 10);
-        crc2.lineTo(_position.x - 4, _position.y - 10);
-        //crc2.lineTo(_position.x + 4, _position.y + 10);
-        crc2.closePath();
-        crc2.fill();
-        crc2.restore();
-
+        }
 
     }
 
