@@ -21,7 +21,7 @@ namespace L09_2 {
 
         draw(): void {
             
-            console.log("Test");
+            //console.log("Test");
 
             //wings
             crc2.save();
