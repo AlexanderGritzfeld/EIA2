@@ -140,7 +140,6 @@ var L09_2;
     }
     function drawBee(_nBees) {
         for (let i = 0; i < _nBees; i++) {
-            //console.log("Test");
             let randomScale = 0.5 + Math.random() * (2.5 - 1.3);
             let randomVelocityX = (Math.random() - 0.5) * 5;
             let randomVelocityY = (Math.random() - 0.5) * 5;
