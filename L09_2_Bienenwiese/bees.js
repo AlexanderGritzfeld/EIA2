@@ -1,11 +1,6 @@
 "use strict";
 var L09_2;
 (function (L09_2) {
-    /*muss noch weg (?)
-    interface Vector {
-            x: number;
-            y: number;
-        } */
     class Bees {
         constructor(_position, _velocity, _randomScale) {
             this.randomNumber = (Math.floor(Math.random() * 2000) + 1000);
@@ -21,16 +16,14 @@ var L09_2;
             //wings
             L09_2.crc2.save();
             L09_2.crc2.translate(this.startPosX - 6, this.startPosY - 10);
-            //crc2.scale(this.randomScale, this.randomScale);
             L09_2.crc2.fillStyle = "HSLA(178, 100%, 50%, 0.7)";
             L09_2.crc2.strokeStyle = "black";
             L09_2.crc2.beginPath();
-            //crc2.moveTo(200, 200);
             L09_2.crc2.arc(0, 0, 8, 0, 2 * Math.PI);
             L09_2.crc2.stroke();
             L09_2.crc2.fill();
-            //crc2.restore();
-            //crc2.save();
+            L09_2.crc2.restore();
+            L09_2.crc2.save();
             L09_2.crc2.beginPath();
             L09_2.crc2.fillStyle = "HSLA(178, 100%, 50%, 0.7)";
             L09_2.crc2.strokeStyle = "black";
@@ -38,9 +31,9 @@ var L09_2;
             L09_2.crc2.arc(0, 0, 8, 0, 2 * Math.PI);
             L09_2.crc2.stroke();
             L09_2.crc2.fill();
-            //crc2.restore();
+            L09_2.crc2.restore();
             //body yellow
-            //crc2.save();
+            L09_2.crc2.save();
             L09_2.crc2.beginPath();
             L09_2.crc2.translate(this.startPosX, this.startPosY);
             L09_2.crc2.fillStyle = "yellow";
@@ -48,7 +41,7 @@ var L09_2;
             L09_2.crc2.fill();
             L09_2.crc2.strokeStyle = "black";
             L09_2.crc2.stroke();
-            //crc2.restore();
+            L09_2.crc2.restore();
             //body black
             //crc2.save();
             L09_2.crc2.beginPath();
