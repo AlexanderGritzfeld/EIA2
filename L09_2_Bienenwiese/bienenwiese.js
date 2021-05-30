@@ -10,12 +10,12 @@ var L09_2;
     let imageData;
     L09_2.greenColors = ["darkGreen", "forestGreen", "green", "oliveDrab", "seaGreen"];
     window.addEventListener("load", handleLoad);
-    function handleLoad(_event) {
+    function handleLoad() {
         let canvas = document.querySelector("canvas");
         if (!canvas)
             return;
         canvas = document.querySelector("canvas");
-        document.querySelector("canvas");
+        //document.querySelector("canvas");   
         L09_2.crc2 = canvas.getContext("2d");
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
