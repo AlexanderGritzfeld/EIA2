@@ -1,22 +1,13 @@
 namespace L10_2 {
 
-    export class Bees {
+    export class Bees extends Movable {
 
-        startPosX: number;
-        startPosY: number;
-        velocityX: number;
-        velocityY: number;
-        randomScale: number;
         randomNumber: number = (Math.floor(Math.random() * 2000) + 1000);
         counter: number = 0;
 
-        constructor(_position: Vector, _velocity: Vector, _randomScale: number) {
+        constructor(_position: Vector, _velocity: Vector) { //_randomScale: number
             
-            this.startPosX = _position.x;
-            this.startPosY = _position.y;
-            this.randomScale = _randomScale;
-            this.velocityX = _velocity.x;
-            this.velocityY = _velocity.y;
+            super(_position, _velocity);
         }
 
         draw(): void {
@@ -90,7 +81,7 @@ namespace L10_2 {
             this.startPosY += this.velocityY;
             this.counter ++;
 
-            this.draw();
+            //this.draw();
         }
 
     } //Ende export class
