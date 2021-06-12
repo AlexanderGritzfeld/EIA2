@@ -2,8 +2,6 @@ namespace L10_2 {
 
     //inspiriert und teilweise entnommen von Jirka seinem Code "Allay.ts"
 
-    console.log("Test");
-
     export interface Vector {
         x: number;
         y: number;
@@ -12,9 +10,10 @@ namespace L10_2 {
     export let crc2: CanvasRenderingContext2D;
     export let golden: number = 0.62;
 
-    let clouds: Clouds[] = [];
+    //let clouds: Clouds[] = [];
     let flowers: Flowers[] = [];
-    let bees: Bees[] = [];
+    //let bees: Bees[] = [];
+    let movable: Movable[] = [];
 
     let imageData: ImageData;
 
@@ -26,16 +25,15 @@ namespace L10_2 {
         let canvas: HTMLCanvasElement | null = document.querySelector("canvas");
         if (!canvas)
             return;
-        canvas = <HTMLCanvasElement>document.querySelector("canvas");
-        //document.querySelector("canvas");   
+        canvas = <HTMLCanvasElement>document.querySelector("canvas"); 
         crc2 = <CanvasRenderingContext2D>canvas.getContext("2d");
 
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
 
         drawBackground();
-        drawCloud();
         drawTree();
+        drawCloud();
         drawFlower();
         drawBee(10);
         imageData = crc2.getImageData(0, 0, canvas.width, canvas.height);
@@ -56,7 +54,7 @@ namespace L10_2 {
 
     function drawCloud(): void {
 
-        clouds.push(new Clouds({ x: crc2.canvas.width * .10, y: crc2.canvas.height * .10 }));
+        movable.push(<Movable> new Clouds({ x: crc2.canvas.width * .10, y: crc2.canvas.height * .10 }, { x: 0.5, y:  0.1}));
 
     }
 
@@ -77,27 +75,29 @@ namespace L10_2 {
         
         for (let i: number = 0; i < _nBees; i++) {
             
-            let randomScale: number = 0.5 + Math.random() * (2.5 - 1.3);
+            //let randomScale: number = 0.5 + Math.random() * (2.5 - 1.3);
             let randomVelocityX: number = (Math.random() - 0.5) * 5;
             let randomVelocityY: number = (Math.random() - 0.5) * 5;
 
-            bees.push(new Bees({ x: crc2.canvas.width / 4, y: crc2.canvas.height * golden / 2.4}, { x: randomVelocityX, y: randomVelocityY }, randomScale));
+            movable.push(<Movable> new Bees({ x: crc2.canvas.width / 4, y: crc2.canvas.height * golden / 2.4}, { x: randomVelocityX, y: randomVelocityY })); //, randomScale
 
         }
 
     }
 
     function animate(): void {
+
         requestAnimationFrame(animate);
+
         crc2.clearRect(0, 0, crc2.canvas.width, crc2.canvas.height);
         crc2.putImageData(imageData, 0, 0);
-        for (let index: number = 0; index < bees.length; index ++) {
-            bees[index].update();
+
+        for (let index: number = 0; index < movable.length; index ++) {
+            movable[index].update();
+            movable[index].draw();
             
-        }
-        for (let index: number = 0; index < clouds.length; index ++) {
-            clouds[index].update();
-        }
-    }
+        } // Ende for
+
+    } //Ende animate
 
 }
