@@ -2,14 +2,14 @@
 var L10_2;
 (function (L10_2) {
     //inspiriert und teilweise entnommen von Jirka seinem Code "Allay.ts"
+    window.addEventListener("load", handleLoad);
     L10_2.golden = 0.62;
     //let clouds: Clouds[] = [];
-    let flowers = [];
     //let bees: Bees[] = [];
     let movable = [];
+    let flowers = [];
     let imageData;
     L10_2.greenColors = ["darkGreen", "forestGreen", "green", "oliveDrab", "seaGreen"];
-    window.addEventListener("load", handleLoad);
     function handleLoad() {
         let canvas = document.querySelector("canvas");
         if (!canvas)
@@ -32,9 +32,11 @@ var L10_2;
         L10_2.drawSkyAndLawn();
         L10_2.drawMountains(posMountains, 75, 200, "grey", "white");
         L10_2.drawSun({ x: L10_2.crc2.canvas.width - 100, y: 75 });
+        console.log("Test_BG");
     }
     function drawCloud() {
-        movable.push(new L10_2.Clouds({ x: L10_2.crc2.canvas.width * .10, y: L10_2.crc2.canvas.height * .10 }, { x: 0.5, y: 0.1 }));
+        movable.push(new L10_2.Clouds({ x: L10_2.crc2.canvas.width * .10, y: L10_2.crc2.canvas.height * .10 }, { x: 0.5, y: 0.0 }));
+        console.log("Test_Cloud");
     }
     function drawTree() {
         L10_2.drawTreeLog({ x: 50, y: L10_2.crc2.canvas.height });
