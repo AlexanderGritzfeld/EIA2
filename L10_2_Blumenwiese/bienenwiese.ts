@@ -2,6 +2,8 @@ namespace L10_2 {
 
     //inspiriert und teilweise entnommen von Jirka seinem Code "Allay.ts"
 
+    window.addEventListener("load", handleLoad);
+
     export interface Vector {
         x: number;
         y: number;
@@ -11,15 +13,15 @@ namespace L10_2 {
     export let golden: number = 0.62;
 
     //let clouds: Clouds[] = [];
-    let flowers: Flowers[] = [];
     //let bees: Bees[] = [];
     let movable: Movable[] = [];
+    let flowers: Flowers[] = [];
 
     let imageData: ImageData;
 
     export let greenColors: string[] = ["darkGreen", "forestGreen", "green", "oliveDrab", "seaGreen"];
 
-    window.addEventListener("load", handleLoad);
+    
 
     function handleLoad(): void {
         let canvas: HTMLCanvasElement | null = document.querySelector("canvas");
@@ -50,11 +52,15 @@ namespace L10_2 {
         drawMountains(posMountains, 75, 200, "grey", "white");
         drawSun({ x: crc2.canvas.width - 100, y: 75 });
 
+        console.log("Test_BG");
+
     }
 
     function drawCloud(): void {
 
-        movable.push(<Movable> new Clouds({ x: crc2.canvas.width * .10, y: crc2.canvas.height * .10 }, { x: 0.5, y:  0.1}));
+        movable.push(<Movable> new Clouds({ x: crc2.canvas.width * .10, y: crc2.canvas.height * .10 }, { x: 0.5, y:  0.0}));
+
+        console.log("Test_Cloud");
 
     }
 
