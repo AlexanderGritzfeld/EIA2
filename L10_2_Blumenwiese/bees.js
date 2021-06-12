@@ -1,15 +1,11 @@
 "use strict";
 var L10_2;
 (function (L10_2) {
-    class Bees {
-        constructor(_position, _velocity, _randomScale) {
+    class Bees extends L10_2.Movable {
+        constructor(_position, _velocity) {
+            super(_position, _velocity);
             this.randomNumber = (Math.floor(Math.random() * 2000) + 1000);
             this.counter = 0;
-            this.startPosX = _position.x;
-            this.startPosY = _position.y;
-            this.randomScale = _randomScale;
-            this.velocityX = _velocity.x;
-            this.velocityY = _velocity.y;
         }
         draw() {
             //wings
@@ -69,7 +65,7 @@ var L10_2;
             this.startPosX += this.velocityX;
             this.startPosY += this.velocityY;
             this.counter++;
-            this.draw();
+            //this.draw();
         }
     } //Ende export class
     L10_2.Bees = Bees;
