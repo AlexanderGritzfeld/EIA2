@@ -1,6 +1,6 @@
 "use strict";
-var L10_2;
-(function (L10_2) {
+var L11_1;
+(function (L11_1) {
     class Movable {
         constructor(_position, _velocity) {
             this.startPosX = _position.x;
@@ -15,6 +15,6 @@ var L10_2;
             //update
         }
     }
-    L10_2.Movable = Movable;
-})(L10_2 || (L10_2 = {}));
+    L11_1.Movable = Movable;
+})(L11_1 || (L11_1 = {}));
 //# sourceMappingURL=movable.js.map
