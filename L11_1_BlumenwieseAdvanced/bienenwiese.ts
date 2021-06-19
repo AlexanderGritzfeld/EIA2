@@ -12,8 +12,6 @@ namespace L11_1 {
     export let crc2: CanvasRenderingContext2D;
     export let golden: number = 0.62;
 
-    //let clouds: Clouds[] = [];
-    //let bees: Bees[] = [];
     let movable: Movable[] = [];
     let flowers: Flowers[] = [];
 
@@ -36,7 +34,7 @@ namespace L11_1 {
         drawBackground();
         drawTree();
         drawCloud();
-        drawFlower();
+        drawFlower(7);
         drawBee(10);
         imageData = crc2.getImageData(0, 0, canvas.width, canvas.height);
         animate();
@@ -52,7 +50,7 @@ namespace L11_1 {
         drawMountains(posMountains, 75, 200, "grey", "white");
         drawSun({ x: crc2.canvas.width - 100, y: 75 });
 
-        console.log("Test_BG");
+        //console.log("Test_BG");
 
     }
 
@@ -60,7 +58,7 @@ namespace L11_1 {
 
         movable.push(<Movable> new Clouds({ x: crc2.canvas.width * .10, y: crc2.canvas.height * .10 }, { x: 0.5, y:  0.0}));
 
-        console.log("Test_Cloud");
+        //console.log("Test_Cloud");
 
     }
 
@@ -71,17 +69,27 @@ namespace L11_1 {
 
     }
 
-    function drawFlower(): void {
+    function drawFlower(_nFlower: number): void {
+        
+        let positionX: number = crc2.canvas.width / 4;
 
-        flowers.push(new Flowers({x: crc2.canvas.width / 4, y: crc2.canvas.height - 50}));
+        for (let i: number = 0; i < _nFlower; i++) {
+
+            //flowers.push(new Flowers({x: crc2.canvas.width / 4, y: crc2.canvas.height - 50}));
+            flowers.push(new Flowers({x: positionX, y: crc2.canvas.height - 50}));
+
+            positionX = positionX + 100;
+
+            //console.log("PX: " + positionX);
+
+        }
 
     }
 
     function drawBee(_nBees: number): void {
         
         for (let i: number = 0; i < _nBees; i++) {
-            
-            //let randomScale: number = 0.5 + Math.random() * (2.5 - 1.3);
+
             let randomVelocityX: number = (Math.random() - 0.5) * 5;
             let randomVelocityY: number = (Math.random() - 0.5) * 5;
 
@@ -98,9 +106,22 @@ namespace L11_1 {
         crc2.clearRect(0, 0, crc2.canvas.width, crc2.canvas.height);
         crc2.putImageData(imageData, 0, 0);
 
+
+        for (let flower of flowers) {
+
+            if (flower.randomSaturation < 100) {
+
+                flower.randomSaturation = flower.randomSaturation + 0.1;
+            }
+            //console.log("Test: randomSaturation = " + flower.randomSaturation);
+            flower.draw();
+    
+        }
+
         for (let index: number = 0; index < movable.length; index ++) {
             movable[index].update();
             movable[index].draw();
+            //flowers[index].draw();
             
         } // Ende for
 
