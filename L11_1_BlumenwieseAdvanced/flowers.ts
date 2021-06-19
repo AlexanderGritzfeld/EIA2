@@ -7,6 +7,11 @@ namespace L11_1 {
         petalColor: string[] = ["red", "white", "orange", "HSL(329, 100%, 24%)", "purple"];
         randomNumberArray: number = Math.floor(Math.random() * Math.floor(5));
 
+        randomSaturation: number = Math.floor(Math.random() * 100);
+        nectar: number = this.randomSaturation;
+        //saturation: number = 0;
+
+        
 
         constructor(_position: Vector) {
 
@@ -17,16 +22,19 @@ namespace L11_1 {
 
         draw(): void {
 
-            for (let flowers: number = 0; flowers < 11; flowers++) {
+            //for (let flowers: number = 0; flowers < 11; flowers++) {
+
+                //console.log("Saturation: " + this.randomSaturation);
 
                 //Stängel
                 crc2.save();
                 crc2.beginPath();
-                crc2.fillStyle = "HSL(131, 100%, 24%)";
+                
                 crc2.moveTo(this.positionX, this.positionY);
                 crc2.lineTo(this.positionX + 10, this.positionY);
                 crc2.lineTo(this.positionX + 10, this.positionY - 75);
                 crc2.lineTo(this.positionX, this.positionY - 75);
+                crc2.fillStyle = "hsl(100," +  this.randomSaturation + "%, 30%)";
                 crc2.closePath();
                 crc2.fill();
                 crc2.restore();
@@ -68,14 +76,24 @@ namespace L11_1 {
                 crc2.save();
                 crc2.beginPath();
                 crc2.translate(this.positionX + 5, this.positionY - 75);
-                crc2.fillStyle = "yellow";
+                crc2.fillStyle = "hsl(58," +  this.randomSaturation + "%, 50%)";
                 crc2.arc(0, 0, 15, 0, 2 * Math.PI);
                 crc2.fill();
                 crc2.restore();
         
-                this.positionX = this.positionX + 100;
+                //this.positionX = this.positionX + 100;
+                //console.log("X: " + this.positionX);
         
-                }//Ende for Schleife
+               // }//Ende for Schleife
+
+                this.nectar = this.randomSaturation;
+
+                //console.log("Nektar: " + this.nectar);
+
+                //this.randomSaturation = this.randomSaturation + 1;
+
+                //console.log("New: " + this.randomSaturation);
+            
 
         }
 
