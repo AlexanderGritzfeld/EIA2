@@ -5,8 +5,6 @@ namespace SoSe21 {
 
     export let crc2: CanvasRenderingContext2D;
 
-    console.log("Test");
-
     function handleLoad(): void {
         let canvas: HTMLCanvasElement | null = document.querySelector("canvas");
         if (!canvas)
