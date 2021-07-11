@@ -58,8 +58,6 @@ namespace L11_1 {
 
         movable.push(<Movable> new Clouds({ x: crc2.canvas.width * .10, y: crc2.canvas.height * .10 }, { x: 0.5, y:  0.0}));
 
-        //console.log("Test_Cloud");
-
     }
 
     function drawTree(): void {
