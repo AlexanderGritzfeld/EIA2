@@ -30,7 +30,6 @@ var L11_1;
         L11_1.drawSkyAndLawn();
         L11_1.drawMountains(posMountains, 75, 200, "grey", "white");
         L11_1.drawSun({ x: L11_1.crc2.canvas.width - 100, y: 75 });
-        //console.log("Test_BG");
     }
     function drawCloud() {
         movable.push(new L11_1.Clouds({ x: L11_1.crc2.canvas.width * .10, y: L11_1.crc2.canvas.height * .10 }, { x: 0.5, y: 0.0 }));
@@ -42,10 +41,8 @@ var L11_1;
     function drawFlower(_nFlower) {
         let positionX = L11_1.crc2.canvas.width / 4;
         for (let i = 0; i < _nFlower; i++) {
-            //flowers.push(new Flowers({x: crc2.canvas.width / 4, y: crc2.canvas.height - 50}));
             flowers.push(new L11_1.Flowers({ x: positionX, y: L11_1.crc2.canvas.height - 50 }));
             positionX = positionX + 100;
-            //console.log("PX: " + positionX);
         }
     }
     function drawBee(_nBees) {
