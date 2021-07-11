@@ -50,8 +50,6 @@ namespace L11_1 {
         drawMountains(posMountains, 75, 200, "grey", "white");
         drawSun({ x: crc2.canvas.width - 100, y: 75 });
 
-        //console.log("Test_BG");
-
     }
 
     function drawCloud(): void {
@@ -73,12 +71,9 @@ namespace L11_1 {
 
         for (let i: number = 0; i < _nFlower; i++) {
 
-            //flowers.push(new Flowers({x: crc2.canvas.width / 4, y: crc2.canvas.height - 50}));
             flowers.push(new Flowers({x: positionX, y: crc2.canvas.height - 50}));
 
             positionX = positionX + 100;
-
-            //console.log("PX: " + positionX);
 
         }
 
