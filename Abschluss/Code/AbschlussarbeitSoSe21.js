@@ -2,7 +2,6 @@
 var SoSe21;
 (function (SoSe21) {
     window.addEventListener("load", handleLoad);
-    console.log("Test");
     function handleLoad() {
         let canvas = document.querySelector("canvas");
         if (!canvas)
