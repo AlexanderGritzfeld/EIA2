@@ -14,7 +14,6 @@ var L11_1;
         }
         draw() {
             //for (let flowers: number = 0; flowers < 11; flowers++) {
-            //console.log("Saturation: " + this.randomSaturation);
             //Stängel
             L11_1.crc2.save();
             L11_1.crc2.beginPath();
