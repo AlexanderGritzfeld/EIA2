@@ -22,6 +22,7 @@ namespace SoSe21 {
 
         drawBackground();
         drawTeam(11);
+        animate();
 
     } //end handleLoad
 
@@ -35,11 +36,22 @@ namespace SoSe21 {
 
         for (let i: number = 0; i <= _nPlayers; i++) {
 
-        movable.push(<Movable> new Player());
+        movable.push(<Movable> new Player({ x: crc2.canvas.width / (i + 1), y: crc2.canvas.height / (i + 1)}, { x: 0.5, y: 0.5 }));
+
+        console.log("Spieler Nummer: " + (i + 1) );
+
+
+        } //end for 
+
+    } //end drawTeam
+
+    function animate(): void {
+
+        for (let index: number = 0; index < movable.length; index ++) {
+            movable[index].update();
+            movable[index].draw();
 
         }
-
-        
     }
 
 } //end namespace
