@@ -24,8 +24,6 @@ namespace L11_1 {
 
             //for (let flowers: number = 0; flowers < 11; flowers++) {
 
-                //console.log("Saturation: " + this.randomSaturation);
-
                 //Stängel
                 crc2.save();
                 crc2.beginPath();
