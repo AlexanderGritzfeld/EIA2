@@ -20,13 +20,21 @@ var SoSe21;
         for (let i = 0; i <= _nPlayers; i++) {
             movable.push(new SoSe21.Player({ x: SoSe21.crc2.canvas.width / (i + 1), y: SoSe21.crc2.canvas.height / (i + 1) }, { x: 0.5, y: 0.5 }));
             console.log("Spieler Nummer: " + (i + 1));
-        } //end for 
-    } //end drawTeam
+        } //end for
+    } //end drawTeam 
+    SoSe21.j = 0;
     function animate() {
-        for (let index = 0; index < movable.length; index++) {
-            movable[index].update();
-            movable[index].draw();
-        }
-    }
+        console.log("j geht in animate() rein: " + SoSe21.j);
+        /*for (let index: number = 0; index < movable.length; index ++) {
+           movable[index].update();
+           movable[index].draw();
+
+       } //end for */
+        while (SoSe21.j < (movable.length - 1)) {
+            movable[SoSe21.j].update();
+            movable[SoSe21.j].draw();
+            SoSe21.j++;
+        } // end while
+    } //end animate
 })(SoSe21 || (SoSe21 = {})); //end namespace
 //# sourceMappingURL=AbschlussarbeitSoSe21.js.map
