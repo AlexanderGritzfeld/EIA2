@@ -65,7 +65,6 @@ var L11_1;
             this.startPosX += this.velocityX;
             this.startPosY += this.velocityY;
             this.counter++;
-            //this.draw();
         }
     } //Ende export class
     L11_1.Bees = Bees;
