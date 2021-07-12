@@ -25,6 +25,8 @@ var SoSe21;
     SoSe21.j = 0;
     function animate() {
         console.log("j geht in animate() rein: " + SoSe21.j);
+        console.log(movable);
+        console.log(movable.length);
         /*for (let index: number = 0; index < movable.length; index ++) {
            movable[index].update();
            movable[index].draw();
