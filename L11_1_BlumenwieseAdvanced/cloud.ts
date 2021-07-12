@@ -37,8 +37,7 @@ namespace L11_1 {
             }
 
             this.startPosX += this.velocityX;
-            
-            //this.draw();
+
         }
 
     }//Ende class
