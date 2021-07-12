@@ -32,26 +32,41 @@ namespace SoSe21 {
 
     }
 
+   
+
     function drawTeam(_nPlayers: number): void {
 
         for (let i: number = 0; i <= _nPlayers; i++) {
 
         movable.push(<Movable> new Player({ x: crc2.canvas.width / (i + 1), y: crc2.canvas.height / (i + 1)}, { x: 0.5, y: 0.5 }));
 
-        console.log("Spieler Nummer: " + (i + 1) );
+        console.log("Spieler Nummer: " + (i + 1) ); 
+    
+        } //end for
 
-
-        } //end for 
-
-    } //end drawTeam
+    } //end drawTeam 
+    
+    export let j: number = 0;
 
     function animate(): void {
 
-        for (let index: number = 0; index < movable.length; index ++) {
+        console.log("j geht in animate() rein: " + j);
+
+         /*for (let index: number = 0; index < movable.length; index ++) {
             movable[index].update();
             movable[index].draw();
 
-        }
-    }
+        } //end for */
+
+        while (j < (movable.length - 1)) {
+
+            movable[j].update();
+            movable[j].draw();
+            
+            j ++;
+
+        } // end while
+        
+    } //end animate
 
 } //end namespace
