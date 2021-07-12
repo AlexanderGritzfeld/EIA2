@@ -68,6 +68,7 @@ var L11_1;
             movable[index].draw();
             //flowers[index].draw();
         } // Ende for
+        console.log(movable);
     } //Ende animate
 })(L11_1 || (L11_1 = {}));
 //# sourceMappingURL=bienenwiese.js.map
