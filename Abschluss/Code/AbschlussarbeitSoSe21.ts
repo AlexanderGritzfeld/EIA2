@@ -28,7 +28,8 @@ namespace SoSe21 {
 
 
         drawBackground();
-        drawTeam(11);
+        //drawTeam(11);
+        drawTeam(22);
         animate();
 
     } //end handleLoad
@@ -82,8 +83,8 @@ namespace SoSe21 {
     function animate(): void {
 
         console.log("j geht in animate() rein: " + j);
-        console.log(movable);
-        console.log(movable.length);
+        console.log("movable " + movable);
+        console.log("length " + movable.length);
 
          /*for (let index: number = 0; index < movable.length; index ++) {
             movable[index].update();
@@ -92,6 +93,16 @@ namespace SoSe21 {
         } //end for */
 
         while (j < 11) { //
+
+            movable[j].update();
+            movable[j].draw();
+            
+            j ++;
+
+        } // end while
+
+        //jetzt wird das gegnerische Team gemalt (?)
+        while (j < 22 && 11 <= 11) { 
 
             movable[j].update();
             movable[j].draw();
