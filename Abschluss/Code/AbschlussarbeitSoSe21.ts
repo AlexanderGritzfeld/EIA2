@@ -51,6 +51,8 @@ namespace SoSe21 {
     function animate(): void {
 
         console.log("j geht in animate() rein: " + j);
+        console.log(movable);
+        console.log(movable.length);
 
          /*for (let index: number = 0; index < movable.length; index ++) {
             movable[index].update();
