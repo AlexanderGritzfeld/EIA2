@@ -1,6 +1,6 @@
 namespace SoSe21 {
 
-    export class Movable {
+    export abstract class Movable {
         
         startPosX: number;
         startPosY: number;
