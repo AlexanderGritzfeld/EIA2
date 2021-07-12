@@ -118,6 +118,8 @@ namespace L11_1 {
             
         } // Ende for
 
+        console.log(movable);
+
     } //Ende animate
 
 }
