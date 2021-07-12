@@ -29,7 +29,6 @@ var L11_1;
                 this.velocityX = -this.velocityX;
             }
             this.startPosX += this.velocityX;
-            //this.draw();
         }
     } //Ende class
     L11_1.Clouds = Clouds;
