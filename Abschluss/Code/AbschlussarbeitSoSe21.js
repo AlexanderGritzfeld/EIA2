@@ -15,7 +15,8 @@ var SoSe21;
         document.body.addEventListener ("click", logInfo);
         */
         drawBackground();
-        drawTeam(11);
+        //drawTeam(11);
+        drawTeam(22);
         animate();
     } //end handleLoad
     /*
@@ -50,14 +51,20 @@ var SoSe21;
     SoSe21.j = 0;
     function animate() {
         console.log("j geht in animate() rein: " + SoSe21.j);
-        console.log(movable);
-        console.log(movable.length);
+        console.log("movable " + movable);
+        console.log("length " + movable.length);
         /*for (let index: number = 0; index < movable.length; index ++) {
            movable[index].update();
            movable[index].draw();
 
        } //end for */
         while (SoSe21.j < 11) { //
+            movable[SoSe21.j].update();
+            movable[SoSe21.j].draw();
+            SoSe21.j++;
+        } // end while
+        //jetzt wird das gegnerische Team gemalt (?)
+        while (SoSe21.j < 22 && 11 <= 11) {
             movable[SoSe21.j].update();
             movable[SoSe21.j].draw();
             SoSe21.j++;
