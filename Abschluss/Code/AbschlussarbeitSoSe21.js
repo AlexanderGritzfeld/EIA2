@@ -64,7 +64,7 @@ var SoSe21;
             SoSe21.j++;
         } // end while
         //jetzt wird das gegnerische Team gemalt (?)
-        while (SoSe21.j < 22 && 11 <= 11) {
+        while (SoSe21.j < 22 && SoSe21.j >= 11) {
             movable[SoSe21.j].update();
             movable[SoSe21.j].draw();
             SoSe21.j++;
