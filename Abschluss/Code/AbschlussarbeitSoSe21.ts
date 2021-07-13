@@ -102,7 +102,7 @@ namespace SoSe21 {
         } // end while
 
         //jetzt wird das gegnerische Team gemalt (?)
-        while (j < 22 && 11 <= 11) { 
+        while (j < 22 && j >= 11) { 
 
             movable[j].update();
             movable[j].draw();
