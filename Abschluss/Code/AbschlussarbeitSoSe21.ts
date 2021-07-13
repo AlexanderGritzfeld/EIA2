@@ -13,6 +13,16 @@ namespace SoSe21 {
     let movable: Movable[] = [];
 
 
+    //HTML Elemente
+
+    let startForm: HTMLElement;
+    let start: HTMLElement;
+
+    startForm = <HTMLDivElement> document.querySelector("#startForm");
+    start = <HTMLButtonElement> document.querySelector("#start");
+
+
+
     function handleLoad(): void {
         let canvas: HTMLCanvasElement | null = document.querySelector("canvas");
         if (!canvas)
@@ -63,11 +73,9 @@ namespace SoSe21 {
 
     }
 
-   
-
     function drawTeam(_nPlayers: number): void {
 
-        for (let i: number = 0; i <= _nPlayers; i++) {
+        for (let i: number = 0; i < _nPlayers; i++) {
 
         movable.push(<Movable> new Player({ x: crc2.canvas.width / (i + 1), y: crc2.canvas.height / (i + 1)}, { x: 0.5, y: 0.5 }));
 
@@ -80,9 +88,6 @@ namespace SoSe21 {
     export let j: number = 0;
 
     function animate(): void {
-
-        console.log("j geht in animate() rein: " + j);
-        console.log("movable " + movable);
         console.log("length " + movable.length);
 
          /*for (let index: number = 0; index < movable.length; index ++) {
@@ -111,5 +116,9 @@ namespace SoSe21 {
         } // end while
         
     } //end animate
+
+    start.addEventListener("click", function(): void {
+        startForm.classList.add("is-hidden");
+    }); //end button listener
 
 } //end namespace
