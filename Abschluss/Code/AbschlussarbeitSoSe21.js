@@ -3,6 +3,11 @@ var SoSe21;
 (function (SoSe21) {
     window.addEventListener("load", handleLoad);
     let movable = [];
+    //HTML Elemente
+    let startForm;
+    let start;
+    startForm = document.querySelector("#startForm");
+    start = document.querySelector("#start");
     function handleLoad() {
         let canvas = document.querySelector("canvas");
         if (!canvas)
@@ -67,5 +72,8 @@ var SoSe21;
             SoSe21.j++;
         } // end while
     } //end animate
+    start.addEventListener("click", function () {
+        startForm.classList.add("is-hidden");
+    }); //end button listener
 })(SoSe21 || (SoSe21 = {})); //end namespace
 //# sourceMappingURL=AbschlussarbeitSoSe21.js.map
