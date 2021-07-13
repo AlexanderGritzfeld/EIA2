@@ -28,7 +28,6 @@ namespace SoSe21 {
 
 
         drawBackground();
-        //drawTeam(11);
         drawTeam(22);
         animate();
 
@@ -101,7 +100,7 @@ namespace SoSe21 {
 
         } // end while
 
-        //jetzt wird das gegnerische Team gemalt (?)
+        //jetzt wird das gegnerische Team gemalt
         while (j < 22 && j >= 11) { 
 
             movable[j].update();
