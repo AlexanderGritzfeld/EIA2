@@ -21,28 +21,33 @@ var SoSe21;
                 { x: 425, y: 250 }, { x: 425, y: 450 }, { x: 350, y: 350 }, { x: 350, y: 150 }, { x: 350, y: 550 }];
         } //end constructor
         draw() {
-            SoSe21.crc2.save();
-            //crc2.translate(this.startPosX, this.startPosY);
-            SoSe21.crc2.beginPath();
-            SoSe21.crc2.strokeStyle = "black";
-            SoSe21.crc2.fillStyle = "red";
-            SoSe21.crc2.lineWidth = 2;
-            SoSe21.crc2.arc(this.startPosPlayer[SoSe21.j].x, this.startPosPlayer[SoSe21.j].y, 7, 0, 2 * Math.PI);
-            SoSe21.crc2.stroke();
-            SoSe21.crc2.fill();
-            SoSe21.crc2.restore();
-            //Test
-            SoSe21.crc2.save();
-            //crc2.translate(this.startPosX, this.startPosY);
-            SoSe21.crc2.beginPath();
-            SoSe21.crc2.strokeStyle = "black";
-            SoSe21.crc2.fillStyle = "blue";
-            SoSe21.crc2.lineWidth = 2;
-            SoSe21.crc2.arc(this.startPosPlayer[SoSe21.j].x, this.startPosPlayer[SoSe21.j].y, 7, 0, 2 * Math.PI);
-            SoSe21.crc2.stroke();
-            SoSe21.crc2.fill();
-            SoSe21.crc2.restore();
-            console.log("Nach 1 Durchlauf draw(): " + SoSe21.j);
+            if (SoSe21.j < 11) {
+                SoSe21.crc2.save();
+                //crc2.translate(this.startPosX, this.startPosY);
+                console.info("j ist gerade: " + SoSe21.j);
+                SoSe21.crc2.beginPath();
+                SoSe21.crc2.strokeStyle = "black";
+                SoSe21.crc2.fillStyle = "red";
+                SoSe21.crc2.lineWidth = 2;
+                SoSe21.crc2.arc(this.startPosPlayer[SoSe21.j].x, this.startPosPlayer[SoSe21.j].y, 7, 0, 2 * Math.PI);
+                SoSe21.crc2.stroke();
+                SoSe21.crc2.fill();
+                SoSe21.crc2.restore();
+            }
+            if (SoSe21.j >= 11) {
+                //Test
+                SoSe21.crc2.save();
+                //crc2.translate(this.startPosX, this.startPosY);
+                SoSe21.crc2.beginPath();
+                SoSe21.crc2.strokeStyle = "black";
+                SoSe21.crc2.fillStyle = "blue";
+                SoSe21.crc2.lineWidth = 2;
+                SoSe21.crc2.arc(this.startPosPlayer[SoSe21.j].x, this.startPosPlayer[SoSe21.j].y, 7, 0, 2 * Math.PI);
+                SoSe21.crc2.stroke();
+                SoSe21.crc2.fill();
+                SoSe21.crc2.restore();
+                console.log("Nach 1 Durchlauf draw(): " + SoSe21.j);
+            }
         } //end draw
     } //end class Player
     SoSe21.Player = Player;
