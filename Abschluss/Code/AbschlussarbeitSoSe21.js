@@ -42,15 +42,13 @@ var SoSe21;
         SoSe21.drawField();
     }
     function drawTeam(_nPlayers) {
-        for (let i = 0; i <= _nPlayers; i++) {
+        for (let i = 0; i < _nPlayers; i++) {
             movable.push(new SoSe21.Player({ x: SoSe21.crc2.canvas.width / (i + 1), y: SoSe21.crc2.canvas.height / (i + 1) }, { x: 0.5, y: 0.5 }));
             console.log("Spieler Nummer: " + (i + 1));
         } //end for
     } //end drawTeam 
     SoSe21.j = 0;
     function animate() {
-        console.log("j geht in animate() rein: " + SoSe21.j);
-        console.log("movable " + movable);
         console.log("length " + movable.length);
         /*for (let index: number = 0; index < movable.length; index ++) {
            movable[index].update();
