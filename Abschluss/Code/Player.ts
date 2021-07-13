@@ -31,8 +31,12 @@ namespace SoSe21 {
         
         draw(): void {
 
+            if (j < 11) {
+
             crc2.save();
             //crc2.translate(this.startPosX, this.startPosY);
+
+            console.info("j ist gerade: " + j);
 
             crc2.beginPath();
             crc2.strokeStyle = "black";
@@ -43,7 +47,9 @@ namespace SoSe21 {
             crc2.fill();
             crc2.restore();
 
-            
+            }
+
+            if (j >= 11) {
 
             //Test
             crc2.save();
@@ -59,6 +65,8 @@ namespace SoSe21 {
             crc2.restore();
 
             console.log("Nach 1 Durchlauf draw(): " + j);
+
+            }
 
         } //end draw
 
