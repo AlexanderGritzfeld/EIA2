@@ -2,7 +2,7 @@
 var SoSe21;
 (function (SoSe21) {
     class Player extends SoSe21.Movable {
-        constructor(_position, _velocity) {
+        constructor(_position, _velocity, _color1, _color2) {
             super(_position, _velocity);
             /*
             //Startpositionen Team links
@@ -19,6 +19,8 @@ var SoSe21;
                 //Startpositionen Team rechts
                 { x: 1025, y: 350 }, { x: 850, y: 100 }, { x: 850, y: 600 }, { x: 750, y: 250 }, { x: 750, y: 450 }, { x: 650, y: 350 },
                 { x: 425, y: 250 }, { x: 425, y: 450 }, { x: 350, y: 350 }, { x: 350, y: 150 }, { x: 350, y: 550 }];
+            this.color1 = _color1;
+            this.color2 = _color2;
         } //end constructor
         draw() {
             if (SoSe21.j < 11) {
