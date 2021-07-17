@@ -20,7 +20,8 @@ namespace SoSe21 {
             {x: 1025, y: 350}, {x: 850, y: 100}, {x: 850, y: 600}, {x: 750, y: 250}, {x: 750, y: 450}, {x: 650, y: 350},
             {x: 425, y: 250}, {x: 425, y: 450}, {x: 350, y: 350}, {x: 350, y: 150}, {x: 350, y: 550}];
             
-        public color: string;
+        public color1: string;
+        public color2: string;
 
 
         constructor(_position: Vector, _velocity: Vector, _color1: string, _color2: string) {
@@ -44,7 +45,7 @@ namespace SoSe21 {
 
             crc2.beginPath();
             crc2.strokeStyle = "black";
-            crc2.fillStyle = "red";
+            crc2.fillStyle = this.color1;
             crc2.lineWidth = 2;
             crc2.arc(this.startPosPlayer[j].x, this.startPosPlayer[j].y, 7, 0, 2 * Math.PI);
             crc2.stroke(); 
@@ -61,7 +62,7 @@ namespace SoSe21 {
 
             crc2.beginPath();
             crc2.strokeStyle = "black";
-            crc2.fillStyle = "blue";
+            crc2.fillStyle = this.color2;
             crc2.lineWidth = 2;
             crc2.arc(this.startPosPlayer[j].x, this.startPosPlayer[j].y, 7, 0, 2 * Math.PI);
             crc2.stroke(); 
