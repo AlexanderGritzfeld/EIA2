@@ -21,8 +21,6 @@ var SoSe21;
         document.body.addEventListener ("click", logInfo);
         */
         drawBackground();
-        drawTeam(22);
-        animate();
     } //end handleLoad
     /*
     function setInfoBox(_event: MouseEvent): void {
@@ -51,6 +49,8 @@ var SoSe21;
         formData = new FormData(document.forms[0]);
         color1 = formData.get("team1Color")?.toString();
         color2 = formData.get("team2Color")?.toString();
+        drawTeam(22);
+        animate();
     }
     function drawBackground() {
         SoSe21.drawField();
