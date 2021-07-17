@@ -5,6 +5,7 @@ var SoSe21;
     let movable = [];
     //HTML Elemente
     let startForm;
+    let formData;
     let start;
     startForm = document.querySelector("#startForm");
     start = document.querySelector("#start");
@@ -43,12 +44,20 @@ var SoSe21;
         console.log("current target " + _event.currentTarget);
         console.log("composed path " + _event.composedPath());
     } */
+    startForm.addEventListener("change", handleForm);
+    let color1;
+    let color2;
+    function handleForm() {
+        formData = new FormData(document.forms[0]);
+        color1 = formData.get("team1Color")?.toString();
+        color2 = formData.get("team2Color")?.toString();
+    }
     function drawBackground() {
         SoSe21.drawField();
     }
     function drawTeam(_nPlayers) {
         for (let i = 0; i < _nPlayers; i++) {
-            movable.push(new SoSe21.Player({ x: SoSe21.crc2.canvas.width / (i + 1), y: SoSe21.crc2.canvas.height / (i + 1) }, { x: 0.5, y: 0.5 }));
+            movable.push(new SoSe21.Player({ x: SoSe21.crc2.canvas.width / (i + 1), y: SoSe21.crc2.canvas.height / (i + 1) }, { x: 0.5, y: 0.5 }, color1, color2));
             console.log("Spieler Nummer: " + (i + 1));
         } //end for
     } //end drawTeam 
@@ -60,7 +69,7 @@ var SoSe21;
            movable[index].draw();
 
        } //end for */
-        while (SoSe21.j < 11) { //
+        while (SoSe21.j < 11) { //erst das Team Nr 1
             movable[SoSe21.j].update();
             movable[SoSe21.j].draw();
             SoSe21.j++;
