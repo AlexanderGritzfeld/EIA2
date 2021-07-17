@@ -16,6 +16,7 @@ namespace SoSe21 {
     //HTML Elemente
 
     let startForm: HTMLElement;
+    let formData: FormData;
     let start: HTMLElement;
 
     startForm = <HTMLDivElement> document.querySelector("#startForm");
@@ -65,6 +66,16 @@ namespace SoSe21 {
         console.log("composed path " + _event.composedPath());
     } */
 
+    startForm.addEventListener("change", handleForm);
+    let color1: string;
+    let color2: string;
+
+    function handleForm(): void {
+
+        formData = new FormData(document.forms[0]);
+        color1 = <string>formData.get("team1Color")?.toString();
+        color2 = <string>formData.get("team2Color")?.toString();
+    }
 
 
     function drawBackground(): void {
@@ -77,7 +88,7 @@ namespace SoSe21 {
 
         for (let i: number = 0; i < _nPlayers; i++) {
 
-        movable.push(<Movable> new Player({ x: crc2.canvas.width / (i + 1), y: crc2.canvas.height / (i + 1)}, { x: 0.5, y: 0.5 }));
+        movable.push(<Movable> new Player({ x: crc2.canvas.width / (i + 1), y: crc2.canvas.height / (i + 1)}, { x: 0.5, y: 0.5 }, color1, color2));
 
         console.log("Spieler Nummer: " + (i + 1) ); 
     
@@ -96,7 +107,7 @@ namespace SoSe21 {
 
         } //end for */
 
-        while (j < 11) { //
+        while (j < 11) { //erst das Team Nr 1
 
             movable[j].update();
             movable[j].draw();
