@@ -39,8 +39,6 @@ namespace SoSe21 {
 
 
         drawBackground();
-        drawTeam(22);
-        animate();
 
     } //end handleLoad
 
@@ -75,7 +73,13 @@ namespace SoSe21 {
         formData = new FormData(document.forms[0]);
         color1 = <string>formData.get("team1Color")?.toString();
         color2 = <string>formData.get("team2Color")?.toString();
+
+        
+        drawTeam(22);
+        animate();
     }
+
+    
 
 
     function drawBackground(): void {
@@ -90,7 +94,7 @@ namespace SoSe21 {
 
         movable.push(<Movable> new Player({ x: crc2.canvas.width / (i + 1), y: crc2.canvas.height / (i + 1)}, { x: 0.5, y: 0.5 }, color1, color2));
 
-        console.log("Spieler Nummer: " + (i + 1) ); 
+        console.log("Spieler Nummer: " + (i + 1) );
     
         } //end for
 
