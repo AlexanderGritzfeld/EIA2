@@ -67,8 +67,9 @@ namespace SoSe21 {
     } */
 
     //startForm.addEventListener("change", handleForm);
-    let color1: string;
-    let color2: string;
+    
+
+
 
     /*function handleForm(): void {
 
@@ -119,6 +120,29 @@ namespace SoSe21 {
         console.log("Feld steht");
 
     }
+    
+    let color1: string;
+    let color2: string;
+
+    start.addEventListener("click", startGame);
+
+    function startGame(): void {
+        
+        formData = new FormData(document.forms[0]);
+        color1 = <string>formData.get("team1Color")?.toString();
+        color2 = <string>formData.get("team2Color")?.toString();
+
+        drawTeam(22);
+        drawOther();
+        animate();
+
+        //console.log("Nach Start: " + color1, color2);
+        
+        startFormForm.classList.add("is-hidden");
+        
+    } //end function startGame
+    
+    
 
     function drawTeam(_nPlayers: number): void {
 
@@ -131,6 +155,14 @@ namespace SoSe21 {
         } //end for
 
     } //end drawTeam 
+
+    function drawOther(): void {
+
+        movable.push(<Movable> new OtherHuman({ x: 225, y: 35}, { x: 0.5, y: 0.5 }));
+        movable.push(<Movable> new OtherHuman({ x: 875, y: 35}, { x: 0.5, y: 0.5 }));
+        movable.push(<Movable> new OtherHuman({ x: crc2.canvas.width / 2, y: 250}, { x: 0.5, y: 0.5 }));
+
+    }
     
     export let j: number = 0;
 
@@ -143,7 +175,8 @@ namespace SoSe21 {
 
         } //end for */
 
-        while (j < 11) { //erst das Team Nr 1
+        //erst das Team Nr 1 wird gemalt
+        while (j < 11) { 
 
             movable[j].update();
             movable[j].draw();
@@ -152,7 +185,7 @@ namespace SoSe21 {
 
         } // end while
 
-        //jetzt wird das gegnerische Team gemalt
+        //jetzt wird das andere Team gemalt
         while (j < 22 && j >= 11) { 
 
             movable[j].update();
@@ -162,26 +195,27 @@ namespace SoSe21 {
 
         } // end while
 
-        console.log("Ende Team");
+        //nun die Linienrichter
+        while (j < (24) && j >= 22) {
+
+            movable[j].update();
+            movable[j].draw();
+
+            j++;
+        }
+
+        //und der Schiri
+        while (j < (25) && j >= 24) {
+
+            movable[j].update();
+            movable[j].draw();
+
+            j++;
+        }
         
     } //end animate
 
-    start.addEventListener("click", startGame);
-
-    function startGame(): void {
-        
-        formData = new FormData(document.forms[0]);
-        color1 = <string>formData.get("team1Color")?.toString();
-        color2 = <string>formData.get("team2Color")?.toString();
-
-        drawTeam(22);
-        animate();
-
-        //console.log("Nach Start: " + color1, color2);
-        
-        startFormForm.classList.add("is-hidden");
-        
-    } //end function startGame
+    
 
 
 } //end namespace
