@@ -26,7 +26,7 @@ var SoSe21;
             if (SoSe21.j < 11) {
                 SoSe21.crc2.save();
                 //crc2.translate(this.startPosX, this.startPosY);
-                console.info("j ist gerade: " + SoSe21.j);
+                //console.info("j ist gerade: " + j);
                 SoSe21.crc2.beginPath();
                 SoSe21.crc2.strokeStyle = "black";
                 SoSe21.crc2.fillStyle = this.color1;
