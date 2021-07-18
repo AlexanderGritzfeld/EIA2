@@ -15,11 +15,11 @@ namespace SoSe21 {
 
     //HTML Elemente
 
-    let startForm: HTMLElement;
+    let startFormForm: HTMLFormElement;
     let formData: FormData;
-    let start: HTMLElement;
+    let start: HTMLButtonElement;
 
-    startForm = <HTMLDivElement> document.querySelector("#startForm");
+    startFormForm = <HTMLFormElement> document.querySelector("#startFormForm");
     start = <HTMLButtonElement> document.querySelector("#start");
 
 
@@ -39,6 +39,8 @@ namespace SoSe21 {
 
 
         drawBackground();
+
+        console.log("load");
 
     } //end handleLoad
 
@@ -114,6 +116,8 @@ namespace SoSe21 {
 
         drawField();
 
+        console.log("Feld steht");
+
     }
 
     function drawTeam(_nPlayers: number): void {
@@ -157,6 +161,8 @@ namespace SoSe21 {
             j ++;
 
         } // end while
+
+        console.log("Ende Team");
         
     } //end animate
 
@@ -171,10 +177,11 @@ namespace SoSe21 {
         drawTeam(22);
         animate();
 
-        console.log("Nach Start: " + color1, color2);
+        //console.log("Nach Start: " + color1, color2);
         
-        startForm.classList.add("is-hidden");
+        startFormForm.classList.add("is-hidden");
         
     } //end function startGame
+
 
 } //end namespace
