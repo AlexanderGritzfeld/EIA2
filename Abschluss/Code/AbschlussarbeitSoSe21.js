@@ -42,16 +42,47 @@ var SoSe21;
         console.log("current target " + _event.currentTarget);
         console.log("composed path " + _event.composedPath());
     } */
-    startForm.addEventListener("change", handleForm);
+    //startForm.addEventListener("change", handleForm);
     let color1;
     let color2;
-    function handleForm() {
-        formData = new FormData(document.forms[0]);
-        color1 = formData.get("team1Color")?.toString();
-        color2 = formData.get("team2Color")?.toString();
-        drawTeam(22);
-        animate();
-    }
+    /*function handleForm(): void {
+
+        
+        
+
+        /*for (let entry of formData) {
+            switch (entry[0]) {
+                /*case "Select1":
+                    team1 = String (entry[1]);
+                    console.log(team1);
+                    break;
+                case "Select2":
+                    team2 = String (entry[1]);
+                    console.log(team2);
+                    break; /
+
+                case "team1Color":
+                    color1 = String(entry[1]);
+                    console.log(color1);
+                    break;
+
+                case "team2Color":
+                    color2 = String(entry[1]);
+                    console.log(color2);
+                    break;
+
+                default:
+                    console.log("???");
+            }
+
+        } //
+
+
+        console.log(formData.get("team1Color"));
+        console.log(formData.get("team2Color"));
+        
+        
+    } */
     function drawBackground() {
         SoSe21.drawField();
     }
@@ -81,8 +112,15 @@ var SoSe21;
             SoSe21.j++;
         } // end while
     } //end animate
-    start.addEventListener("click", function () {
+    start.addEventListener("click", startGame);
+    function startGame() {
+        formData = new FormData(document.forms[0]);
+        color1 = formData.get("team1Color")?.toString();
+        color2 = formData.get("team2Color")?.toString();
+        drawTeam(22);
+        animate();
+        console.log("Nach Start: " + color1, color2);
         startForm.classList.add("is-hidden");
-    }); //end button listener
+    } //end function startGame
 })(SoSe21 || (SoSe21 = {})); //end namespace
 //# sourceMappingURL=AbschlussarbeitSoSe21.js.map
