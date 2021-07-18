@@ -41,7 +41,7 @@ namespace SoSe21 {
             crc2.save();
             //crc2.translate(this.startPosX, this.startPosY);
 
-            console.info("j ist gerade: " + j);
+            //console.info("j ist gerade: " + j);
 
             crc2.beginPath();
             crc2.strokeStyle = "black";
