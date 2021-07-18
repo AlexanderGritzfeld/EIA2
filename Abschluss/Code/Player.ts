@@ -69,7 +69,7 @@ namespace SoSe21 {
             crc2.fill();
             crc2.restore();
 
-            console.log("Nach 1 Durchlauf draw(): " + j);
+            //console.log("Nach 1 Durchlauf draw(): " + j);
 
             }
 
