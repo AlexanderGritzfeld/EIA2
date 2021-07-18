@@ -64,20 +64,48 @@ namespace SoSe21 {
         console.log("composed path " + _event.composedPath());
     } */
 
-    startForm.addEventListener("change", handleForm);
+    //startForm.addEventListener("change", handleForm);
     let color1: string;
     let color2: string;
 
-    function handleForm(): void {
-
-        formData = new FormData(document.forms[0]);
-        color1 = <string>formData.get("team1Color")?.toString();
-        color2 = <string>formData.get("team2Color")?.toString();
+    /*function handleForm(): void {
 
         
-        drawTeam(22);
-        animate();
-    }
+        
+
+        /*for (let entry of formData) {
+            switch (entry[0]) {
+                /*case "Select1":
+                    team1 = String (entry[1]);
+                    console.log(team1);
+                    break;
+                case "Select2":
+                    team2 = String (entry[1]);
+                    console.log(team2);
+                    break; /
+
+                case "team1Color":
+                    color1 = String(entry[1]);
+                    console.log(color1);
+                    break;
+
+                case "team2Color":
+                    color2 = String(entry[1]);
+                    console.log(color2);
+                    break;
+
+                default:
+                    console.log("???");
+            }
+
+        } //
+
+
+        console.log(formData.get("team1Color"));
+        console.log(formData.get("team2Color"));
+        
+        
+    } */
 
     
 
@@ -132,8 +160,21 @@ namespace SoSe21 {
         
     } //end animate
 
-    start.addEventListener("click", function(): void {
+    start.addEventListener("click", startGame);
+
+    function startGame(): void {
+        
+        formData = new FormData(document.forms[0]);
+        color1 = <string>formData.get("team1Color")?.toString();
+        color2 = <string>formData.get("team2Color")?.toString();
+
+        drawTeam(22);
+        animate();
+
+        console.log("Nach Start: " + color1, color2);
+        
         startForm.classList.add("is-hidden");
-    }); //end button listener
+        
+    } //end function startGame
 
 } //end namespace
