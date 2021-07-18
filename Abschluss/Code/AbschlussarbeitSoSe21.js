@@ -84,7 +84,6 @@ var SoSe21;
     } */
     function drawBackground() {
         SoSe21.drawField();
-        console.log("Feld steht");
     }
     let color1;
     let color2;
@@ -95,6 +94,7 @@ var SoSe21;
         color2 = formData.get("team2Color")?.toString();
         drawTeam(22);
         drawOther();
+        drawBall();
         animate();
         //console.log("Nach Start: " + color1, color2);
         startFormForm.classList.add("is-hidden");
@@ -110,14 +110,17 @@ var SoSe21;
         movable.push(new SoSe21.OtherHuman({ x: 875, y: 35 }, { x: 0.5, y: 0.5 }));
         movable.push(new SoSe21.OtherHuman({ x: SoSe21.crc2.canvas.width / 2, y: 250 }, { x: 0.5, y: 0.5 }));
     }
+    function drawBall() {
+        movable.push(new SoSe21.Ball({ x: SoSe21.crc2.canvas.width / 2, y: SoSe21.crc2.canvas.height / 2 }, { x: 0.6, y: 0.6 }));
+    }
     SoSe21.j = 0;
     function animate() {
-        console.log("length " + movable.length);
+        console.log("movable.length: " + movable.length);
         /*for (let index: number = 0; index < movable.length; index ++) {
            movable[index].update();
            movable[index].draw();
 
-       } //end for */
+       } */
         //erst das Team Nr 1 wird gemalt
         while (SoSe21.j < 11) {
             movable[SoSe21.j].update();
@@ -138,6 +141,12 @@ var SoSe21;
         }
         //und der Schiri
         while (SoSe21.j < (25) && SoSe21.j >= 24) {
+            movable[SoSe21.j].update();
+            movable[SoSe21.j].draw();
+            SoSe21.j++;
+        }
+        //unzum Schluss noch der Ball
+        while (SoSe21.j < (26) && SoSe21.j >= 25) {
             movable[SoSe21.j].update();
             movable[SoSe21.j].draw();
             SoSe21.j++;
