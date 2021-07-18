@@ -44,8 +44,6 @@ var SoSe21;
         console.log("composed path " + _event.composedPath());
     } */
     //startForm.addEventListener("change", handleForm);
-    let color1;
-    let color2;
     /*function handleForm(): void {
 
         
@@ -88,12 +86,30 @@ var SoSe21;
         SoSe21.drawField();
         console.log("Feld steht");
     }
+    let color1;
+    let color2;
+    start.addEventListener("click", startGame);
+    function startGame() {
+        formData = new FormData(document.forms[0]);
+        color1 = formData.get("team1Color")?.toString();
+        color2 = formData.get("team2Color")?.toString();
+        drawTeam(22);
+        drawOther();
+        animate();
+        //console.log("Nach Start: " + color1, color2);
+        startFormForm.classList.add("is-hidden");
+    } //end function startGame
     function drawTeam(_nPlayers) {
         for (let i = 0; i < _nPlayers; i++) {
             movable.push(new SoSe21.Player({ x: SoSe21.crc2.canvas.width / (i + 1), y: SoSe21.crc2.canvas.height / (i + 1) }, { x: 0.5, y: 0.5 }, color1, color2));
             console.log("Spieler Nummer: " + (i + 1));
         } //end for
     } //end drawTeam 
+    function drawOther() {
+        movable.push(new SoSe21.OtherHuman({ x: 225, y: 35 }, { x: 0.5, y: 0.5 }));
+        movable.push(new SoSe21.OtherHuman({ x: 875, y: 35 }, { x: 0.5, y: 0.5 }));
+        movable.push(new SoSe21.OtherHuman({ x: SoSe21.crc2.canvas.width / 2, y: 250 }, { x: 0.5, y: 0.5 }));
+    }
     SoSe21.j = 0;
     function animate() {
         console.log("length " + movable.length);
@@ -102,28 +118,30 @@ var SoSe21;
            movable[index].draw();
 
        } //end for */
-        while (SoSe21.j < 11) { //erst das Team Nr 1
+        //erst das Team Nr 1 wird gemalt
+        while (SoSe21.j < 11) {
             movable[SoSe21.j].update();
             movable[SoSe21.j].draw();
             SoSe21.j++;
         } // end while
-        //jetzt wird das gegnerische Team gemalt
+        //jetzt wird das andere Team gemalt
         while (SoSe21.j < 22 && SoSe21.j >= 11) {
             movable[SoSe21.j].update();
             movable[SoSe21.j].draw();
             SoSe21.j++;
         } // end while
-        console.log("Ende Team");
+        //nun die Linienrichter
+        while (SoSe21.j < (24) && SoSe21.j >= 22) {
+            movable[SoSe21.j].update();
+            movable[SoSe21.j].draw();
+            SoSe21.j++;
+        }
+        //und der Schiri
+        while (SoSe21.j < (25) && SoSe21.j >= 24) {
+            movable[SoSe21.j].update();
+            movable[SoSe21.j].draw();
+            SoSe21.j++;
+        }
     } //end animate
-    start.addEventListener("click", startGame);
-    function startGame() {
-        formData = new FormData(document.forms[0]);
-        color1 = formData.get("team1Color")?.toString();
-        color2 = formData.get("team2Color")?.toString();
-        drawTeam(22);
-        animate();
-        //console.log("Nach Start: " + color1, color2);
-        startFormForm.classList.add("is-hidden");
-    } //end function startGame
 })(SoSe21 || (SoSe21 = {})); //end namespace
 //# sourceMappingURL=AbschlussarbeitSoSe21.js.map
