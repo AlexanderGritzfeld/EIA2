@@ -48,7 +48,7 @@ var SoSe21;
                 SoSe21.crc2.stroke();
                 SoSe21.crc2.fill();
                 SoSe21.crc2.restore();
-                console.log("Nach 1 Durchlauf draw(): " + SoSe21.j);
+                //console.log("Nach 1 Durchlauf draw(): " + j);
             }
         } //end draw
     } //end class Player
