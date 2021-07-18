@@ -4,10 +4,10 @@ var SoSe21;
     window.addEventListener("load", handleLoad);
     let movable = [];
     //HTML Elemente
-    let startForm;
+    let startFormForm;
     let formData;
     let start;
-    startForm = document.querySelector("#startForm");
+    startFormForm = document.querySelector("#startFormForm");
     start = document.querySelector("#start");
     function handleLoad() {
         let canvas = document.querySelector("canvas");
@@ -21,6 +21,7 @@ var SoSe21;
         document.body.addEventListener ("click", logInfo);
         */
         drawBackground();
+        console.log("load");
     } //end handleLoad
     /*
     function setInfoBox(_event: MouseEvent): void {
@@ -85,6 +86,7 @@ var SoSe21;
     } */
     function drawBackground() {
         SoSe21.drawField();
+        console.log("Feld steht");
     }
     function drawTeam(_nPlayers) {
         for (let i = 0; i < _nPlayers; i++) {
@@ -111,6 +113,7 @@ var SoSe21;
             movable[SoSe21.j].draw();
             SoSe21.j++;
         } // end while
+        console.log("Ende Team");
     } //end animate
     start.addEventListener("click", startGame);
     function startGame() {
@@ -119,8 +122,8 @@ var SoSe21;
         color2 = formData.get("team2Color")?.toString();
         drawTeam(22);
         animate();
-        console.log("Nach Start: " + color1, color2);
-        startForm.classList.add("is-hidden");
+        //console.log("Nach Start: " + color1, color2);
+        startFormForm.classList.add("is-hidden");
     } //end function startGame
 })(SoSe21 || (SoSe21 = {})); //end namespace
 //# sourceMappingURL=AbschlussarbeitSoSe21.js.map
