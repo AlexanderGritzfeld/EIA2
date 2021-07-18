@@ -117,8 +117,6 @@ namespace SoSe21 {
 
         drawField();
 
-        console.log("Feld steht");
-
     }
     
     let color1: string;
@@ -134,6 +132,7 @@ namespace SoSe21 {
 
         drawTeam(22);
         drawOther();
+        drawBall();
         animate();
 
         //console.log("Nach Start: " + color1, color2);
@@ -163,17 +162,22 @@ namespace SoSe21 {
         movable.push(<Movable> new OtherHuman({ x: crc2.canvas.width / 2, y: 250}, { x: 0.5, y: 0.5 }));
 
     }
+
+    function drawBall(): void {
+
+        movable.push(<Movable> new Ball({ x: crc2.canvas.width / 2, y: crc2.canvas.height / 2}, { x: 0.6, y: 0.6}));
+    }
     
     export let j: number = 0;
 
     function animate(): void {
-        console.log("length " + movable.length);
+        console.log("movable.length: " + movable.length);
 
          /*for (let index: number = 0; index < movable.length; index ++) {
             movable[index].update();
             movable[index].draw();
 
-        } //end for */
+        } */
 
         //erst das Team Nr 1 wird gemalt
         while (j < 11) { 
@@ -212,10 +216,17 @@ namespace SoSe21 {
 
             j++;
         }
+
+        //unzum Schluss noch der Ball
+        while (j < (26) && j >= 25) {
+
+            movable[j].update();
+            movable[j].draw();
+
+            j++;
+        }
+        
         
     } //end animate
-
-    
-
 
 } //end namespace
