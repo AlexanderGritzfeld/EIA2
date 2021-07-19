@@ -27,6 +27,11 @@ namespace SoSe21 {
 
         } //ende draw
 
+        /*public move(_event: MouseEvent): void {
+
+            let difference: Vector = new Vector(_event.offsetX - this.positionBall.x, _event.offsetY - this.positionBall.y);
+
+        }*/
 
     }
 
