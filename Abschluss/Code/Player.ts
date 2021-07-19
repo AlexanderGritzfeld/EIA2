@@ -6,7 +6,7 @@ namespace SoSe21 {
         private startPos: Vector;
         private team: string;
         private task: Task = Task.lookForBall;
-        private viewRadius: number = 500;
+        private viewRadius: number = 150;
         private distancePlayerBall: number;
 
 
