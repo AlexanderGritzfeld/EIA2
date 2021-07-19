@@ -2,7 +2,7 @@ namespace SoSe21 {
 
     export class Ball extends Movable {
 
-        public positionBall: Vector;
+        //positionBall: Vector;
 
         constructor(_position: Vector, _velocity: number) {
             
@@ -11,6 +11,11 @@ namespace SoSe21 {
             //this.positionBall = _position;
 
         } // end constructor
+
+        public get ballPos(): Vector {
+
+            return this.position;
+        }
 
         draw(): void {
 
