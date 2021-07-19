@@ -10,7 +10,9 @@ var SoSe21;
         Task[Task["shootTheBall"] = 2] = "shootTheBall";
         Task[Task["walkToStartPos"] = 3] = "walkToStartPos";
     })(Task = SoSe21.Task || (SoSe21.Task = {}));
+    let imageData;
     SoSe21.movable = [];
+    SoSe21.animationSwitch = true;
     //HTML Elemente
     let startFormForm;
     let formData;
@@ -40,6 +42,7 @@ var SoSe21;
         drawTeam(11);
         drawOtherTeam(11);
         drawOther();
+        imageData = SoSe21.crc2.getImageData(0, 0, 1100, 700);
         SoSe21.ball = new SoSe21.Ball(new SoSe21.Vector(550, 350), 0.5);
         animate();
         startFormForm.classList.add("is-hidden");
@@ -62,42 +65,67 @@ var SoSe21;
         SoSe21.movable.push(new SoSe21.OtherHuman(new SoSe21.Vector(225, 35), 0.5));
         SoSe21.movable.push(new SoSe21.OtherHuman(new SoSe21.Vector(875, 35), 0.5));
         SoSe21.movable.push(new SoSe21.OtherHuman(new SoSe21.Vector(SoSe21.crc2.canvas.width / 2, 250), 0.5));
-        console.log("andere");
     }
-    /*function drawBall(): void {
-
-        new Ball(new Vector( crc2.canvas.width / 2, crc2.canvas.height / 2), 0.6));
-
-        console.log("Ball");
-    }*/
-    SoSe21.j = 0;
     function animate() {
-        console.log("movable.length: " + SoSe21.movable.length);
+        if (SoSe21.animationSwitch == true) { //damit kann man die Animation stoppen, sobald ein Spieler den Ball hat
+            requestAnimationFrame(animate);
+            SoSe21.crc2.clearRect(0, 0, SoSe21.crc2.canvas.width, SoSe21.crc2.canvas.height);
+            SoSe21.crc2.putImageData(imageData, 0, 0);
+            for (let j = 0; j < SoSe21.movable.length; j++) {
+                SoSe21.movable[j].update();
+                SoSe21.movable[j].draw();
+            } //end for
+            //ball.update();
+            SoSe21.ball.draw();
+        } //end if
+    } //end animate
+    /*
+    export let j: number = 0;
+
+    function animate(): void {
+
+        console.log("movable.length: " + movable.length);
+
         //erst das Team Nr 1 wird gemalt
-        while (SoSe21.j < 11) {
-            SoSe21.movable[SoSe21.j].update();
-            SoSe21.movable[SoSe21.j].draw();
-            SoSe21.j++;
+        while (j < 11) {
+
+            movable[j].update();
+            movable[j].draw();
+            
+            j ++;
+
         } // end while
+
         console.log("Team 1 fertig");
+
         //jetzt wird das andere Team gemalt
-        while (SoSe21.j < 22 && SoSe21.j >= 11) {
-            SoSe21.movable[SoSe21.j].update();
-            SoSe21.movable[SoSe21.j].draw();
-            SoSe21.j++;
+        while (j < 22 && j >= 11) {
+
+            movable[j].update();
+            movable[j].draw();
+            
+            j ++;
+
         } // end while
+
         //nun die Linienrichter
-        while (SoSe21.j < (24) && SoSe21.j >= 22) {
-            SoSe21.movable[SoSe21.j].update();
-            SoSe21.movable[SoSe21.j].draw();
-            SoSe21.j++;
+        while (j < (24) && j >= 22) {
+
+            movable[j].update();
+            movable[j].draw();
+
+            j++;
         }
+
         //und der Schiri
-        while (SoSe21.j < (25) && SoSe21.j >= 24) {
-            SoSe21.movable[SoSe21.j].update();
-            SoSe21.movable[SoSe21.j].draw();
-            SoSe21.j++;
+        while (j < (25) && j >= 24) {
+
+            movable[j].update();
+            movable[j].draw();
+
+            j++;
         }
+
         /*und zum Schluss noch der Ball
         while (j < (26) && j >= 25) {
 
@@ -107,7 +135,8 @@ var SoSe21;
             j++;
         }
 
-        console.log("j ist: " + j); */
-    } //end animate
+        console.log("j ist: " + j); //
+        
+    } //end animate */
 })(SoSe21 || (SoSe21 = {})); //end namespace
 //# sourceMappingURL=AbschlussarbeitSoSe21.js.map
