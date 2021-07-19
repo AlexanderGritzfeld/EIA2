@@ -4,9 +4,11 @@ namespace SoSe21 {
 
     export class Ball {
 
-        private ballmode: boolean = true;
+        private ballMode: boolean = true;
 
         private position: Vector;
+        private newPosition: Vector;
+        private activePlayerNumber: number;
 
         //private velocity: number;
 
@@ -27,9 +29,27 @@ namespace SoSe21 {
 
         public setBoolean(_boolean: boolean): void {
 
-            this.ballmode = _boolean;
+            //console.log("ballMode alt: " + this.ballMode);
+            console.log("activePlayerNumber: " + this.activePlayerNumber);
 
-            console.log("Ball-Modus: " + this.ballmode);
+            this.ballMode = _boolean;
+
+            //console.log("Ball-Modus: " + this.ballMode);
+
+        }
+
+        public setNewPosition(_newPosition: Vector): void {
+
+            /*let distanceBall: number = Vector.getDistance(_newPosition, this.position);
+            let activePlayer: Player = <Player>movable[this.activePlayerNumber];
+
+            if (distanceBall > 400) { //wenn Spieler zu weit zielt, kommt Genauigkeit des Spielers ins Spiel
+
+                this.newPosition.x = _newPosition.x + activePlayer.playerPrecision.x;
+                this.newPosition.y = _newPosition.y + activePlayer.playerPrecision.y;
+            }*/
+
+            this.newPosition = _newPosition;
 
         }
 
@@ -48,20 +68,67 @@ namespace SoSe21 {
 
         } //ende draw
 
-        //update(): void {
+        public update(): void {
 
-            //test
-        //}
+            if (playerCheck == true) {
+
+                let smallDifference: Vector = Vector.getDifference(this.newPosition, this.position);
+
+                if (Math.abs(smallDifference.x) < 1 && Math.abs(smallDifference.y) < 1) {
+
+                    playerCheck = false;
+                    this.checkEnviroment();
+                } // end if
+
+                else {
+
+                    this.position.x += smallDifference.x / 20;
+                    this.position.y += smallDifference.y / 20;
+                    this.checkEnviroment();
+                }
+            } //end if playerCheck
+
+            else {
+
+                this.draw();
+                this.checkEnviroment();
+            }
+
+        }
+
+        checkEnviroment(): void {
+
+            if (this.ballMode == true) {
+
+                for (let i: number = 0; i < movable.length; i++) {
+
+                    let activePlayer: Player = <Player>movable[i];
+
+                    if (activePlayer.distance < 10) {
+
+                        this.activePlayerNumber = i;
+                        animationSwitch = false;
+                        this.ballMode = false;
+                        shootSwitch = true;
+                        break;
+
+                    } //end if distance
+
+                } //end for
+
+            } //end if
+
+        } //end checkEnviroment
 
 
 
-        
+
         /*public move(_event: MouseEvent): void {
 
             let difference: Vector = new Vector(_event.offsetX - this.positionBall.x, _event.offsetY - this.positionBall.y);
 
         }*/
 
-    }
+    } //end class Ball
 
 }
