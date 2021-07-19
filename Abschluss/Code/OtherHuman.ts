@@ -2,13 +2,9 @@ namespace SoSe21 {
 
     export class OtherHuman extends Movable {
 
-        public positionOther: Vector;
-
         constructor(_position: Vector, _velocity: number) {
             
             super(_position, _velocity);
-
-            //this.positionOther = _position;
 
         } //Ende constructor
 
