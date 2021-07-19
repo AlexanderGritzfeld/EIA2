@@ -1,14 +1,21 @@
 "use strict";
 var SoSe21;
 (function (SoSe21) {
-    class Ball extends SoSe21.Movable {
-        //positionBall: Vector;
+    //export class Ball extends Movable {
+    class Ball {
+        //private velocity: number;
         constructor(_position, _velocity) {
-            super(_position, _velocity);
-            //this.positionBall = _position;
+            this.ballmode = true;
+            this.position = _position;
+            this.draw();
+            //super(_position, _velocity);
         } // end constructor
         get ballPos() {
             return this.position;
+        }
+        setBoolean(_boolean) {
+            this.ballmode = _boolean;
+            console.log("Ball-Modus: " + this.ballmode);
         }
         draw() {
             SoSe21.crc2.save();
