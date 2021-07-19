@@ -17,11 +17,11 @@ var SoSe21;
             return this.distancePlayerBall;
         }
         setDistance() {
-            console.log("set distence");
+            //console.log("set distence");
             let ballPos = SoSe21.ball.ballPos;
-            console.log("ballPos: " + SoSe21.ball.ballPos);
+            //console.log("ballPos: " + ball.ballPos);
             this.distancePlayerBall = SoSe21.Vector.getDistance(ballPos, this.position);
-            console.log("distence fertig");
+            //console.log("distence fertig");
         }
         draw() {
             //crc2.save();
@@ -34,7 +34,6 @@ var SoSe21;
             SoSe21.crc2.stroke();
             SoSe21.crc2.fill();
             //crc2.restore();
-            console.log("Ich gehöre zu Team: " + this.team);
         } //end draw
         drawViewRadius() {
             SoSe21.crc2.beginPath();
@@ -44,41 +43,43 @@ var SoSe21;
         }
         update() {
             this.setDistance();
-            console.log("Los geht's");
             //jenachdem welche Task gerade ansteht
             switch (this.task) {
                 case SoSe21.Task.lookForBall:
-                    console.log("Ich bin dran");
+                    //console.log("Ich bin dran");
                     if (this.distancePlayerBall < this.viewRadius) { //wenn Ball ich Sichtweite --> geh hin
-                        console.log("distance: " + this.distancePlayerBall);
+                        //console.log("distance: " + this.distancePlayerBall);
                         this.task = SoSe21.Task.walkToBall;
-                        console.log("Ich gehe jetzt hin " + this.task);
+                        //console.log("Ich gehe jetzt hin " + this.task);
                     }
-                    console.log("Ich sehe");
+                    //console.log("Ich sehe");
                     break;
                 case SoSe21.Task.walkToBall:
-                    console.log("Also jetzt gehe ich hin?");
+                    //console.log("Also jetzt gehe ich hin?");
                     if (this.distancePlayerBall > this.viewRadius) { //wenn Ball nicht (mehr) in Sichtweite --> geh zurück
                         this.task = SoSe21.Task.walkToStartPos;
                     }
                     else {
-                        if (this.distancePlayerBall < 15) { //wenn in Reichweite zum Ball --> schieß
+                        if (this.distancePlayerBall < 10) { //wenn in Reichweite zum Ball --> schieß
                             this.task = SoSe21.Task.shootTheBall;
                             console.log("Ich möchte jetzt schießen");
+                            console.log("Ich gehöre zu Team: " + this.team);
                         }
                         this.movePlayer(SoSe21.ball.ballPos);
-                        console.log("Ich bewege mich zum Ball");
+                        //console.log("Ich bewege mich zum Ball");
                     } //end else walkToBall
                     break;
                 case SoSe21.Task.shootTheBall:
-                    SoSe21.ball.setBoolean(true); // setzt Schießvorgang in Wege
-                    console.log("Ich schieße");
-                    this.task = SoSe21.Task.walkToStartPos; //sobald geschoßen --> Rückzug
+                    if (this.distancePlayerBall > 10) {
+                        SoSe21.ball.setBoolean(true); // setzt Schießvorgang in Wege
+                        console.log("Schade");
+                        this.task = SoSe21.Task.walkToStartPos; //sobald geschoßen --> Rückzug
+                    }
                     break;
                 case SoSe21.Task.walkToStartPos:
                     if (this.position == this.startPos) { //sobald wieder an Anfangsposition --> schaut nach Ball
                         this.task = SoSe21.Task.lookForBall;
-                        console.log("Ich bin bereit");
+                        //console.log("Ich bin bereit");
                     }
                     this.movePlayer(this.startPos);
             } //end switch
