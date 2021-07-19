@@ -1,20 +1,36 @@
 namespace SoSe21 {
 
-    export class Ball extends Movable {
+    //export class Ball extends Movable {
 
-        //positionBall: Vector;
+    export class Ball {
+
+        private ballmode: boolean = true;
+
+        private position: Vector;
+
+        //private velocity: number;
+
 
         constructor(_position: Vector, _velocity: number) {
-            
-            super(_position, _velocity);
 
-            //this.positionBall = _position;
+            this.position = _position;
+            this.draw();
+            
+            //super(_position, _velocity);
 
         } // end constructor
 
         public get ballPos(): Vector {
 
             return this.position;
+        }
+
+        public setBoolean(_boolean: boolean): void {
+
+            this.ballmode = _boolean;
+
+            console.log("Ball-Modus: " + this.ballmode);
+
         }
 
         draw(): void {
