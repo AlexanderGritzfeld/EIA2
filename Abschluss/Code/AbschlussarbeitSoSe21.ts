@@ -19,7 +19,8 @@ namespace SoSe21 {
 
     export let crc2: CanvasRenderingContext2D;
 
-    let movable: Movable[] = [];
+    export let movable: Movable[] = [];
+    export let ball: Ball;
 
 
     //HTML Elemente
@@ -47,37 +48,6 @@ namespace SoSe21 {
     } //end handleLoad
 
     //startForm.addEventListener("change", handleForm);
-    
-    /*function handleForm(): void {
-
-        /*for (let entry of formData) {
-            switch (entry[0]) {
-                /*case "Select1":
-                    team1 = String (entry[1]);
-                    console.log(team1);
-                    break;
-                case "Select2":
-                    team2 = String (entry[1]);
-                    console.log(team2);
-                    break; /
-
-                case "team1Color":
-                    color1 = String(entry[1]);
-                    console.log(color1);
-                    break;
-
-                case "team2Color":
-                    color2 = String(entry[1]);
-                    console.log(color2);
-                    break;
-
-                default:
-                    console.log("???");
-            }
-
-        } //
-        
-    } */
 
     function drawBackground(): void {
 
@@ -205,6 +175,8 @@ namespace SoSe21 {
 
             j++;
         }
+
+        console.log("j ist: " + j);
         
     } //end animate
 
