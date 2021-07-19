@@ -5,6 +5,11 @@ var SoSe21;
         constructor(_x = 0, _y = 0) {
             this.set(_x, _y);
         }
+        static getDistance(_vector1, _vector2) {
+            let distanceX = _vector1.x - _vector2.x;
+            let distanceY = _vector1.y - _vector2.y;
+            return Math.hypot(distanceX, distanceY);
+        }
         set(_x, _y) {
             this.x = _x;
             this.y = _y;
