@@ -1,30 +1,12 @@
 namespace SoSe21 {
 
     export class Player extends Movable {
-        
-        
-        /*Startpositionen Team links (otherTeam)
-        startPosLeft: Vector[] = [{x: 75, y: 350}, {x: 250, y: 100}, {x: 250, y: 600}, {x: 350, y: 250}, {x: 350, y: 450}, {x: 450, y: 350},
-            {x: 675, y: 250}, {x: 675, y: 450}, {x: 750, y: 350}, {x: 750, y: 150}, {x: 750, y: 550}]; 
-
-        //Startpositionen Team rechts
-        public startPosRight: Vector[] = [{x: 1025, y: 350}, {x: 850, y: 100}, {x: 850, y: 600}, {x: 750, y: 250}, {x: 750, y: 450}, {x: 650, y: 350},
-            {x: 425, y: 250}, {x: 425, y: 450}, {x: 350, y: 350}, {x: 350, y: 150}, {x: 350, y: 550}];*/
-        
-
-        /*Startpositionen Team links
-        private startPosPlayer: Vector[] = [{x: 75, y: 350}, {x: 250, y: 100}, {x: 250, y: 600}, {x: 350, y: 250}, {x: 350, y: 450}, {x: 450, y: 350},
-            {x: 675, y: 250}, {x: 675, y: 450}, {x: 750, y: 350}, {x: 750, y: 150}, {x: 750, y: 550},
-
-        //Startpositionen Team rechts
-            {x: 1025, y: 350}, {x: 850, y: 100}, {x: 850, y: 600}, {x: 750, y: 250}, {x: 750, y: 450}, {x: 650, y: 350},
-            {x: 425, y: 250}, {x: 425, y: 450}, {x: 350, y: 350}, {x: 350, y: 150}, {x: 350, y: 550}]; */
             
         private color: string;
         private startPos: Vector;
         private team: string;
         private task: Task = Task.lookForBall;
-        private radius: number = 100;
+        private viewRadius: number = 500;
         private distancePlayerBall: number;
 
 
@@ -52,15 +34,20 @@ namespace SoSe21 {
 
         setDistance(): void {
 
+            console.log("set distence");
+
             let ballPos: Vector = ball.ballPos;
-            this.distancePlayerBall = Vector.getDistance
+
+            console.log("ballPos: " + ball.ballPos);
+            this.distancePlayerBall = Vector.getDistance(ballPos, this.position);
+
+            console.log("distence fertig");
         }
 
         
         public draw(): void {
 
-            crc2.save();
-            //crc2.translate(this.startPosX, this.startPosY);
+            //crc2.save();
 
             //console.info("j ist gerade: " + j);
 
@@ -68,14 +55,162 @@ namespace SoSe21 {
             crc2.strokeStyle = "black";
             crc2.fillStyle = this.color;
             crc2.lineWidth = 2;
-            crc2.arc(this.startPos.x, this.startPos.y, 7, 0, 2 * Math.PI);
+            crc2.arc(this.position.x, this.position.y, 7, 0, 2 * Math.PI);
             crc2.stroke(); 
             crc2.fill();
-            crc2.restore();
+            //crc2.restore();
 
             console.log("Ich gehöre zu Team: " + this.team);
 
         } //end draw
+
+        public drawViewRadius(): void {
+
+            crc2.beginPath();
+            crc2.arc(this.position.x, this.position.y, this.viewRadius, 0, 2 * Math.PI);
+            crc2.stroke();
+            crc2.closePath();
+        }
+
+        public update(): void {
+
+            this.setDistance();
+
+            console.log("Los geht's");
+
+            //jenachdem welche Task gerade ansteht
+            switch (this.task) {
+
+                case Task.lookForBall:
+
+                    console.log("Ich bin dran");
+
+                    if (this.distancePlayerBall < this.viewRadius) { //wenn Ball ich Sichtweite --> geh hin
+
+                        console.log("distance: " + this.distancePlayerBall);
+
+                        this.task = Task.walkToBall;
+
+                        console.log("Ich gehe jetzt hin " + this.task);
+
+                    }
+
+                    console.log("Ich sehe");
+
+                    break;
+
+                case Task.walkToBall:
+
+                    console.log("Also jetzt gehe ich hin?");
+
+                    if (this.distancePlayerBall > this.viewRadius) { //wenn Ball nicht (mehr) in Sichtweite --> geh zurück
+
+                        this.task = Task.walkToStartPos;
+
+                    }
+
+                    else {
+
+                        if (this.distancePlayerBall < 15) { //wenn in Reichweite zum Ball --> schieß
+
+                            this.task = Task.shootTheBall;
+
+                            console.log("Ich möchte jetzt schießen");
+
+                        }
+
+                        this.movePlayer(ball.ballPos);
+
+                        console.log("Ich bewege mich zum Ball");
+
+                    } //end else walkToBall
+                    
+                    break;
+
+                    case Task.shootTheBall:
+
+                        ball.setBoolean(true); // setzt Schießvorgang in Wege
+
+                        console.log("Ich schieße");
+
+                        this.task = Task.walkToStartPos; //sobald geschoßen --> Rückzug
+
+                        break;
+
+                    case Task.walkToStartPos:
+
+                        if (this.position == this.startPos) { //sobald wieder an Anfangsposition --> schaut nach Ball
+
+                            this.task = Task.lookForBall;
+
+                            console.log("Ich bin bereit");
+                        }
+
+                        this.movePlayer(this.startPos);
+                    
+            } //end switch
+
+        } //end update
+
+        private movePlayer(_position: Vector): void {
+
+            let distance: Vector = Vector.getDifference(_position, this.position);
+
+            if (distance.x == 0 && distance.y < 0) {  //Fall: Ball ist nördlich von Spieler
+
+                this.position.y -= this.velocity;
+
+            }
+
+            if (distance.x > 0 && distance.y < 0) {  //Fall: Ball ist nord-östlich von Spieler
+
+                this.position.x += this.velocity;
+                this.position.y -= this.velocity;
+
+            }
+
+            if (distance.x > 0 && distance.y == 0) {  //Fall: Ball ist östlich von Spieler
+
+                this.position.x += this.velocity;
+
+            }
+
+            if (distance.x > 0 && distance.y > 0) {  //Fall: Ball ist süd-östlich von Spieler
+
+                this.position.x += this.velocity;
+                this.position.y += this.velocity;
+
+            }
+
+            if (distance.x == 0 && distance.y > 0) {  //Fall: Ball ist südlich von Spieler
+
+                this.position.y += this.velocity;
+
+            }
+
+            if (distance.x < 0 && distance.y > 0) {  //Fall: Ball ist süd-westlich von Spieler
+
+                this.position.x -= this.velocity;
+                this.position.y += this.velocity;
+
+            }
+
+            if (distance.x < 0 && distance.y == 0) {  //Fall: Ball ist westlich von Spieler
+
+                this.position.x -= this.velocity;
+
+            }
+
+            if (distance.x < 0 && distance.y < 0) {  //Fall: Ball ist nord-westlich von Spieler
+
+                this.position.x -= this.velocity;
+                this.position.y -= this.velocity;
+
+            }
+
+            this.draw();
+
+        } //end movePlayer
 
     } //end class Player
 
