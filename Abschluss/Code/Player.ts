@@ -34,14 +34,14 @@ namespace SoSe21 {
 
         setDistance(): void {
 
-            console.log("set distence");
+            //console.log("set distence");
 
             let ballPos: Vector = ball.ballPos;
 
-            console.log("ballPos: " + ball.ballPos);
+            //console.log("ballPos: " + ball.ballPos);
             this.distancePlayerBall = Vector.getDistance(ballPos, this.position);
 
-            console.log("distence fertig");
+            //console.log("distence fertig");
         }
 
         
@@ -60,8 +60,6 @@ namespace SoSe21 {
             crc2.fill();
             //crc2.restore();
 
-            console.log("Ich gehöre zu Team: " + this.team);
-
         } //end draw
 
         public drawViewRadius(): void {
@@ -76,32 +74,30 @@ namespace SoSe21 {
 
             this.setDistance();
 
-            console.log("Los geht's");
-
             //jenachdem welche Task gerade ansteht
             switch (this.task) {
 
                 case Task.lookForBall:
 
-                    console.log("Ich bin dran");
+                    //console.log("Ich bin dran");
 
                     if (this.distancePlayerBall < this.viewRadius) { //wenn Ball ich Sichtweite --> geh hin
 
-                        console.log("distance: " + this.distancePlayerBall);
+                        //console.log("distance: " + this.distancePlayerBall);
 
                         this.task = Task.walkToBall;
 
-                        console.log("Ich gehe jetzt hin " + this.task);
+                        //console.log("Ich gehe jetzt hin " + this.task);
 
                     }
 
-                    console.log("Ich sehe");
+                    //console.log("Ich sehe");
 
                     break;
 
                 case Task.walkToBall:
 
-                    console.log("Also jetzt gehe ich hin?");
+                    //console.log("Also jetzt gehe ich hin?");
 
                     if (this.distancePlayerBall > this.viewRadius) { //wenn Ball nicht (mehr) in Sichtweite --> geh zurück
 
@@ -111,17 +107,17 @@ namespace SoSe21 {
 
                     else {
 
-                        if (this.distancePlayerBall < 15) { //wenn in Reichweite zum Ball --> schieß
+                        if (this.distancePlayerBall < 10) { //wenn in Reichweite zum Ball --> schieß
 
                             this.task = Task.shootTheBall;
 
                             console.log("Ich möchte jetzt schießen");
-
+                            console.log("Ich gehöre zu Team: " + this.team);
                         }
 
                         this.movePlayer(ball.ballPos);
 
-                        console.log("Ich bewege mich zum Ball");
+                        //console.log("Ich bewege mich zum Ball");
 
                     } //end else walkToBall
                     
@@ -129,13 +125,17 @@ namespace SoSe21 {
 
                     case Task.shootTheBall:
 
+                    if (this.distancePlayerBall > 10) {
+
                         ball.setBoolean(true); // setzt Schießvorgang in Wege
 
-                        console.log("Ich schieße");
+                        console.log("Schade");
 
                         this.task = Task.walkToStartPos; //sobald geschoßen --> Rückzug
 
-                        break;
+                    }
+                        
+                    break;
 
                     case Task.walkToStartPos:
 
@@ -143,7 +143,7 @@ namespace SoSe21 {
 
                             this.task = Task.lookForBall;
 
-                            console.log("Ich bin bereit");
+                            //console.log("Ich bin bereit");
                         }
 
                         this.movePlayer(this.startPos);
