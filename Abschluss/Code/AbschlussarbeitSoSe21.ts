@@ -31,7 +31,6 @@ namespace SoSe21 {
     export let animationSwitch: boolean = true;
     export let shootSwitch: boolean = false; // erst kicken, wenn Spieler ihn hat
 
-
     //HTML Elemente
 
     let startFormForm: HTMLFormElement;
@@ -93,9 +92,6 @@ namespace SoSe21 {
 
     function shootTheBall(_event: MouseEvent): void {
 
-        console.log("pengu " + shootSwitch); //kommt nicht auf true
-
-
         if (shootSwitch == true) {
 
             mouse = new Vector(_event.clientX - rect.left, _event.clientY - rect.top);
@@ -108,7 +104,6 @@ namespace SoSe21 {
             animate();
         }
 
-        console.log("Maus: " + mouse);
     }
     
     
@@ -120,8 +115,6 @@ namespace SoSe21 {
             let playerRight: Player = new Player(new Vector(startPosRight[i].x, startPosRight[i].y), 0.5, color1, "right");
 
             movable.push(playerRight);
-
-        //movable.push(<Movable> new Player(new Vector(startPosRight[i].x, startPosRight[i].y), 0.5, color1, "right"));
     
         } //end for
 
