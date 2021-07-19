@@ -5,7 +5,7 @@ var SoSe21;
         constructor(_position, _velocity, _color, _team) {
             super(_position, _velocity);
             this.task = SoSe21.Task.lookForBall;
-            this.viewRadius = 500;
+            this.viewRadius = 150;
             this.color = _color;
             this.startPos = this.position.copy(); //copy siehe Vector
             this.team = _team;
