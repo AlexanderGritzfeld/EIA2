@@ -67,7 +67,8 @@ var SoSe21;
         formData = new FormData(document.forms[0]);
         color1 = formData.get("team1Color")?.toString();
         color2 = formData.get("team2Color")?.toString();
-        drawTeam(22);
+        drawTeam(11);
+        drawOtherTeam(11);
         drawOther();
         drawBall();
         animate();
@@ -75,18 +76,25 @@ var SoSe21;
     } //end function startGame
     function drawTeam(_nPlayers) {
         for (let i = 0; i < _nPlayers; i++) {
-            movable.push(new SoSe21.Player({ x: SoSe21.crc2.canvas.width / (i + 1), y: SoSe21.crc2.canvas.height / (i + 1) }, { x: 0.5, y: 0.5 }, color1, color2));
+            movable.push(new SoSe21.Player(new SoSe21.Vector(SoSe21.startPosRight[i].x, SoSe21.startPosRight[i].y), 0.5, color1, "right"));
             //movable.push(<Movable> new Player(new Vector (x: crc2.canvas.width / (i + 1), y: crc2.canvas.height / (i + 1)), { x: 0.5, y: 0.5 }, color1, color2));
-            console.log("Spieler Nummer: " + (i + 1));
+            console.log("Spieler Rechts Nummer: " + (i + 1));
         } //end for
     } //end drawTeam 
+    function drawOtherTeam(_nPlayers) {
+        for (let i = 0; i < _nPlayers; i++) {
+            movable.push(new SoSe21.Player(new SoSe21.Vector(SoSe21.startPosLeft[i].x, SoSe21.startPosLeft[i].y), 0.5, color2, "left"));
+            //movable.push(<Movable> new Player(new Vector (x: crc2.canvas.width / (i + 1), y: crc2.canvas.height / (i + 1)), { x: 0.5, y: 0.5 }, color1, color2));
+            console.log("Spieler Links Nummer: " + (i + 1));
+        } //end for
+    } //end drawOtherTeam 
     function drawOther() {
-        movable.push(new SoSe21.OtherHuman({ x: 225, y: 35 }, { x: 0.5, y: 0.5 }));
-        movable.push(new SoSe21.OtherHuman({ x: 875, y: 35 }, { x: 0.5, y: 0.5 }));
-        movable.push(new SoSe21.OtherHuman({ x: SoSe21.crc2.canvas.width / 2, y: 250 }, { x: 0.5, y: 0.5 }));
+        movable.push(new SoSe21.OtherHuman(new SoSe21.Vector(225, 35), 0.5));
+        movable.push(new SoSe21.OtherHuman(new SoSe21.Vector(875, 35), 0.5));
+        movable.push(new SoSe21.OtherHuman(new SoSe21.Vector(SoSe21.crc2.canvas.width / 2, 250), 0.5));
     }
     function drawBall() {
-        movable.push(new SoSe21.Ball({ x: SoSe21.crc2.canvas.width / 2, y: SoSe21.crc2.canvas.height / 2 }, { x: 0.6, y: 0.6 }));
+        movable.push(new SoSe21.Ball(new SoSe21.Vector(SoSe21.crc2.canvas.width / 2, SoSe21.crc2.canvas.height / 2), 0.6));
     }
     SoSe21.j = 0;
     function animate() {
