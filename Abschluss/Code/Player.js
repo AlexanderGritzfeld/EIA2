@@ -2,15 +2,24 @@
 var SoSe21;
 (function (SoSe21) {
     class Player extends SoSe21.Movable {
-        // private task: Task = Task.lookForBall;
-        //private radius: number = 100;
-        //private distancePlayerBall: number;
         constructor(_position, _velocity, _color, _team) {
             super(_position, _velocity);
+            this.task = SoSe21.Task.lookForBall;
+            this.radius = 100;
             this.color = _color;
             this.startPos = this.position.copy(); //copy siehe Vector
             this.team = _team;
         } //end constructor
+        get playerProperties() {
+            return this.velocity;
+        }
+        get distance() {
+            return this.distancePlayerBall;
+        }
+        setDistance() {
+            let ballPos = SoSe21.ball.ballPos;
+            this.distancePlayerBall = SoSe21.Vector.getDistance;
+        }
         draw() {
             SoSe21.crc2.save();
             //crc2.translate(this.startPosX, this.startPosY);
