@@ -3,6 +3,15 @@ namespace SoSe21 {
 
     window.addEventListener("load", handleLoad);
 
+    //im Prinzip eine einfachere und kompaktere Definition von Aufgaben (wird später referiert)
+    export enum Task {
+
+        lookForBall,
+        walkToBall,
+        shootTheBall,
+        walkToStartPos
+    }
+
     export interface Vector {
         x: number;
         y: number;
@@ -31,50 +40,15 @@ namespace SoSe21 {
         canvas = <HTMLCanvasElement>document.querySelector("canvas"); 
         crc2 = <CanvasRenderingContext2D>canvas.getContext("2d");
 
-        /*
-        document.addEventListener ("mousemove", setInfoBox);
-        document.addEventListener ("click", logInfo);
-        document.body.addEventListener ("click", logInfo);
-        */
-
-
         drawBackground();
 
         console.log("load");
 
     } //end handleLoad
 
-
-    /*
-    function setInfoBox(_event: MouseEvent): void {
-        let spanElement: HTMLSpanElement = <HTMLSpanElement>document.querySelector("#span");
-    
-        let x: number = _event.clientX;
-        let y: number = _event.clientY;
-        let mousePosition: string = "X-Coordinates: " + x + "," + "<br>" + "Y-Coordinates: " + y + ",";
-        let eventTarget: EventTarget = <EventTarget>_event.target;
-    
-        spanElement.innerHTML = mousePosition + "<br>" + eventTarget;
-        spanElement.style.top = y + 8 + "px";
-        spanElement.style.left = x + 10 + "px";
-    }
-    function logInfo(_event: Event): void {
-
-        console.info("type: " + _event.type);
-        console.log("target " + _event.target);
-        console.log("current target " + _event.currentTarget);
-        console.log("composed path " + _event.composedPath());
-    } */
-
     //startForm.addEventListener("change", handleForm);
     
-
-
-
     /*function handleForm(): void {
-
-        
-        
 
         /*for (let entry of formData) {
             switch (entry[0]) {
@@ -102,16 +76,8 @@ namespace SoSe21 {
             }
 
         } //
-
-
-        console.log(formData.get("team1Color"));
-        console.log(formData.get("team2Color"));
-        
         
     } */
-
-    
-
 
     function drawBackground(): void {
 
@@ -135,8 +101,6 @@ namespace SoSe21 {
         drawBall();
         animate();
 
-        //console.log("Nach Start: " + color1, color2);
-        
         startFormForm.classList.add("is-hidden");
         
     } //end function startGame
@@ -148,12 +112,15 @@ namespace SoSe21 {
         for (let i: number = 0; i < _nPlayers; i++) {
 
         movable.push(<Movable> new Player({ x: crc2.canvas.width / (i + 1), y: crc2.canvas.height / (i + 1)}, { x: 0.5, y: 0.5 }, color1, color2));
+        //movable.push(<Movable> new Player(new Vector (x: crc2.canvas.width / (i + 1), y: crc2.canvas.height / (i + 1)), { x: 0.5, y: 0.5 }, color1, color2));
 
         console.log("Spieler Nummer: " + (i + 1) );
     
         } //end for
 
     } //end drawTeam 
+
+
 
     function drawOther(): void {
 
@@ -163,21 +130,20 @@ namespace SoSe21 {
 
     }
 
+
+
     function drawBall(): void {
 
         movable.push(<Movable> new Ball({ x: crc2.canvas.width / 2, y: crc2.canvas.height / 2}, { x: 0.6, y: 0.6}));
     }
+
+
     
     export let j: number = 0;
 
     function animate(): void {
+
         console.log("movable.length: " + movable.length);
-
-         /*for (let index: number = 0; index < movable.length; index ++) {
-            movable[index].update();
-            movable[index].draw();
-
-        } */
 
         //erst das Team Nr 1 wird gemalt
         while (j < 11) { 
@@ -217,7 +183,7 @@ namespace SoSe21 {
             j++;
         }
 
-        //unzum Schluss noch der Ball
+        //und zum Schluss noch der Ball
         while (j < (26) && j >= 25) {
 
             movable[j].update();
@@ -225,7 +191,6 @@ namespace SoSe21 {
 
             j++;
         }
-        
         
     } //end animate
 
