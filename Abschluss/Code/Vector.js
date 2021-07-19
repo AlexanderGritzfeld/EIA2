@@ -10,6 +10,9 @@ var SoSe21;
             let distanceY = _vector1.y - _vector2.y;
             return Math.hypot(distanceX, distanceY);
         }
+        static getDifference(_vector1, _vector2) {
+            return new Vector(_vector1.x - _vector2.x, _vector1.y - _vector2.y);
+        }
         set(_x, _y) {
             this.x = _x;
             this.y = _y;
