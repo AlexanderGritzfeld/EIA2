@@ -23,9 +23,9 @@ namespace SoSe21 {
         private color: string;
         private startPos: Vector;
         private team: string;
-       // private task: Task = Task.lookForBall;
-        //private radius: number = 100;
-        //private distancePlayerBall: number;
+        private task: Task = Task.lookForBall;
+        private radius: number = 100;
+        private distancePlayerBall: number;
 
 
 
@@ -40,8 +40,24 @@ namespace SoSe21 {
 
         } //end constructor
 
+        public get playerProperties(): number {
+
+            return this.velocity;
+        }
+
+        public get distance(): number {
+
+            return this.distancePlayerBall;
+        }
+
+        setDistance(): void {
+
+            let ballPos: Vector = ball.ballPos;
+            this.distancePlayerBall = Vector.getDistance
+        }
+
         
-        draw(): void {
+        public draw(): void {
 
             crc2.save();
             //crc2.translate(this.startPosX, this.startPosY);
