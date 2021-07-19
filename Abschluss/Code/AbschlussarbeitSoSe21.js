@@ -40,7 +40,7 @@ var SoSe21;
         drawTeam(11);
         drawOtherTeam(11);
         drawOther();
-        drawBall();
+        SoSe21.ball = new SoSe21.Ball(new SoSe21.Vector(550, 350), 0.5);
         animate();
         startFormForm.classList.add("is-hidden");
     } //end function startGame
@@ -62,10 +62,14 @@ var SoSe21;
         SoSe21.movable.push(new SoSe21.OtherHuman(new SoSe21.Vector(225, 35), 0.5));
         SoSe21.movable.push(new SoSe21.OtherHuman(new SoSe21.Vector(875, 35), 0.5));
         SoSe21.movable.push(new SoSe21.OtherHuman(new SoSe21.Vector(SoSe21.crc2.canvas.width / 2, 250), 0.5));
+        console.log("andere");
     }
-    function drawBall() {
-        SoSe21.movable.push(new SoSe21.Ball(new SoSe21.Vector(SoSe21.crc2.canvas.width / 2, SoSe21.crc2.canvas.height / 2), 0.6));
-    }
+    /*function drawBall(): void {
+
+        new Ball(new Vector( crc2.canvas.width / 2, crc2.canvas.height / 2), 0.6));
+
+        console.log("Ball");
+    }*/
     SoSe21.j = 0;
     function animate() {
         console.log("movable.length: " + SoSe21.movable.length);
@@ -75,6 +79,7 @@ var SoSe21;
             SoSe21.movable[SoSe21.j].draw();
             SoSe21.j++;
         } // end while
+        console.log("Team 1 fertig");
         //jetzt wird das andere Team gemalt
         while (SoSe21.j < 22 && SoSe21.j >= 11) {
             SoSe21.movable[SoSe21.j].update();
@@ -93,13 +98,16 @@ var SoSe21;
             SoSe21.movable[SoSe21.j].draw();
             SoSe21.j++;
         }
-        //und zum Schluss noch der Ball
-        while (SoSe21.j < (26) && SoSe21.j >= 25) {
-            SoSe21.movable[SoSe21.j].update();
-            SoSe21.movable[SoSe21.j].draw();
-            SoSe21.j++;
+        /*und zum Schluss noch der Ball
+        while (j < (26) && j >= 25) {
+
+            movable[j].update();
+            movable[j].draw();
+
+            j++;
         }
-        console.log("j ist: " + SoSe21.j);
+
+        console.log("j ist: " + j); */
     } //end animate
 })(SoSe21 || (SoSe21 = {})); //end namespace
 //# sourceMappingURL=AbschlussarbeitSoSe21.js.map
