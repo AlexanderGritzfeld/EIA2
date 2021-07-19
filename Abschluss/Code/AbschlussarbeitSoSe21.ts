@@ -19,8 +19,12 @@ namespace SoSe21 {
 
     export let crc2: CanvasRenderingContext2D;
 
+    let imageData: ImageData;
+
     export let movable: Movable[] = [];
     export let ball: Ball;
+
+    export let animationSwitch: boolean = true;
 
 
     //HTML Elemente
@@ -70,6 +74,7 @@ namespace SoSe21 {
         drawOtherTeam(11);
         drawOther();
         
+        imageData = crc2.getImageData(0, 0, 1100, 700);
         ball = new Ball(new Vector(550, 350), 0.5);
 
         animate();
@@ -114,21 +119,31 @@ namespace SoSe21 {
         movable.push(<Movable> new OtherHuman(new Vector ( 875, 35), 0.5));
         movable.push(<Movable> new OtherHuman(new Vector (crc2.canvas.width / 2, 250), 0.5));
 
-        console.log("andere");
-
     }
-
-
-
-    /*function drawBall(): void {
-
-        new Ball(new Vector( crc2.canvas.width / 2, crc2.canvas.height / 2), 0.6));
-
-        console.log("Ball");
-    }*/
-
-
     
+    function animate(): void {
+
+        if (animationSwitch == true) { //damit kann man die Animation stoppen, sobald ein Spieler den Ball hat
+
+            requestAnimationFrame(animate);
+            crc2.clearRect(0, 0, crc2.canvas.width, crc2.canvas.height);
+            crc2.putImageData(imageData, 0, 0);
+
+            for (let j: number = 0; j < movable.length; j++) {
+
+                movable[j].update();
+                movable[j].draw();
+
+            } //end for
+
+            //ball.update();
+            ball.draw();
+
+        } //end if
+
+    } //end animate
+
+    /*
     export let j: number = 0;
 
     function animate(): void {
@@ -184,8 +199,8 @@ namespace SoSe21 {
             j++;
         }
 
-        console.log("j ist: " + j); */
+        console.log("j ist: " + j); //
         
-    } //end animate
+    } //end animate */
 
 } //end namespace
