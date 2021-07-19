@@ -2,35 +2,31 @@ namespace SoSe21 {
 
     export abstract class Movable {
         
+        /* brauche ich das?
         startPosX: number;
-        startPosY: number;
+        startPosY: number; */
 
-        velocityX: number;
-        velocityY: number;
+        protected velocity: number;
+        protected position: Vector;
 
-        constructor(_position: Vector, _velocity: Vector) {
+        constructor(_position: Vector, _velocity: number) {
             
-            this.startPosX = _position.x;
-            this.startPosY = _position.y;
+            /*this.startPosX = _position.x;
+            this.startPosY = _position.y; */
 
-            this.velocityX = _velocity.x;
-            this.velocityY = _velocity.y;
+            this.position = _position;
+
+            this.velocity = _velocity;
         }
 
         draw(): void {
             //draw
         }
 
-        /*brauche ich das?
-        pickColor(): void {
-            //pick color
-        }
-        */
-
         update(): void {
         //update
         }
         
-    } //end class Mivable
+    } //end class Movable
 
 }
