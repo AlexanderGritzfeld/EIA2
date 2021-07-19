@@ -13,15 +13,21 @@ namespace SoSe21 {
         */
 
         //Startpositionen Team links
-        startPosPlayer: Vector[] = [{x: 75, y: 350}, {x: 250, y: 100}, {x: 250, y: 600}, {x: 350, y: 250}, {x: 350, y: 450}, {x: 450, y: 350},
+        private startPosPlayer: Vector[] = [{x: 75, y: 350}, {x: 250, y: 100}, {x: 250, y: 600}, {x: 350, y: 250}, {x: 350, y: 450}, {x: 450, y: 350},
             {x: 675, y: 250}, {x: 675, y: 450}, {x: 750, y: 350}, {x: 750, y: 150}, {x: 750, y: 550},
 
         //Startpositionen Team rechts
             {x: 1025, y: 350}, {x: 850, y: 100}, {x: 850, y: 600}, {x: 750, y: 250}, {x: 750, y: 450}, {x: 650, y: 350},
             {x: 425, y: 250}, {x: 425, y: 450}, {x: 350, y: 350}, {x: 350, y: 150}, {x: 350, y: 550}];
             
-        public color1: string;
-        public color2: string;
+        private color1: string;
+        private color2: string;
+        //private startPos: Vector;
+       // private task: Task = Task.lookForBall;
+        //private radius: number = 100;
+        //private distancePlayerBall: number;
+
+
 
 
         constructor(_position: Vector, _velocity: Vector, _color1: string, _color2: string) {
@@ -30,6 +36,7 @@ namespace SoSe21 {
 
             this.color1 = _color1;
             this.color2 = _color2;
+            //this.startPos
 
         } //end constructor
 
