@@ -96,7 +96,8 @@ namespace SoSe21 {
         color1 = <string>formData.get("team1Color")?.toString();
         color2 = <string>formData.get("team2Color")?.toString();
 
-        drawTeam(22);
+        drawTeam(11);
+        drawOtherTeam(11);
         drawOther();
         drawBall();
         animate();
@@ -111,22 +112,35 @@ namespace SoSe21 {
 
         for (let i: number = 0; i < _nPlayers; i++) {
 
-        movable.push(<Movable> new Player({ x: crc2.canvas.width / (i + 1), y: crc2.canvas.height / (i + 1)}, { x: 0.5, y: 0.5 }, color1, color2));
+        movable.push(<Movable> new Player(new Vector(startPosRight[i].x, startPosRight[i].y), 0.5, color1, "right"));
         //movable.push(<Movable> new Player(new Vector (x: crc2.canvas.width / (i + 1), y: crc2.canvas.height / (i + 1)), { x: 0.5, y: 0.5 }, color1, color2));
 
-        console.log("Spieler Nummer: " + (i + 1) );
+        console.log("Spieler Rechts Nummer: " + (i + 1) );
     
         } //end for
 
     } //end drawTeam 
 
+    function drawOtherTeam(_nPlayers: number): void {
+
+        for (let i: number = 0; i < _nPlayers; i++) {
+
+        movable.push(<Movable> new Player(new Vector(startPosLeft[i].x, startPosLeft[i].y), 0.5, color2, "left"));
+        //movable.push(<Movable> new Player(new Vector (x: crc2.canvas.width / (i + 1), y: crc2.canvas.height / (i + 1)), { x: 0.5, y: 0.5 }, color1, color2));
+
+        console.log("Spieler Links Nummer: " + (i + 1) );
+    
+        } //end for
+
+    } //end drawOtherTeam 
+
 
 
     function drawOther(): void {
 
-        movable.push(<Movable> new OtherHuman({ x: 225, y: 35}, { x: 0.5, y: 0.5 }));
-        movable.push(<Movable> new OtherHuman({ x: 875, y: 35}, { x: 0.5, y: 0.5 }));
-        movable.push(<Movable> new OtherHuman({ x: crc2.canvas.width / 2, y: 250}, { x: 0.5, y: 0.5 }));
+        movable.push(<Movable> new OtherHuman(new Vector( 225, 35), 0.5));
+        movable.push(<Movable> new OtherHuman(new Vector ( 875, 35), 0.5));
+        movable.push(<Movable> new OtherHuman(new Vector (crc2.canvas.width / 2, 250), 0.5));
 
     }
 
@@ -134,7 +148,7 @@ namespace SoSe21 {
 
     function drawBall(): void {
 
-        movable.push(<Movable> new Ball({ x: crc2.canvas.width / 2, y: crc2.canvas.height / 2}, { x: 0.6, y: 0.6}));
+        movable.push(<Movable> new Ball(new Vector( crc2.canvas.width / 2, crc2.canvas.height / 2), 0.6));
     }
 
 
