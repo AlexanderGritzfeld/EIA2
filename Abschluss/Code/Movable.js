@@ -3,8 +3,6 @@ var SoSe21;
 (function (SoSe21) {
     class Movable {
         constructor(_position, _velocity) {
-            /*this.startPosX = _position.x;
-            this.startPosY = _position.y; */
             this.position = _position;
             this.velocity = _velocity;
         }
