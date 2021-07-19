@@ -49,7 +49,6 @@ var SoSe21;
         animate();
     } //end function startGame
     function shootTheBall(_event) {
-        console.log("pengu " + SoSe21.shootSwitch); //kommt nicht auf true
         if (SoSe21.shootSwitch == true) {
             SoSe21.mouse = new SoSe21.Vector(_event.clientX - SoSe21.rect.left, _event.clientY - SoSe21.rect.top);
             SoSe21.playerCheck = true; //darf ich gekickt werden?
@@ -58,13 +57,11 @@ var SoSe21;
             SoSe21.shootSwitch = false;
             animate();
         }
-        console.log("Maus: " + SoSe21.mouse);
     }
     function drawTeam(_nPlayers) {
         for (let i = 0; i < _nPlayers; i++) {
             let playerRight = new SoSe21.Player(new SoSe21.Vector(SoSe21.startPosRight[i].x, SoSe21.startPosRight[i].y), 0.5, color1, "right");
             SoSe21.movable.push(playerRight);
-            //movable.push(<Movable> new Player(new Vector(startPosRight[i].x, startPosRight[i].y), 0.5, color1, "right"));
         } //end for
     } //end drawTeam 
     function drawOtherTeam(_nPlayers) {
