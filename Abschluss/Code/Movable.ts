@@ -19,11 +19,11 @@ namespace SoSe21 {
             this.velocity = _velocity;
         }
 
-        draw(): void {
+        public draw(): void {
             //draw
         }
 
-        update(): void {
+        public update(): void {
         //update
         }
         
