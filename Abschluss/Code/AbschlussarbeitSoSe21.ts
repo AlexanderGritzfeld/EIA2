@@ -69,7 +69,9 @@ namespace SoSe21 {
         drawTeam(11);
         drawOtherTeam(11);
         drawOther();
-        drawBall();
+        
+        ball = new Ball(new Vector(550, 350), 0.5);
+
         animate();
 
         startFormForm.classList.add("is-hidden");
@@ -112,14 +114,18 @@ namespace SoSe21 {
         movable.push(<Movable> new OtherHuman(new Vector ( 875, 35), 0.5));
         movable.push(<Movable> new OtherHuman(new Vector (crc2.canvas.width / 2, 250), 0.5));
 
+        console.log("andere");
+
     }
 
 
 
-    function drawBall(): void {
+    /*function drawBall(): void {
 
-        movable.push(<Movable> new Ball(new Vector( crc2.canvas.width / 2, crc2.canvas.height / 2), 0.6));
-    }
+        new Ball(new Vector( crc2.canvas.width / 2, crc2.canvas.height / 2), 0.6));
+
+        console.log("Ball");
+    }*/
 
 
     
@@ -138,6 +144,8 @@ namespace SoSe21 {
             j ++;
 
         } // end while
+
+        console.log("Team 1 fertig");
 
         //jetzt wird das andere Team gemalt
         while (j < 22 && j >= 11) { 
@@ -167,7 +175,7 @@ namespace SoSe21 {
             j++;
         }
 
-        //und zum Schluss noch der Ball
+        /*und zum Schluss noch der Ball
         while (j < (26) && j >= 25) {
 
             movable[j].update();
@@ -176,7 +184,7 @@ namespace SoSe21 {
             j++;
         }
 
-        console.log("j ist: " + j);
+        console.log("j ist: " + j); */
         
     } //end animate
 
