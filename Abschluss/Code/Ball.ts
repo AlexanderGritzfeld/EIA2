@@ -1,7 +1,5 @@
 namespace SoSe21 {
 
-    //export class Ball extends Movable {
-
     export class Ball {
 
         private ballMode: boolean = true;
@@ -10,15 +8,11 @@ namespace SoSe21 {
         private newPosition: Vector;
         private activePlayerNumber: number;
 
-        //private velocity: number;
-
 
         constructor(_position: Vector, _velocity: number) {
 
             this.position = _position;
             this.draw();
-            
-            //super(_position, _velocity);
 
         } // end constructor
 
@@ -29,12 +23,9 @@ namespace SoSe21 {
 
         public setBoolean(_boolean: boolean): void {
 
-            //console.log("ballMode alt: " + this.ballMode);
             console.log("activePlayerNumber: " + this.activePlayerNumber);
 
             this.ballMode = _boolean;
-
-            //console.log("Ball-Modus: " + this.ballMode);
 
         }
 
@@ -53,7 +44,7 @@ namespace SoSe21 {
 
         }
 
-        draw(): void {
+        public draw(): void {
 
             crc2.save();
 
@@ -96,7 +87,7 @@ namespace SoSe21 {
 
         }
 
-        checkEnviroment(): void {
+        private checkEnviroment(): void {
 
             if (this.ballMode == true) {
 
@@ -119,15 +110,6 @@ namespace SoSe21 {
             } //end if
 
         } //end checkEnviroment
-
-
-
-
-        /*public move(_event: MouseEvent): void {
-
-            let difference: Vector = new Vector(_event.offsetX - this.positionBall.x, _event.offsetY - this.positionBall.y);
-
-        }*/
 
     } //end class Ball
 
