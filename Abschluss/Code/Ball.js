@@ -1,23 +1,18 @@
 "use strict";
 var SoSe21;
 (function (SoSe21) {
-    //export class Ball extends Movable {
     class Ball {
-        //private velocity: number;
         constructor(_position, _velocity) {
             this.ballMode = true;
             this.position = _position;
             this.draw();
-            //super(_position, _velocity);
         } // end constructor
         get ballPos() {
             return this.position;
         }
         setBoolean(_boolean) {
-            //console.log("ballMode alt: " + this.ballMode);
             console.log("activePlayerNumber: " + this.activePlayerNumber);
             this.ballMode = _boolean;
-            //console.log("Ball-Modus: " + this.ballMode);
         }
         setNewPosition(_newPosition) {
             /*let distanceBall: number = Vector.getDistance(_newPosition, this.position);
