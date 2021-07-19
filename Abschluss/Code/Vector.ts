@@ -11,6 +11,12 @@ namespace SoSe21 {
 
         }
 
+        public static getDistance(_vector1: Vector, _vector2: Vector): number { //static weil wegen Berechnung und resultierender Wert
+            let distanceX: number = _vector1.x - _vector2.x;
+            let distanceY: number = _vector1.y - _vector2.y;
+            return Math.hypot(distanceX, distanceY);
+          }
+
         public set(_x: number, _y: number): void {
 
             this.x = _x;
