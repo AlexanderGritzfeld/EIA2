@@ -2,10 +2,14 @@
 var SoSe21;
 (function (SoSe21) {
     class Ball extends SoSe21.Movable {
+        //positionBall: Vector;
         constructor(_position, _velocity) {
             super(_position, _velocity);
             //this.positionBall = _position;
         } // end constructor
+        get ballPos() {
+            return this.position;
+        }
         draw() {
             SoSe21.crc2.save();
             SoSe21.crc2.beginPath();
