@@ -2,6 +2,10 @@
 var SoSe21;
 (function (SoSe21) {
     class Player extends SoSe21.Movable {
+        //private startPos: Vector;
+        // private task: Task = Task.lookForBall;
+        //private radius: number = 100;
+        //private distancePlayerBall: number;
         constructor(_position, _velocity, _color1, _color2) {
             super(_position, _velocity);
             /*
@@ -21,6 +25,7 @@ var SoSe21;
                 { x: 425, y: 250 }, { x: 425, y: 450 }, { x: 350, y: 350 }, { x: 350, y: 150 }, { x: 350, y: 550 }];
             this.color1 = _color1;
             this.color2 = _color2;
+            //this.startPos
         } //end constructor
         draw() {
             if (SoSe21.j < 11) {
