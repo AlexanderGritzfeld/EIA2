@@ -4,7 +4,6 @@ var SoSe21;
     class OtherHuman extends SoSe21.Movable {
         constructor(_position, _velocity) {
             super(_position, _velocity);
-            //this.positionOther = _position;
         } //Ende constructor
         draw() {
             SoSe21.crc2.save();
